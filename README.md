@@ -24,7 +24,7 @@ Lint:
 make lint
 ```
 
-Bundle (overwrite `landscape_api.bundle.yaml`:
+Bundle (overwrite `landscape_api.bundle.yaml`):
 
 ```sh
 make bundle
