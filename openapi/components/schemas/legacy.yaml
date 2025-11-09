@@ -1,17 +1,5 @@
-CreateScriptAttachmentResult:
-  type: object
-  additionalProperties: false
-  properties:
-    filename:
-      type: string
-      description: Name of the attachment that was created.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "filename"
-  required:
-    - filename
-
 LegacyActionResult:
   oneOf:
-    - $ref: "../schemas/script.yaml#/V1Script"
-    - $ref: "../schemas/script.yaml#/V2Script"
-    - $ref: "#/CreateScriptAttachmentResult"
+    - $ref: './script.yaml#/V1Script'
+    - $ref: './script.yaml#/V2Script'
+    - $ref: "./script.yaml#/LegacyScriptAttachment"

@@ -237,3 +237,15 @@ V2Script:
     - id
     - title
     - status
+
+ScriptResult:
+  oneOf:
+    - $ref: '#/V1Script'
+    - $ref: '#/V2Script'
+  discriminator:
+    propertyName: status
+    mapping:
+      V1: '#/V1Script'
+      ARCHIVED: '#/V2Script'
+      REDACTED: '#/V2Script'
+      ACTIVE: '#/V2Script'
