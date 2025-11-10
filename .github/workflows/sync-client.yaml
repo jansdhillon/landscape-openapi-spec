@@ -66,6 +66,7 @@ jobs:
               --title "$TAG" \
               --notes "Automated release for Landscape OpenAPI ${{ steps.ver.outputs.result }}." \
               "openapi/landscape_api.bundle.yaml"
+          fi
 
   regen-client-and-release:
     needs: build-and-release-openapi
