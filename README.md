@@ -1,5 +1,7 @@
 # landscape-openapi-spec
 
+[![Bundle and sync API Client with OpenAPI spec, publish GitHub release/Go package](https://github.com/jansdhillon/landscape-openapi-spec/actions/workflows/sync-client.yaml/badge.svg)](https://github.com/jansdhillon/landscape-openapi-spec/actions/workflows/sync-client.yaml)
+
 OpenAPI 3.1 specification for the Landscape Server API.
 
 ## Validating, linting, and bundling
