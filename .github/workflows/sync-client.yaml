@@ -31,7 +31,7 @@ jobs:
           path: openapi/landscape_api.bundle.yaml
           if-no-files-found: error
 
-  update-go-client-pr:
+  update-landscape-go-api-client-pr:
     needs: generate-openapi-bundle
     runs-on: ubuntu-latest
     permissions:
@@ -54,15 +54,10 @@ jobs:
         with:
           go-version: '1.25'
 
-      - name: Copy bundle into client repo
-        run: |
-          mkdir -p landscape-go-api-client/openapi
-          cp bundle/landscape_api.bundle.yaml landscape-go-api-client/openapi/landscape_api.bundle.yaml
-
       - name: Generate client
         working-directory: landscape-go-api-client/client
         env:
-          OPENAPI_SPEC: ${{ github.workspace }}/landscape-go-api-client/openapi/landscape_api.bundle.yaml
+          OPENAPI_SPEC: ${{ github.workspace }}/bundle/landscape_api.bundle.yaml
         run: |
           go generate ./...
           go mod tidy
@@ -72,7 +67,7 @@ jobs:
         with:
           token: ${{ secrets.REGENERATE_CLIENT_TOKEN }}
           path: landscape-go-api-client
-          branch: chore/regen-client
+          branch: build/regen-landscape-go-api-client
           commit-message: "build: regenerate client from OpenAPI spec"
           title: "build: regenerate client from OpenAPI spec"
           body: "Automated regeneration from latest OpenAPI bundle."
