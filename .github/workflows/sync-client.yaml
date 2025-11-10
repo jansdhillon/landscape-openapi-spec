@@ -1,62 +1,81 @@
-name: Sync API Client with OpenAPI document (PR)
+# SPDX-License-Identifier: Apache-2.0
+
+name: Sync API Client with OpenAPI spec
 
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
   generate-openapi-bundle:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout openapi repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
-          repository: jansdhillon/landscape-openapi-docs
+          fetch-depth: 0
 
-      - name: Install swagger-cli
-        run: npm install -g swagger-cli @stoplight/spectral-cli
-
-      - name: Regenerate OpenAPI bundle
-        id: bundle
-        run: |
+      - run: npm install -g swagger-cli @stoplight/spectral-cli
+      - run: |
           make validate
           make lint
           make bundle
-          echo "path=openapi/landscape_api.bundle.yaml" >> "$GITHUB_OUTPUT"
 
-      - name: Upload bundle artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: openapi-bundle
           path: openapi/landscape_api.bundle.yaml
           if-no-files-found: error
 
-  check-go-client:
+  update-go-client-pr:
     needs: generate-openapi-bundle
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
     steps:
-      - name: Checkout Go client repo
-        uses: actions/checkout@v4
-        with:
-          repository: jansdhillon/landscape-go-client
-          path: landscape-go-client
-
-      - name: Download OpenAPI bundle
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: openapi-bundle
-          path: landscape-openapi-docs/openapi
+          path: bundle
 
-      - name: Set up Go
-        uses: actions/setup-go@v5
+      - uses: actions/checkout@v4
+        with:
+          repository: jansdhillon/landscape-go-api-client
+          path: landscape-go-api-client
+          token: ${{ secrets.REGENERATE_CLIENT_TOKEN }}
+          fetch-depth: 0
+
+      - uses: actions/setup-go@v5
         with:
           go-version: '1.25'
 
-      - name: Verify Go client
-        run: go version
+      - name: Copy bundle into client repo
+        run: |
+          mkdir -p landscape-go-api-client/openapi
+          cp bundle/landscape_api.bundle.yaml landscape-go-api-client/openapi/landscape_api.bundle.yaml
 
-      - name: Generate Go client with bundled OpenAPI spec
-        working-directory: landscape-go-client/client
+      - name: Generate client
+        working-directory: landscape-go-api-client/client
         env:
-          OPENAPI_SPEC: ${{ github.workspace }}/landscape-openapi-docs/openapi/landscape_api.bundle.yaml
-        run: go generate ./...
+          OPENAPI_SPEC: ${{ github.workspace }}/landscape-go-api-client/openapi/landscape_api.bundle.yaml
+        run: |
+          go generate ./...
+          go mod tidy
+
+      - name: Create/Update PR
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.REGENERATE_CLIENT_TOKEN }}
+          path: landscape-go-api-client
+          branch: chore/regen-client
+          commit-message: "build: regenerate client from OpenAPI spec"
+          title: "build: regenerate client from OpenAPI spec"
+          body: "Automated regeneration from latest OpenAPI bundle."
+          labels: automated, generated
+          author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
+          signoff: true
