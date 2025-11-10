@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
-extends: ["spectral:oas"]
+extends: [[spectral:oas, all]]
 
 rules:
   oas3-schema: off
-  
+  oas3-unused-component: off
   info-description-required:
-    description: "The info object should have description"
+    description: "The info object should have a description"
     given: "$.info"
     then:
       field: description
@@ -14,9 +14,9 @@ rules:
     severity: warn
 
   schema-property-description:
-    description: "All properties in schemas should have description"
+    description: "All properties in schemas should have a description"
     given: "$.components.schemas.*.properties.*"
     then:
       field: description
       function: truthy
-    severity: hint
+    severity: warn
