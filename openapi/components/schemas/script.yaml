@@ -233,7 +233,7 @@ V2Script:
         tfsdk: "is_editable"
     is_executable:
       type: boolean
-      x-oapi-codegenw-extra-tags:
+      x-oapi-codegen-extra-tags:
         tfsdk: "is_executable"
   required:
     - id
