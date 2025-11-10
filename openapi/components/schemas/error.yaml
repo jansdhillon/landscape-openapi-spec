@@ -5,9 +5,11 @@ Error:
   properties:
     code:
       type: integer
+      description: HTTP status code for the error.
       x-oapi-codegen-extra-tags:
         tfsdk: "code"
     message:
       type: string
+      description: Human-readable error message describing what went wrong.
       x-oapi-codegen-extra-tags:
         tfsdk: "message"

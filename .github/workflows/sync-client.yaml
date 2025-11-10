@@ -1,30 +1,26 @@
 # SPDX-License-Identifier: Apache-2.0
 
-name: Sync API Client with OpenAPI spec
+name: Bundle and sync API Client with OpenAPI spec
 
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+  
+  workflow_dispatch:
 
 permissions:
   contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   generate-openapi-bundle:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - run: npm install -g swagger-cli @stoplight/spectral-cli
-      - run: |
-          make validate
-          make lint
-          make bundle
-
+      - run: make bundle
       - uses: actions/upload-artifact@v4
         with:
           name: openapi-bundle
@@ -48,7 +44,6 @@ jobs:
           repository: jansdhillon/landscape-go-api-client
           path: landscape-go-api-client
           token: ${{ secrets.REGENERATE_CLIENT_TOKEN }}
-          fetch-depth: 0
 
       - uses: actions/setup-go@v5
         with:

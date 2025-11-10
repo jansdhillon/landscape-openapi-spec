@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 
 paths:
-  /api/:
+  /api:
     parameters:
       - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
       - $ref: "../parameters/legacy.yaml#/LegacyActionParam"
