@@ -3,21 +3,23 @@
 openapi: 3.1.0
 info:
   title: Landscape OpenAPI Spec
-  version: "0.0.2"
+  version: "0.0.4"
   description: API specification for Canonical Landscape.
   contact:
     name: Jan-Yaeger Dhillon
+    email: jan.dhillon@canonical.com
+    url: https://ubuntu.com/landscape
   license:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 
 tags:
-  - name: Scripts
-    description: Operations for managing scripts.
-  - name: Legacy Actions
-    description: Legacy API endpoints for backward compatibility.
   - name: Authentication
     description: Authentication and authorization operations.
+  - name: Legacy Actions
+    description: Legacy API endpoints for backward compatibility.
+  - name: Scripts
+    description: Operations for managing scripts.
 
 servers:
   - url: https://{landscape_root_url}
