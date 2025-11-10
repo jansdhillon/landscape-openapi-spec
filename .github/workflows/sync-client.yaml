@@ -140,10 +140,12 @@ jobs:
           fi
 
       - name: Trigger Go module proxy indexing
-        working-directory: clientrepo
         env:
           TAG: ${{ env.TAG }}
         run: |
           MOD="github.com/jansdhillon/landscape-go-api-client"
           VER="$TAG"
+          mkdir -p /tmp/proxycheck
+          cd /tmp/proxycheck
+          go mod init proxycheck
           GOPROXY=https://proxy.golang.org GO111MODULE=on go get "${MOD}@${VER}"
