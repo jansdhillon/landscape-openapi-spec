@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: Apache-2.0
+
+name: Lint OpenAPI spec
+
+on:
+  pull_request:
+    branches: [main]
+    
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm install -g swagger-cli @stoplight/spectral-cli
+      - run: |
+          make validate
+          make lint

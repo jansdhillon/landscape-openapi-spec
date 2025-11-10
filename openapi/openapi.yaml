@@ -4,9 +4,21 @@ openapi: 3.1.0
 info:
   title: Landscape OpenAPI Spec
   version: "0.0.2"
+  description: API specification for Canonical Landscape Server management platform.
+  contact:
+    name: Canonical Landscape Team
+    url: https://ubuntu.com/landscape
   license:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
+
+tags:
+  - name: Scripts
+    description: Operations for managing scripts.
+  - name: Legacy Actions
+    description: Legacy API endpoints for backward compatibility.
+  - name: Authentication
+    description: Authentication and authorization operations.
 
 servers:
   - url: https://{landscape_root_url}
@@ -21,7 +33,10 @@ paths:
   "/api/scripts/{script_id}":
     parameters:
       - $ref: "./components/parameters/script.yaml#/ScriptIdPathParam"
+      
     get:
+      tags:
+        - Scripts
       operationId: get_script
       description: Get a specific script.
       responses:
@@ -33,6 +48,8 @@ paths:
     parameters:
       - $ref: "./components/parameters/script.yaml#/ScriptIdPathParam"
     post:
+      tags:
+        - Scripts
       operationId: archive_script
       summary: Archive a script.
       description: Archive a script and any associated script profiles. Redacted scripts cannot be archived.
@@ -47,6 +64,8 @@ paths:
     parameters:
       - $ref: "./components/parameters/script.yaml#/ScriptIdPathParam"
     post:
+      tags:
+        - Scripts
       operationId: redact_script
       summary: Redact a script.
       description: Redact a script, archive profiles, delete attachments, and redact script versions.
@@ -57,8 +76,8 @@ paths:
           $ref: "./components/responses/error.yaml#/Unauthorized"
         "404":
           $ref: "./components/responses/error.yaml#/ScriptNotFound"
-  "/api/":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1"
+  "/api":
+    $ref: "./components/paths/actions.yaml#/paths/~1api"
   "/api/login":
     $ref: "./components/paths/auth.yaml#/paths/~1api~1login"
   "/api/login/access-key":
@@ -70,53 +89,3 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-
-  parameters:
-    ScriptIdPathParam:
-      $ref: "./components/parameters/script.yaml#/ScriptIdPathParam"
-    LegacyVersionParam:
-      $ref: "./components/parameters/legacy.yaml#/LegacyVersionParam"
-    LegacyActionParam:
-      $ref: "./components/parameters/legacy.yaml#/LegacyActionParam"
-
-  schemas:
-    AccessKeyLoginRequest:
-      $ref: "./components/schemas/auth.yaml#/AccessKeyLoginRequest"
-    Error:
-      $ref: "./components/schemas/error.yaml#/Error"
-    LegacyScriptAttachment:
-      $ref: "./components/schemas/script.yaml#/LegacyScriptAttachment"
-    LegacyScriptCreator:
-      $ref: "./components/schemas/script.yaml#/LegacyScriptCreator"
-    LoginAccount:
-      $ref: "./components/schemas/auth.yaml#/LoginAccount"
-    LoginRequest:
-      $ref: "./components/schemas/auth.yaml#/LoginRequest"
-    LoginResponse:
-      $ref: "./components/schemas/auth.yaml#/LoginResponse"
-    ScriptAttachment:
-      $ref: "./components/schemas/script.yaml#/ScriptAttachment"
-    ScriptCreator:
-      $ref: "./components/schemas/script.yaml#/ScriptCreatedBy"
-    ScriptEditor:
-      $ref: "./components/schemas/script.yaml#/ScriptLastEditedBy"
-    ScriptProfile:
-      $ref: "./components/schemas/script.yaml#/ScriptProfile"
-    ScriptResult:
-      $ref: "./components/schemas/script.yaml#/ScriptResult"
-    V1Script:
-      $ref: "./components/schemas/script.yaml#/V1Script"
-    V2Script:
-      $ref: "./components/schemas/script.yaml#/V2Script"
-
-  responses:
-    Unauthorized:
-      $ref: "./components/responses/error.yaml#/Unauthorized"
-    BadRequest:
-      $ref: "./components/responses/error.yaml#/BadRequest"
-    NotFound:
-      $ref: "./components/responses/error.yaml#/NotFound"
-    ScriptNotFound:
-      $ref: "./components/responses/error.yaml#/ScriptNotFound"
-    LegacyActionResponse:
-      $ref: "./components/responses/legacy.yaml#/LegacyActionResponse"

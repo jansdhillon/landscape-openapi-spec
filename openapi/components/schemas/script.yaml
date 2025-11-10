@@ -2,6 +2,7 @@
 
 ScriptCreatedBy:
   type: object
+  description: Information about the user who created the script.
   x-oapi-codegen-extra-tags:
     tfsdk: "created_by"
   properties:
@@ -23,6 +24,7 @@ ScriptCreatedBy:
 
 ScriptLastEditedBy:
   type: object
+  description: Information about the user who last edited the script.
   x-oapi-codegen-extra-tags:
     tfsdk: "last_edited_by"
   properties:
@@ -44,23 +46,27 @@ ScriptLastEditedBy:
 
 LegacyScriptCreator:
   type: object
+  description: Information about the creator of a V1 legacy script.
   x-oapi-codegen-extra-tags:
     tfsdk: "creator"
   properties:
     id:
       type: integer
       nullable: true
+      description: The ID of the person who created the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "id"
     name:
       type: string
       nullable: true
+      description: The name of the person who created the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "name"
     email:
       type: string
       format: email
       nullable: true
+      description: The email address of the person who created the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "email"
   required:
@@ -73,10 +79,12 @@ ScriptAttachment:
   properties:
     id:
       type: integer
+      description: The unique identifier for the script attachment.
       x-oapi-codegen-extra-tags:
         tfsdk: "id"
     filename:
       type: string
+      description: The filename of the attachment.
       x-oapi-codegen-extra-tags:
         tfsdk: "filename"
   required:
@@ -91,10 +99,12 @@ ScriptProfile:
   properties:
     id:
       type: integer
+      description: The unique identifier for the script profile.
       x-oapi-codegen-extra-tags:
         tfsdk: "id"
     title:
       type: string
+      description: The title of the script profile.
       x-oapi-codegen-extra-tags:
         tfsdk: "title"
   required:
@@ -106,10 +116,12 @@ V1Script:
   properties:
     id:
       type: integer
+      description: The unique identifier for the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "id"
     title:
       type: string
+      description: The title of the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "title"
     creator:
@@ -117,6 +129,7 @@ V1Script:
       nullable: true
     status:
       type: string
+      description: The status of the script (V1 for legacy scripts).
       x-oapi-codegen-extra-tags:
         tfsdk: "status"
       enum:
@@ -124,21 +137,25 @@ V1Script:
     attachments:
       type: array
       nullable: true
+      description: List of attachments associated with the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "attachments"
       items:
         $ref: "#/LegacyScriptAttachment"
     access_group:
       type: string
+      description: The access group that can view or execute this script.
       x-oapi-codegen-extra-tags:
         tfsdk: "access_group"
     time_limit:
       type: integer
+      description: The execution time limit for the script in seconds.
       x-oapi-codegen-extra-tags:
         tfsdk: "time_limit"
     username:
       type: string
       nullable: true
+      description: The username under which the script runs.
       x-oapi-codegen-extra-tags:
         tfsdk: "username"
   required:
@@ -151,20 +168,24 @@ V2Script:
   properties:
     id:
       type: integer
+      description: The unique identifier for the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "id"
     title:
       type: string
+      description: The title of the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "title"
     version_number:
       type: integer
       nullable: true
+      description: The version number of the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "version_number"
     created_at:
       type: string
       nullable: true
+      description: The timestamp when the script was created.
       x-oapi-codegen-extra-tags:
         tfsdk: "created_at"
     created_by:
@@ -173,6 +194,7 @@ V2Script:
     last_edited_at:
       type: string
       nullable: true
+      description: The timestamp when the script was last edited.
       x-oapi-codegen-extra-tags:
         tfsdk: "last_edited_at"
     last_edited_by:
@@ -183,12 +205,14 @@ V2Script:
     script_profiles:
       type: array
       nullable: true
+      description: The script profiles associated with this script.
       items:
         $ref: "#/ScriptProfile"
       x-oapi-codegen-extra-tags:
         tfsdk: "script_profiles"
     status:
       type: string
+      description: The current status of the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "status"
       enum:
@@ -198,42 +222,51 @@ V2Script:
     attachments:
       type: array
       nullable: true
+      description: List of attachments associated with the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "attachments"
       items:
         $ref: "#/ScriptAttachment"
     code:
       type: string
+      description: The source code of the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "code"
     interpreter:
       type: string
+      description: The interpreter used to execute the script.
       x-oapi-codegen-extra-tags:
         tfsdk: "interpreter"
     access_group:
       type: string
+      description: The access group that can view or execute this script.
       x-oapi-codegen-extra-tags:
         tfsdk: "access_group"
     time_limit:
       type: integer
+      description: The execution time limit for the script in seconds.
       x-oapi-codegen-extra-tags:
         tfsdk: "time_limit"
     username:
       type: string
       nullable: true
+      description: The username under which the script runs.
       x-oapi-codegen-extra-tags:
         tfsdk: "username"
     is_redactable:
       type: boolean
+      description: Whether the script can be redacted.
       x-oapi-codegen-extra-tags:
         tfsdk: "is_redactable"
     is_editable:
       type: boolean
+      description: Whether the script can be edited.
       x-oapi-codegen-extra-tags:
         tfsdk: "is_editable"
     is_executable:
       type: boolean
-      x-oapi-codegenw-extra-tags:
+      description: Whether the script can be executed.
+      x-oapi-codegen-extra-tags:
         tfsdk: "is_executable"
   required:
     - id
