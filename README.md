@@ -24,12 +24,10 @@ Lint:
 make lint
 ```
 
-Bundle (overwrite `landscape_api.bundle.yaml`):
+Generate bundle in `openapi/landscape_api.bundle.yaml`:
 
 ```sh
 make bundle
 ```
 
-Example usage: https://github.com/jansdhillon/landscape-go-api-client
-
-
+Example usage: <https://github.com/jansdhillon/landscape-go-api-client>
