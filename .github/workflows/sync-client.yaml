@@ -115,8 +115,9 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git tag -d "$TAG"
-          git tag -a "$TAG" -m "Automated regen from OpenAPI spec ${{ steps.tag.outputs.openapi_version }}"
+          git fetch --tags
+          git tag -fa "$TAG" -m "Automated regen from OpenAPI spec ${{ steps.tag.outputs.openapi_version }}"
+          git push -f origin "refs/tags/$TAG"
           git remote set-url origin "https://x-access-token:${PUSH_TOKEN}@github.com/jansdhillon/landscape-go-api-client.git"
           git push --force origin "refs/tags/$TAG"
 
