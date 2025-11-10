@@ -144,5 +144,4 @@ jobs:
         run: |
           MOD="github.com/jansdhillon/landscape-go-api-client"
           VER="$TAG"
-          GOPROXY=https://proxy.golang.org GO111MODULE=on go list -m "${MOD}@${VER}"
-          GOPROXY=https://proxy.golang.org GO111MODULE=on go mod download "${MOD}@${VER}"
+          GOPROXY=https://proxy.golang.org GO111MODULE=on go get "${MOD}@${VER}"
