@@ -1,8 +1,10 @@
-extends: ["spectral:oas"]
+# SPDX-License-Identifier: Apache-2.0
 
+extends: ["spectral:oas"]
 
 rules:
   oas3-schema: off
+  
   info-description-required:
     description: "The info object should have description"
     given: "$.info"
