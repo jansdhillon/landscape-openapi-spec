@@ -139,6 +139,7 @@ jobs:
           fi
 
       - name: Trigger Go module proxy indexing
+        working-directory: clientrepo
         env:
           TAG: ${{ env.TAG }}
         run: |
