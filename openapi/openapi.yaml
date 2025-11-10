@@ -4,10 +4,9 @@ openapi: 3.1.0
 info:
   title: Landscape OpenAPI Spec
   version: "0.0.2"
-  description: API specification for Canonical Landscape Server management platform.
+  description: API specification for Canonical Landscape.
   contact:
-    name: Canonical Landscape Team
-    url: https://ubuntu.com/landscape
+    name: Jan-Yaeger Dhillon
   license:
     name: Apache-2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
@@ -89,3 +88,53 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+
+  parameters:
+    ScriptIdPathParam:
+      $ref: "./components/parameters/script.yaml#/ScriptIdPathParam"
+    LegacyVersionParam:
+      $ref: "./components/parameters/legacy.yaml#/LegacyVersionParam"
+    LegacyActionParam:
+      $ref: "./components/parameters/legacy.yaml#/LegacyActionParam"
+
+  schemas:
+    AccessKeyLoginRequest:
+      $ref: "./components/schemas/auth.yaml#/AccessKeyLoginRequest"
+    Error:
+      $ref: "./components/schemas/error.yaml#/Error"
+    LegacyScriptAttachment:
+      $ref: "./components/schemas/script.yaml#/LegacyScriptAttachment"
+    LegacyScriptCreator:
+      $ref: "./components/schemas/script.yaml#/LegacyScriptCreator"
+    LoginAccount:
+      $ref: "./components/schemas/auth.yaml#/LoginAccount"
+    LoginRequest:
+      $ref: "./components/schemas/auth.yaml#/LoginRequest"
+    LoginResponse:
+      $ref: "./components/schemas/auth.yaml#/LoginResponse"
+    ScriptAttachment:
+      $ref: "./components/schemas/script.yaml#/ScriptAttachment"
+    ScriptCreator:
+      $ref: "./components/schemas/script.yaml#/ScriptCreatedBy"
+    ScriptEditor:
+      $ref: "./components/schemas/script.yaml#/ScriptLastEditedBy"
+    ScriptProfile:
+      $ref: "./components/schemas/script.yaml#/ScriptProfile"
+    ScriptResult:
+      $ref: "./components/schemas/script.yaml#/ScriptResult"
+    V1Script:
+      $ref: "./components/schemas/script.yaml#/V1Script"
+    V2Script:
+      $ref: "./components/schemas/script.yaml#/V2Script"
+
+  responses:
+    Unauthorized:
+      $ref: "./components/responses/error.yaml#/Unauthorized"
+    BadRequest:
+      $ref: "./components/responses/error.yaml#/BadRequest"
+    NotFound:
+      $ref: "./components/responses/error.yaml#/NotFound"
+    ScriptNotFound:
+      $ref: "./components/responses/error.yaml#/ScriptNotFound"
+    LegacyActionResponse:
+      $ref: "./components/responses/legacy.yaml#/LegacyActionResponse"
