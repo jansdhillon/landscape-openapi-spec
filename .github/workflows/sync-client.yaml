@@ -5,6 +5,7 @@ name: Bundle and sync API Client with OpenAPI spec, publish GitHub release/Go pa
 on:
   push:
     branches: [main]
+
   workflow_dispatch:
 
 permissions:
