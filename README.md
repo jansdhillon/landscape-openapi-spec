@@ -36,4 +36,4 @@ Example usage: <https://github.com/jansdhillon/landscape-go-api-client>.
 
 ## Syncing
 
-Whenever changes are pushed to `main`, [a GitHub Actions workflow](./.github/workflows/sync-client.yaml) is triggered that bundles the OpenAPI spec, creates a release for this repository and the Go client, and uses the new bundle to open a PR on `landscape-go-api-client` to update the generated code. The workflow also syncs the Go package with [pkg.go.dev](https://pkg.go.dev/github.com/jansdhillon/landscape-go-api-client).
+Whenever a new version of the OpenAPI spec is created and pushed to `main`, [a GitHub Actions workflow](./.github/workflows/sync-client.yaml) is triggered that bundles the OpenAPI spec, creates a release for that version in this repository and the Go client (with the bundle as an artifact), and uses the new bundle to open a PR on `landscape-go-api-client` to update the generated code. The workflow also syncs the Go package with [pkg.go.dev](https://pkg.go.dev/github.com/jansdhillon/landscape-go-api-client).
