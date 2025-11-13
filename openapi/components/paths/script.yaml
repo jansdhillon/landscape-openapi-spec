@@ -1,0 +1,49 @@
+# SPDX-License-Identifier: Apache-2.0
+
+paths:
+  "/api/scripts/{script_id}":
+    parameters:
+      - $ref: "../parameters/script.yaml#/ScriptIdPathParam"
+
+    get:
+      tags:
+        - Scripts
+      operationId: get_script
+      description: Get a specific script.
+      responses:
+        "200":
+          $ref: "../responses/script.yaml#/GetScriptResponse"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptNotFound"
+  "/api/scripts/{script_id}:archive":
+    parameters:
+      - $ref: "../parameters/script.yaml#/ScriptIdPathParam"
+    post:
+      tags:
+        - Scripts
+      operationId: archive_script
+      summary: Archive a script.
+      description: Archive a script and any associated script profiles. Redacted scripts cannot be archived.
+      responses:
+        "204":
+          description: Script archived successfully.
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptNotFound"
+  "/api/scripts/{script_id}:redact":
+    parameters:
+      - $ref: "../parameters/script.yaml#/ScriptIdPathParam"
+    post:
+      tags:
+        - Scripts
+      operationId: redact_script
+      summary: Redact a script.
+      description: Redact a script, archive profiles, delete attachments, and redact script versions.
+      responses:
+        "204":
+          description: Script redacted successfully.
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptNotFound"

@@ -93,6 +93,11 @@ ScriptAttachment:
 
 LegacyScriptAttachment:
   type: string
+  description: The response from creating a legacy script attachment.
+
+LegacyScriptCode:
+  type: string
+  description: The response of getting a legacy script's code (raw, doesn't split code and interpreter).
 
 ScriptProfile:
   type: object
@@ -275,12 +280,12 @@ V2Script:
 
 ScriptResult:
   oneOf:
-    - $ref: '#/V1Script'
-    - $ref: '#/V2Script'
+    - $ref: "#/V1Script"
+    - $ref: "#/V2Script"
   discriminator:
     propertyName: status
     mapping:
-      V1: '#/V1Script'
-      ARCHIVED: '#/V2Script'
-      REDACTED: '#/V2Script'
-      ACTIVE: '#/V2Script'
+      V1: "#/V1Script"
+      ARCHIVED: "#/V2Script"
+      REDACTED: "#/V2Script"
+      ACTIVE: "#/V2Script"
