@@ -33,6 +33,8 @@ security:
 paths:
   "/api/scripts/{script_id}":
     $ref: "./components/paths/script.yaml#/paths/~1api~1scripts~1{script_id}"
+  "/api/scripts/{script_id}/attachments/{attachment_id}":
+    $ref: "./components/paths/script.yaml#/paths/~1api~1scripts~1{script_id}~1attachments~1{attachment_id}"
   "/api/scripts/{script_id}:archive":
     $ref: "./components/paths/script.yaml#/paths/~1api~1scripts~1{script_id}:archive"
   "/api/scripts/{script_id}:redact":
@@ -54,6 +56,8 @@ components:
   parameters:
     ScriptIdPathParam:
       $ref: "./components/parameters/script.yaml#/ScriptIdPathParam"
+    ScriptAttachmentIdPathParam:
+      $ref: "./components/parameters/script.yaml#/ScriptAttachmentIdPathParam"
     LegacyVersionParam:
       $ref: "./components/parameters/legacy.yaml#/LegacyVersionParam"
     LegacyActionParam:
@@ -86,6 +90,8 @@ components:
       $ref: "./components/schemas/script.yaml#/ScriptProfile"
     ScriptResult:
       $ref: "./components/schemas/script.yaml#/ScriptResult"
+    ScriptAttachmentResult:
+      $ref: "./components/schemas/script.yaml#/ScriptAttachmentResult"
     V1Script:
       $ref: "./components/schemas/script.yaml#/V1Script"
     V2Script:

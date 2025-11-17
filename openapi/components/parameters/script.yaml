@@ -7,3 +7,11 @@ ScriptIdPathParam:
   schema:
     type: integer
   description: The ID of the script.
+
+ScriptAttachmentIdPathParam:
+  name: attachment_id
+  in: path
+  required: true
+  schema:
+    type: integer
+  description: The ID of the script attachment.

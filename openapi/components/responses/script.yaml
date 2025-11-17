@@ -6,3 +6,10 @@ GetScriptResponse:
     application/json:
       schema:
         $ref: "../schemas/script.yaml#/ScriptResult"
+
+GetScriptAttachmentResponse:
+  description: The found script attachment and its state.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/script.yaml#/ScriptAttachmentResult"

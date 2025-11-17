@@ -289,3 +289,7 @@ ScriptResult:
       ARCHIVED: "#/V2Script"
       REDACTED: "#/V2Script"
       ACTIVE: "#/V2Script"
+
+ScriptAttachmentResult:
+  description: The contents of the specified script attachment.
+  type: string
