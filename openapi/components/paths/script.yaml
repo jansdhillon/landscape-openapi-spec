@@ -15,6 +15,23 @@ paths:
           $ref: "../responses/script.yaml#/GetScriptResponse"
         "404":
           $ref: "../responses/error.yaml#/ScriptNotFound"
+
+  "/api/scripts/{script_id}/attachments/{attachment_id}":
+    parameters:
+      - $ref: "../parameters/script.yaml#/ScriptIdPathParam"
+      - $ref: "../parameters/script.yaml#/ScriptAttachmentIdPathParam"
+
+    get:
+      tags:
+        - Scripts
+      operationId: get_script_attachment
+      description: Get a specific script attachment.
+      responses:
+        "200":
+          $ref: "../responses/script.yaml#/GetScriptAttachmentResponse"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptNotFound"
+
   "/api/scripts/{script_id}:archive":
     parameters:
       - $ref: "../parameters/script.yaml#/ScriptIdPathParam"
