@@ -2,7 +2,6 @@
 
 LegacyActionResult:
   oneOf:
-    - $ref: './script.yaml#/V1Script'
-    - $ref: './script.yaml#/V2Script'
+    - $ref: "./script.yaml#/ScriptResult"
     - $ref: "./script.yaml#/LegacyScriptAttachment"
     - $ref: "./script.yaml#/LegacyScriptCode"
