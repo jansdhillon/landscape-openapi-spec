@@ -3,7 +3,7 @@
 openapi: 3.1.0
 info:
   title: Landscape OpenAPI Spec
-  version: "0.0.6"
+  version: "0.0.7"
   description: API specification for Canonical Landscape.
   contact:
     name: Jan-Yaeger Dhillon
