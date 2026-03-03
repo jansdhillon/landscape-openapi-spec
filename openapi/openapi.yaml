@@ -18,10 +18,10 @@ tags:
     description: Authentication and authorization operations.
   - name: Legacy Actions
     description: Legacy API endpoints for backward compatibility.
-  - name: Scripts
-    description: Operations for managing scripts.
   - name: Script Profiles
     description: Operations for managing script profiles, which define scheduled or event-based script execution across targeted computers.
+  - name: Scripts
+    description: Operations for managing scripts.
 
 servers:
   - url: https://{landscape_root_url}

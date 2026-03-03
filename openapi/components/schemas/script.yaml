@@ -334,6 +334,7 @@ ScriptProfileEventTrigger:
   properties:
     trigger_type:
       type: string
+      description: The type of trigger. Must be "event" for event-based triggers.
       enum:
         - event
       x-oapi-codegen-extra-tags:
@@ -354,6 +355,7 @@ ScriptProfileScheduleTrigger:
   properties:
     trigger_type:
       type: string
+      description: The type of trigger. Must be "recurring" for schedule-based triggers.
       enum:
         - recurring
       x-oapi-codegen-extra-tags:
@@ -396,6 +398,7 @@ ScriptProfileOneTimeTrigger:
   properties:
     trigger_type:
       type: string
+      description: The type of trigger. Must be "one_time" for one-time triggers.
       enum:
         - one_time
       x-oapi-codegen-extra-tags:
@@ -451,6 +454,7 @@ ScriptProfileScheduleDraftTrigger:
   properties:
     trigger_type:
       type: string
+      description: The type of trigger. Must be "recurring" for schedule-based triggers.
       enum:
         - recurring
       x-oapi-codegen-extra-tags:
@@ -479,6 +483,7 @@ ScriptProfileScheduleDraftEditTrigger:
   properties:
     trigger_type:
       type: string
+      description: The type of trigger. Must be "recurring" for schedule-based triggers.
       enum:
         - recurring
       x-oapi-codegen-extra-tags:
@@ -507,6 +512,7 @@ ScriptProfileOneTimeDraftTrigger:
   properties:
     trigger_type:
       type: string
+      description: The type of trigger. Must be "one_time" for one-time triggers.
       enum:
         - one_time
       x-oapi-codegen-extra-tags:
