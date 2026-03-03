@@ -13,3 +13,54 @@ GetScriptAttachmentResponse:
     application/json:
       schema:
         $ref: "../schemas/script.yaml#/ScriptAttachmentResult"
+
+GetScriptProfileLimitsResponse:
+  description: The script profile limits configured for the account.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/script.yaml#/ScriptProfileLimits"
+
+ListScriptProfilesResponse:
+  description: A paginated list of script profiles.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/script.yaml#/ScriptProfileListResponse"
+
+GetScriptProfileResponse:
+  description: The requested script profile and its full state.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/script.yaml#/ScriptProfileDetail"
+
+CreateScriptProfileResponse:
+  description: The newly created script profile.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/script.yaml#/ScriptProfileDetail"
+
+GetScriptProfileComputersResponse:
+  description: A paginated list of computers targeted by the script profile.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/script.yaml#/ScriptProfileComputersListResponse"
+
+GetScriptProfileActivitiesResponse:
+  description: A paginated list of activity runs for the script profile.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/script.yaml#/ScriptProfileActivitiesListResponse"
+
+ListScriptProfilesByScriptResponse:
+  description: A list of script profiles associated with the given script.
+  content:
+    application/json:
+      schema:
+        type: array
+        items:
+          $ref: "../schemas/script.yaml#/ScriptProfile"

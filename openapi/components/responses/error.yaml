@@ -27,3 +27,52 @@ ScriptNotFound:
     application/json:
       schema:
         $ref: "../schemas/error.yaml#/Error"
+
+ScriptProfileNotFound:
+  description: The specified script profile does not exist.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/error.yaml#/Error"
+
+ScriptProfileArchived:
+  description: The operation cannot be performed on an archived script profile.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/error.yaml#/Error"
+
+ScriptProfileDuplicate:
+  description: A script profile with this title already exists.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/error.yaml#/Error"
+
+ScriptProfileMaxReached:
+  description: The maximum number of script profiles for this account has been reached.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/error.yaml#/Error"
+
+ScriptProfileNotEnabled:
+  description: The script profile feature is not currently enabled.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/error.yaml#/Error"
+
+InvalidCronExpression:
+  description: The provided cron expression is invalid.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/error.yaml#/Error"
+
+CannotChangeTriggerType:
+  description: The trigger type of a script profile cannot be changed after creation.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/error.yaml#/Error"

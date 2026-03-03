@@ -18,6 +18,8 @@ tags:
     description: Authentication and authorization operations.
   - name: Legacy Actions
     description: Legacy API endpoints for backward compatibility.
+  - name: Script Profiles
+    description: Operations for managing script profiles, which define scheduled or event-based script execution across targeted computers.
   - name: Scripts
     description: Operations for managing scripts.
 
@@ -39,6 +41,20 @@ paths:
     $ref: "./components/paths/script.yaml#/paths/~1api~1scripts~1{script_id}:archive"
   "/api/scripts/{script_id}:redact":
     $ref: "./components/paths/script.yaml#/paths/~1api~1scripts~1{script_id}:redact"
+  "/api/scripts/{script_id}/script-profiles":
+    $ref: "./components/paths/script.yaml#/paths/~1api~1scripts~1{script_id}~1script-profiles"
+  "/api/script-profile-limits":
+    $ref: "./components/paths/script.yaml#/paths/~1api~1script-profile-limits"
+  "/api/script-profiles":
+    $ref: "./components/paths/script.yaml#/paths/~1api~1script-profiles"
+  "/api/script-profiles/{script_profile_id}":
+    $ref: "./components/paths/script.yaml#/paths/~1api~1script-profiles~1{script_profile_id}"
+  "/api/script-profiles/{script_profile_id}:archive":
+    $ref: "./components/paths/script.yaml#/paths/~1api~1script-profiles~1{script_profile_id}:archive"
+  "/api/script-profiles/{script_profile_id}/computers":
+    $ref: "./components/paths/script.yaml#/paths/~1api~1script-profiles~1{script_profile_id}~1computers"
+  "/api/script-profiles/{script_profile_id}/activities":
+    $ref: "./components/paths/script.yaml#/paths/~1api~1script-profiles~1{script_profile_id}~1activities"
   "/api":
     $ref: "./components/paths/actions.yaml#/paths/~1api"
   "/api/login":
@@ -58,6 +74,12 @@ components:
       $ref: "./components/parameters/script.yaml#/ScriptIdPathParam"
     ScriptAttachmentIdPathParam:
       $ref: "./components/parameters/script.yaml#/ScriptAttachmentIdPathParam"
+    ScriptProfileIdPathParam:
+      $ref: "./components/parameters/script.yaml#/ScriptProfileIdPathParam"
+    ScriptProfileArchivedQueryParam:
+      $ref: "./components/parameters/script.yaml#/ScriptProfileArchivedQueryParam"
+    ScriptProfileNamesQueryParam:
+      $ref: "./components/parameters/script.yaml#/ScriptProfileNamesQueryParam"
     LegacyVersionParam:
       $ref: "./components/parameters/legacy.yaml#/LegacyVersionParam"
     LegacyActionParam:
@@ -96,6 +118,46 @@ components:
       $ref: "./components/schemas/script.yaml#/V1Script"
     V2Script:
       $ref: "./components/schemas/script.yaml#/V2Script"
+    ScriptProfileLimits:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileLimits"
+    ScriptProfileEventType:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileEventType"
+    ScriptProfileEventTrigger:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileEventTrigger"
+    ScriptProfileScheduleTrigger:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileScheduleTrigger"
+    ScriptProfileOneTimeTrigger:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileOneTimeTrigger"
+    ScriptProfileTriggerResponse:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileTriggerResponse"
+    ScriptProfileScheduleDraftTrigger:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileScheduleDraftTrigger"
+    ScriptProfileScheduleDraftEditTrigger:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileScheduleDraftEditTrigger"
+    ScriptProfileOneTimeDraftTrigger:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileOneTimeDraftTrigger"
+    ScriptProfileTriggerCreateRequest:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileTriggerCreateRequest"
+    ScriptProfileTriggerPatchRequest:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileTriggerPatchRequest"
+    ScriptProfileCreatedBy:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileCreatedBy"
+    ScriptProfileComputersInfo:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileComputersInfo"
+    ScriptProfileActivityInfo:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileActivityInfo"
+    ScriptProfileDetail:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileDetail"
+    ScriptProfileListResponse:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileListResponse"
+    ScriptProfileCreateBody:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileCreateBody"
+    ScriptProfilePatchBody:
+      $ref: "./components/schemas/script.yaml#/ScriptProfilePatchBody"
+    ScriptProfileComputersListResponse:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileComputersListResponse"
+    ScriptProfileActivitiesListResponse:
+      $ref: "./components/schemas/script.yaml#/ScriptProfileActivitiesListResponse"
 
   responses:
     Unauthorized:
@@ -106,5 +168,33 @@ components:
       $ref: "./components/responses/error.yaml#/NotFound"
     ScriptNotFound:
       $ref: "./components/responses/error.yaml#/ScriptNotFound"
+    ScriptProfileNotFound:
+      $ref: "./components/responses/error.yaml#/ScriptProfileNotFound"
+    ScriptProfileArchived:
+      $ref: "./components/responses/error.yaml#/ScriptProfileArchived"
+    ScriptProfileDuplicate:
+      $ref: "./components/responses/error.yaml#/ScriptProfileDuplicate"
+    ScriptProfileMaxReached:
+      $ref: "./components/responses/error.yaml#/ScriptProfileMaxReached"
+    ScriptProfileNotEnabled:
+      $ref: "./components/responses/error.yaml#/ScriptProfileNotEnabled"
+    InvalidCronExpression:
+      $ref: "./components/responses/error.yaml#/InvalidCronExpression"
+    CannotChangeTriggerType:
+      $ref: "./components/responses/error.yaml#/CannotChangeTriggerType"
+    GetScriptProfileLimitsResponse:
+      $ref: "./components/responses/script.yaml#/GetScriptProfileLimitsResponse"
+    ListScriptProfilesResponse:
+      $ref: "./components/responses/script.yaml#/ListScriptProfilesResponse"
+    GetScriptProfileResponse:
+      $ref: "./components/responses/script.yaml#/GetScriptProfileResponse"
+    CreateScriptProfileResponse:
+      $ref: "./components/responses/script.yaml#/CreateScriptProfileResponse"
+    GetScriptProfileComputersResponse:
+      $ref: "./components/responses/script.yaml#/GetScriptProfileComputersResponse"
+    GetScriptProfileActivitiesResponse:
+      $ref: "./components/responses/script.yaml#/GetScriptProfileActivitiesResponse"
+    ListScriptProfilesByScriptResponse:
+      $ref: "./components/responses/script.yaml#/ListScriptProfilesByScriptResponse"
     LegacyActionResponse:
       $ref: "./components/responses/legacy.yaml#/LegacyActionResponse"

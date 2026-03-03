@@ -15,3 +15,32 @@ ScriptAttachmentIdPathParam:
   schema:
     type: integer
   description: The ID of the script attachment.
+
+ScriptProfileIdPathParam:
+  name: script_profile_id
+  in: path
+  required: true
+  schema:
+    type: integer
+  description: The ID of the script profile.
+
+ScriptProfileArchivedQueryParam:
+  name: archived
+  in: query
+  required: false
+  schema:
+    type: string
+    enum:
+      - archived
+      - active
+      - all
+    default: active
+  description: Filter script profiles by archived status.
+
+ScriptProfileNamesQueryParam:
+  name: names
+  in: query
+  required: false
+  schema:
+    type: string
+  description: Comma-separated list of script profile titles to filter by.
