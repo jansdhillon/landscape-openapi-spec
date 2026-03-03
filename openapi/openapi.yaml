@@ -3,7 +3,7 @@
 openapi: 3.1.0
 info:
   title: Landscape OpenAPI Spec
-  version: "0.0.8"
+  version: "0.0.9"
   description: API specification for Canonical Landscape.
   contact:
     name: Jan-Yaeger Dhillon
@@ -182,19 +182,19 @@ components:
       $ref: "./components/responses/error.yaml#/InvalidCronExpression"
     CannotChangeTriggerType:
       $ref: "./components/responses/error.yaml#/CannotChangeTriggerType"
-    GetScriptProfileLimitsResponse:
-      $ref: "./components/responses/script.yaml#/GetScriptProfileLimitsResponse"
-    ListScriptProfilesResponse:
-      $ref: "./components/responses/script.yaml#/ListScriptProfilesResponse"
-    GetScriptProfileResponse:
-      $ref: "./components/responses/script.yaml#/GetScriptProfileResponse"
-    CreateScriptProfileResponse:
-      $ref: "./components/responses/script.yaml#/CreateScriptProfileResponse"
+    ScriptProfileLimitsResult:
+      $ref: "./components/responses/script.yaml#/ScriptProfileLimitsResult"
+    ScriptProfileListResult:
+      $ref: "./components/responses/script.yaml#/ScriptProfileListResult"
+    ScriptProfileDetailResult:
+      $ref: "./components/responses/script.yaml#/ScriptProfileDetailResult"
+    ScriptProfileCreatedResult:
+      $ref: "./components/responses/script.yaml#/ScriptProfileCreatedResult"
     GetScriptProfileComputersResponse:
       $ref: "./components/responses/script.yaml#/GetScriptProfileComputersResponse"
     GetScriptProfileActivitiesResponse:
       $ref: "./components/responses/script.yaml#/GetScriptProfileActivitiesResponse"
-    ListScriptProfilesByScriptResponse:
-      $ref: "./components/responses/script.yaml#/ListScriptProfilesByScriptResponse"
+    ScriptProfilesByScriptResult:
+      $ref: "./components/responses/script.yaml#/ScriptProfilesByScriptResult"
     LegacyActionResponse:
       $ref: "./components/responses/legacy.yaml#/LegacyActionResponse"

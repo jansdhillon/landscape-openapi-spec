@@ -14,28 +14,28 @@ GetScriptAttachmentResponse:
       schema:
         $ref: "../schemas/script.yaml#/ScriptAttachmentResult"
 
-GetScriptProfileLimitsResponse:
+ScriptProfileLimitsResult:
   description: The script profile limits configured for the account.
   content:
     application/json:
       schema:
         $ref: "../schemas/script.yaml#/ScriptProfileLimits"
 
-ListScriptProfilesResponse:
+ScriptProfileListResult:
   description: A paginated list of script profiles.
   content:
     application/json:
       schema:
         $ref: "../schemas/script.yaml#/ScriptProfileListResponse"
 
-GetScriptProfileResponse:
+ScriptProfileDetailResult:
   description: The requested script profile and its full state.
   content:
     application/json:
       schema:
         $ref: "../schemas/script.yaml#/ScriptProfileDetail"
 
-CreateScriptProfileResponse:
+ScriptProfileCreatedResult:
   description: The newly created script profile.
   content:
     application/json:
@@ -56,7 +56,7 @@ GetScriptProfileActivitiesResponse:
       schema:
         $ref: "../schemas/script.yaml#/ScriptProfileActivitiesListResponse"
 
-ListScriptProfilesByScriptResponse:
+ScriptProfilesByScriptResult:
   description: A list of script profiles associated with the given script.
   content:
     application/json:
