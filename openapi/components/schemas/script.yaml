@@ -293,3 +293,539 @@ ScriptResult:
 ScriptAttachmentResult:
   description: The contents of the specified script attachment.
   type: string
+
+ScriptProfileLimits:
+  type: object
+  description: Limits and constraints for script profiles in an account.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "script_profile_limits"
+  properties:
+    max_num_computers:
+      type: integer
+      description: Maximum number of computers a single script profile can target.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "max_num_computers"
+    max_num_profiles:
+      type: integer
+      description: Maximum number of script profiles allowed per account.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "max_num_profiles"
+    min_interval:
+      type: integer
+      description: Minimum interval in minutes between recurring script profile executions.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "min_interval"
+  required:
+    - max_num_computers
+    - max_num_profiles
+    - min_interval
+
+ScriptProfileEventType:
+  type: string
+  description: The type of event that triggers the script profile execution.
+  enum:
+    - post_enrollment
+
+ScriptProfileEventTrigger:
+  type: object
+  description: An event-based trigger that executes the script profile on a specific system event.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "event_trigger"
+  properties:
+    trigger_type:
+      type: string
+      enum:
+        - event
+      x-oapi-codegen-extra-tags:
+        tfsdk: "trigger_type"
+    event_type:
+      x-oapi-codegen-extra-tags:
+        tfsdk: "event_type"
+      $ref: "#/ScriptProfileEventType"
+  required:
+    - trigger_type
+    - event_type
+
+ScriptProfileScheduleTrigger:
+  type: object
+  description: A recurring (cron-based) trigger for a script profile.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "schedule_trigger"
+  properties:
+    trigger_type:
+      type: string
+      enum:
+        - recurring
+      x-oapi-codegen-extra-tags:
+        tfsdk: "trigger_type"
+    interval:
+      type: string
+      description: A cron expression defining the recurrence interval.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "interval"
+    start_after:
+      type: string
+      format: date-time
+      description: The earliest datetime after which the schedule begins.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "start_after"
+    next_run:
+      type: string
+      format: date-time
+      nullable: true
+      description: The next scheduled execution time.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "next_run"
+    last_run:
+      type: string
+      format: date-time
+      nullable: true
+      description: The most recent execution time.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "last_run"
+  required:
+    - trigger_type
+    - interval
+    - start_after
+
+ScriptProfileOneTimeTrigger:
+  type: object
+  description: A one-time trigger that executes the script profile at a specific datetime.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "one_time_trigger"
+  properties:
+    trigger_type:
+      type: string
+      enum:
+        - one_time
+      x-oapi-codegen-extra-tags:
+        tfsdk: "trigger_type"
+    timestamp:
+      type: string
+      format: date-time
+      description: The datetime at which the script profile will execute.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "timestamp"
+    is_finished:
+      type: boolean
+      description: Whether the one-time execution has already completed.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "is_finished"
+    next_run:
+      type: string
+      format: date-time
+      nullable: true
+      description: The scheduled next run time, or null if already finished.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "next_run"
+    last_run:
+      type: string
+      format: date-time
+      nullable: true
+      description: The most recent execution time.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "last_run"
+  required:
+    - trigger_type
+    - timestamp
+    - is_finished
+
+ScriptProfileTriggerResponse:
+  description: A discriminated union representing a script profile trigger as returned in responses.
+  oneOf:
+    - $ref: "#/ScriptProfileEventTrigger"
+    - $ref: "#/ScriptProfileScheduleTrigger"
+    - $ref: "#/ScriptProfileOneTimeTrigger"
+  discriminator:
+    propertyName: trigger_type
+    mapping:
+      event: "#/ScriptProfileEventTrigger"
+      recurring: "#/ScriptProfileScheduleTrigger"
+      one_time: "#/ScriptProfileOneTimeTrigger"
+
+ScriptProfileScheduleDraftTrigger:
+  type: object
+  description: A recurring trigger definition for creating a script profile.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "schedule_draft_trigger"
+  properties:
+    trigger_type:
+      type: string
+      enum:
+        - recurring
+      x-oapi-codegen-extra-tags:
+        tfsdk: "trigger_type"
+    interval:
+      type: string
+      description: A cron expression defining the recurrence interval.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "interval"
+    start_after:
+      type: string
+      format: date-time
+      description: The earliest datetime after which the schedule begins.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "start_after"
+  required:
+    - trigger_type
+    - interval
+    - start_after
+
+ScriptProfileScheduleDraftEditTrigger:
+  type: object
+  description: A partial recurring trigger update for patching a script profile.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "schedule_draft_edit_trigger"
+  properties:
+    trigger_type:
+      type: string
+      enum:
+        - recurring
+      x-oapi-codegen-extra-tags:
+        tfsdk: "trigger_type"
+    interval:
+      type: string
+      nullable: true
+      description: A cron expression defining the recurrence interval.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "interval"
+    start_after:
+      type: string
+      format: date-time
+      nullable: true
+      description: The earliest datetime after which the schedule begins.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "start_after"
+  required:
+    - trigger_type
+
+ScriptProfileOneTimeDraftTrigger:
+  type: object
+  description: A one-time trigger definition for creating or patching a script profile.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "one_time_draft_trigger"
+  properties:
+    trigger_type:
+      type: string
+      enum:
+        - one_time
+      x-oapi-codegen-extra-tags:
+        tfsdk: "trigger_type"
+    timestamp:
+      type: string
+      format: date-time
+      description: The datetime at which the script profile will execute.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "timestamp"
+  required:
+    - trigger_type
+    - timestamp
+
+ScriptProfileTriggerCreateRequest:
+  description: A discriminated union representing a script profile trigger in create requests.
+  oneOf:
+    - $ref: "#/ScriptProfileEventTrigger"
+    - $ref: "#/ScriptProfileScheduleDraftTrigger"
+    - $ref: "#/ScriptProfileOneTimeDraftTrigger"
+  discriminator:
+    propertyName: trigger_type
+    mapping:
+      event: "#/ScriptProfileEventTrigger"
+      recurring: "#/ScriptProfileScheduleDraftTrigger"
+      one_time: "#/ScriptProfileOneTimeDraftTrigger"
+
+ScriptProfileTriggerPatchRequest:
+  description: A discriminated union representing a script profile trigger in patch requests.
+  oneOf:
+    - $ref: "#/ScriptProfileEventTrigger"
+    - $ref: "#/ScriptProfileScheduleDraftEditTrigger"
+    - $ref: "#/ScriptProfileOneTimeDraftTrigger"
+  discriminator:
+    propertyName: trigger_type
+    mapping:
+      event: "#/ScriptProfileEventTrigger"
+      recurring: "#/ScriptProfileScheduleDraftEditTrigger"
+      one_time: "#/ScriptProfileOneTimeDraftTrigger"
+
+ScriptProfileCreatedBy:
+  type: object
+  description: The user who created the script profile.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "script_profile_created_by"
+  properties:
+    id:
+      type: integer
+      description: The ID of the person who created the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "id"
+    name:
+      type: string
+      description: The full name of the person who created the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "name"
+  required:
+    - id
+    - name
+
+ScriptProfileComputersInfo:
+  type: object
+  description: Aggregate computer association information for a script profile.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "computers_info"
+  properties:
+    num_associated_computers:
+      type: integer
+      description: The number of computers currently associated with the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "num_associated_computers"
+  required:
+    - num_associated_computers
+
+ScriptProfileActivityInfo:
+  type: object
+  description: The most recent activity information for a script profile.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "activity_info"
+  properties:
+    last_activity:
+      type: object
+      nullable: true
+      description: The state of the last activity run for this script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "last_activity"
+  required:
+    - last_activity
+
+ScriptProfileDetail:
+  type: object
+  description: A script profile and its full state.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "script_profile_detail"
+  properties:
+    id:
+      type: integer
+      description: The unique identifier for the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "id"
+    title:
+      type: string
+      description: The title of the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "title"
+    script_id:
+      type: integer
+      description: The ID of the script this profile executes.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "script_id"
+    access_group:
+      type: string
+      description: The access group associated with the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "access_group"
+    created_by:
+      nullable: true
+      description: The user who created the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "created_by"
+      $ref: "#/ScriptProfileCreatedBy"
+    created_at:
+      type: string
+      format: date-time
+      description: The timestamp when the script profile was created.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "created_at"
+    last_edited_at:
+      type: string
+      format: date-time
+      description: The timestamp when the script profile was last modified.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "last_edited_at"
+    trigger:
+      description: The trigger configuration for this script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "trigger"
+      $ref: "#/ScriptProfileTriggerResponse"
+    all_computers:
+      type: boolean
+      description: Whether the script profile targets all computers in the account.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "all_computers"
+    tags:
+      type: array
+      description: The list of tags used to target computers.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "tags"
+      items:
+        type: string
+    time_limit:
+      type: integer
+      description: The execution time limit for the script in seconds.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "time_limit"
+    username:
+      type: string
+      description: The username under which the script runs.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "username"
+    computers:
+      description: Aggregate computer targeting information.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "computers"
+      $ref: "#/ScriptProfileComputersInfo"
+    activities:
+      description: The most recent activity information.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "activities"
+      $ref: "#/ScriptProfileActivityInfo"
+    archived:
+      type: boolean
+      description: Whether the script profile has been archived.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "archived"
+  required:
+    - id
+    - title
+    - script_id
+    - access_group
+    - created_at
+    - last_edited_at
+    - trigger
+    - all_computers
+    - tags
+    - time_limit
+    - username
+    - computers
+    - activities
+    - archived
+
+ScriptProfileListResponse:
+  type: object
+  description: Paginated list of script profiles.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "script_profile_list_response"
+  properties:
+    results:
+      type: array
+      description: The list of script profiles.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "results"
+      items:
+        $ref: "#/ScriptProfileDetail"
+    count:
+      type: integer
+      description: Total number of script profiles matching the query.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "count"
+  required:
+    - results
+    - count
+
+ScriptProfileCreateBody:
+  type: object
+  description: Request body for creating a new script profile.
+  properties:
+    title:
+      type: string
+      description: The title of the script profile.
+    script_id:
+      type: integer
+      description: The ID of the script to execute.
+    all_computers:
+      type: boolean
+      description: Whether to target all computers in the account.
+      default: false
+    tags:
+      type: array
+      description: Tags used to target specific computers.
+      items:
+        type: string
+      default: []
+    trigger:
+      $ref: "#/ScriptProfileTriggerCreateRequest"
+    time_limit:
+      type: integer
+      description: Maximum execution time for the script in seconds.
+    username:
+      type: string
+      description: The username under which the script will run.
+  required:
+    - title
+    - script_id
+    - trigger
+    - time_limit
+    - username
+
+ScriptProfilePatchBody:
+  type: object
+  description: Request body for partially updating a script profile.
+  properties:
+    title:
+      type: string
+      nullable: true
+      description: The new title for the script profile.
+    trigger:
+      nullable: true
+      description: The new trigger configuration.
+      $ref: "#/ScriptProfileTriggerPatchRequest"
+    all_computers:
+      type: boolean
+      nullable: true
+      description: Whether to target all computers in the account.
+    tags:
+      type: array
+      nullable: true
+      description: Tags used to target specific computers.
+      items:
+        type: string
+    time_limit:
+      type: integer
+      nullable: true
+      description: Maximum execution time for the script in seconds.
+    username:
+      type: string
+      nullable: true
+      description: The username under which the script will run.
+
+ScriptProfileComputersListResponse:
+  type: object
+  description: Paginated list of computers associated with a script profile.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "script_profile_computers_list_response"
+  properties:
+    results:
+      type: array
+      description: List of computers targeted by the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "results"
+      items:
+        type: object
+    count:
+      type: integer
+      description: Total number of computers associated with the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "count"
+  required:
+    - results
+    - count
+
+ScriptProfileActivitiesListResponse:
+  type: object
+  description: Paginated list of activity runs for a script profile.
+  x-oapi-codegen-extra-tags:
+    tfsdk: "script_profile_activities_list_response"
+  properties:
+    results:
+      type: array
+      description: List of activity state objects for each run.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "results"
+      items:
+        type: object
+    count:
+      type: integer
+      description: Total number of activity runs for the script profile.
+      x-oapi-codegen-extra-tags:
+        tfsdk: "count"
+  required:
+    - results
+    - count

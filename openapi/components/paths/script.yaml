@@ -64,3 +64,177 @@ paths:
           $ref: "../responses/error.yaml#/Unauthorized"
         "404":
           $ref: "../responses/error.yaml#/ScriptNotFound"
+
+  "/api/scripts/{script_id}/script-profiles":
+    parameters:
+      - $ref: "../parameters/script.yaml#/ScriptIdPathParam"
+    get:
+      tags:
+        - Script Profiles
+      operationId: list_script_profiles_by_script
+      summary: List script profiles for a script.
+      description: Get all script profiles associated with a specific script.
+      responses:
+        "200":
+          $ref: "../responses/script.yaml#/ListScriptProfilesByScriptResponse"
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptNotFound"
+
+  "/api/script-profile-limits":
+    get:
+      tags:
+        - Script Profiles
+      operationId: get_script_profile_limits
+      summary: Get script profile limits.
+      description: Retrieve the script profile limits configured for the account, including the maximum number of profiles and computers.
+      responses:
+        "200":
+          $ref: "../responses/script.yaml#/GetScriptProfileLimitsResponse"
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+
+  "/api/script-profiles":
+    get:
+      tags:
+        - Script Profiles
+      operationId: list_script_profiles
+      summary: List script profiles.
+      description: Retrieve a paginated list of script profiles, optionally filtered by name or archived status.
+      parameters:
+        - $ref: "../parameters/script.yaml#/ScriptProfileArchivedQueryParam"
+        - $ref: "../parameters/script.yaml#/ScriptProfileNamesQueryParam"
+      responses:
+        "200":
+          $ref: "../responses/script.yaml#/ListScriptProfilesResponse"
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "403":
+          $ref: "../responses/error.yaml#/ScriptProfileNotEnabled"
+    post:
+      tags:
+        - Script Profiles
+      operationId: create_script_profile
+      summary: Create a script profile.
+      description: Create a new script profile that defines when and how a script is executed across targeted computers.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/script.yaml#/ScriptProfileCreateBody"
+      responses:
+        "201":
+          $ref: "../responses/script.yaml#/CreateScriptProfileResponse"
+        "400":
+          $ref: "../responses/error.yaml#/ScriptProfileMaxReached"
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "403":
+          $ref: "../responses/error.yaml#/ScriptProfileNotEnabled"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptNotFound"
+        "409":
+          $ref: "../responses/error.yaml#/ScriptProfileDuplicate"
+
+  "/api/script-profiles/{script_profile_id}":
+    parameters:
+      - $ref: "../parameters/script.yaml#/ScriptProfileIdPathParam"
+    get:
+      tags:
+        - Script Profiles
+      operationId: get_script_profile
+      summary: Get a script profile.
+      description: Retrieve the full details of a specific script profile by its ID.
+      responses:
+        "200":
+          $ref: "../responses/script.yaml#/GetScriptProfileResponse"
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "403":
+          $ref: "../responses/error.yaml#/ScriptProfileNotEnabled"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptProfileNotFound"
+    patch:
+      tags:
+        - Script Profiles
+      operationId: update_script_profile
+      summary: Update a script profile.
+      description: Partially update an existing script profile. Only provided fields will be updated. The trigger type cannot be changed.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/script.yaml#/ScriptProfilePatchBody"
+      responses:
+        "200":
+          $ref: "../responses/script.yaml#/GetScriptProfileResponse"
+        "400":
+          $ref: "../responses/error.yaml#/ScriptProfileArchived"
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "403":
+          $ref: "../responses/error.yaml#/ScriptProfileNotEnabled"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptProfileNotFound"
+        "409":
+          $ref: "../responses/error.yaml#/ScriptProfileDuplicate"
+
+  "/api/script-profiles/{script_profile_id}:archive":
+    parameters:
+      - $ref: "../parameters/script.yaml#/ScriptProfileIdPathParam"
+    post:
+      tags:
+        - Script Profiles
+      operationId: archive_script_profile
+      summary: Archive a script profile.
+      description: Archive a script profile. Archived profiles are disabled and their associated computers are disassociated.
+      responses:
+        "204":
+          description: Script profile archived successfully.
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "403":
+          $ref: "../responses/error.yaml#/ScriptProfileNotEnabled"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptProfileNotFound"
+
+  "/api/script-profiles/{script_profile_id}/computers":
+    parameters:
+      - $ref: "../parameters/script.yaml#/ScriptProfileIdPathParam"
+    get:
+      tags:
+        - Script Profiles
+      operationId: list_script_profile_computers
+      summary: List computers for a script profile.
+      description: Retrieve a paginated list of computers currently targeted by the script profile.
+      responses:
+        "200":
+          $ref: "../responses/script.yaml#/GetScriptProfileComputersResponse"
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "403":
+          $ref: "../responses/error.yaml#/ScriptProfileNotEnabled"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptProfileNotFound"
+
+  "/api/script-profiles/{script_profile_id}/activities":
+    parameters:
+      - $ref: "../parameters/script.yaml#/ScriptProfileIdPathParam"
+    get:
+      tags:
+        - Script Profiles
+      operationId: list_script_profile_activities
+      summary: List activities for a script profile.
+      description: Retrieve a paginated list of activity runs for the script profile, ordered by most recent first.
+      responses:
+        "200":
+          $ref: "../responses/script.yaml#/GetScriptProfileActivitiesResponse"
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"
+        "403":
+          $ref: "../responses/error.yaml#/ScriptProfileNotEnabled"
+        "404":
+          $ref: "../responses/error.yaml#/ScriptProfileNotFound"
