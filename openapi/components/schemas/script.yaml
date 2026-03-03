@@ -329,6 +329,7 @@ ScriptProfileEventType:
 ScriptProfileEventTrigger:
   type: object
   description: An event-based trigger that executes the script profile on a specific system event.
+  x-discriminator-value: event
   x-oapi-codegen-extra-tags:
     tfsdk: "event_trigger"
   properties:
@@ -350,6 +351,7 @@ ScriptProfileEventTrigger:
 ScriptProfileScheduleTrigger:
   type: object
   description: A recurring (cron-based) trigger for a script profile.
+  x-discriminator-value: recurring
   x-oapi-codegen-extra-tags:
     tfsdk: "schedule_trigger"
   properties:
@@ -393,6 +395,7 @@ ScriptProfileScheduleTrigger:
 ScriptProfileOneTimeTrigger:
   type: object
   description: A one-time trigger that executes the script profile at a specific datetime.
+  x-discriminator-value: one_time
   x-oapi-codegen-extra-tags:
     tfsdk: "one_time_trigger"
   properties:
@@ -442,13 +445,14 @@ ScriptProfileTriggerResponse:
   discriminator:
     propertyName: trigger_type
     mapping:
-      event: "#/ScriptProfileEventTrigger"
-      recurring: "#/ScriptProfileScheduleTrigger"
-      one_time: "#/ScriptProfileOneTimeTrigger"
+      event: "#/components/schemas/ScriptProfileEventTrigger"
+      recurring: "#/components/schemas/ScriptProfileScheduleTrigger"
+      one_time: "#/components/schemas/ScriptProfileOneTimeTrigger"
 
 ScriptProfileScheduleDraftTrigger:
   type: object
   description: A recurring trigger definition for creating a script profile.
+  x-discriminator-value: recurring
   x-oapi-codegen-extra-tags:
     tfsdk: "schedule_draft_trigger"
   properties:
@@ -478,6 +482,7 @@ ScriptProfileScheduleDraftTrigger:
 ScriptProfileScheduleDraftEditTrigger:
   type: object
   description: A partial recurring trigger update for patching a script profile.
+  x-discriminator-value: recurring
   x-oapi-codegen-extra-tags:
     tfsdk: "schedule_draft_edit_trigger"
   properties:
@@ -507,6 +512,7 @@ ScriptProfileScheduleDraftEditTrigger:
 ScriptProfileOneTimeDraftTrigger:
   type: object
   description: A one-time trigger definition for creating or patching a script profile.
+  x-discriminator-value: one_time
   x-oapi-codegen-extra-tags:
     tfsdk: "one_time_draft_trigger"
   properties:
@@ -536,9 +542,9 @@ ScriptProfileTriggerCreateRequest:
   discriminator:
     propertyName: trigger_type
     mapping:
-      event: "#/ScriptProfileEventTrigger"
-      recurring: "#/ScriptProfileScheduleDraftTrigger"
-      one_time: "#/ScriptProfileOneTimeDraftTrigger"
+      event: "#/components/schemas/ScriptProfileEventTrigger"
+      recurring: "#/components/schemas/ScriptProfileScheduleDraftTrigger"
+      one_time: "#/components/schemas/ScriptProfileOneTimeDraftTrigger"
 
 ScriptProfileTriggerPatchRequest:
   description: A discriminated union representing a script profile trigger in patch requests.
@@ -549,9 +555,9 @@ ScriptProfileTriggerPatchRequest:
   discriminator:
     propertyName: trigger_type
     mapping:
-      event: "#/ScriptProfileEventTrigger"
-      recurring: "#/ScriptProfileScheduleDraftEditTrigger"
-      one_time: "#/ScriptProfileOneTimeDraftTrigger"
+      event: "#/components/schemas/ScriptProfileEventTrigger"
+      recurring: "#/components/schemas/ScriptProfileScheduleDraftEditTrigger"
+      one_time: "#/components/schemas/ScriptProfileOneTimeDraftTrigger"
 
 ScriptProfileCreatedBy:
   type: object
