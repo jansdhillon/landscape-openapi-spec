@@ -76,7 +76,7 @@ paths:
       description: Get all script profiles associated with a specific script.
       responses:
         "200":
-          $ref: "../responses/script.yaml#/ListScriptProfilesByScriptResponse"
+          $ref: "../responses/script.yaml#/ScriptProfilesByScriptResult"
         "401":
           $ref: "../responses/error.yaml#/Unauthorized"
         "404":
@@ -91,7 +91,7 @@ paths:
       description: Retrieve the script profile limits configured for the account, including the maximum number of profiles and computers.
       responses:
         "200":
-          $ref: "../responses/script.yaml#/GetScriptProfileLimitsResponse"
+          $ref: "../responses/script.yaml#/ScriptProfileLimitsResult"
         "401":
           $ref: "../responses/error.yaml#/Unauthorized"
 
@@ -107,7 +107,7 @@ paths:
         - $ref: "../parameters/script.yaml#/ScriptProfileNamesQueryParam"
       responses:
         "200":
-          $ref: "../responses/script.yaml#/ListScriptProfilesResponse"
+          $ref: "../responses/script.yaml#/ScriptProfileListResult"
         "401":
           $ref: "../responses/error.yaml#/Unauthorized"
         "403":
@@ -126,7 +126,7 @@ paths:
               $ref: "../schemas/script.yaml#/ScriptProfileCreateBody"
       responses:
         "201":
-          $ref: "../responses/script.yaml#/CreateScriptProfileResponse"
+          $ref: "../responses/script.yaml#/ScriptProfileCreatedResult"
         "400":
           $ref: "../responses/error.yaml#/ScriptProfileMaxReached"
         "401":
@@ -149,7 +149,7 @@ paths:
       description: Retrieve the full details of a specific script profile by its ID.
       responses:
         "200":
-          $ref: "../responses/script.yaml#/GetScriptProfileResponse"
+          $ref: "../responses/script.yaml#/ScriptProfileDetailResult"
         "401":
           $ref: "../responses/error.yaml#/Unauthorized"
         "403":
@@ -170,7 +170,7 @@ paths:
               $ref: "../schemas/script.yaml#/ScriptProfilePatchBody"
       responses:
         "200":
-          $ref: "../responses/script.yaml#/GetScriptProfileResponse"
+          $ref: "../responses/script.yaml#/ScriptProfileDetailResult"
         "400":
           $ref: "../responses/error.yaml#/ScriptProfileArchived"
         "401":
