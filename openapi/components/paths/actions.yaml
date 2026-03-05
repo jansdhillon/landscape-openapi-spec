@@ -1,17 +1,16 @@
 # SPDX-License-Identifier: Apache-2.0
 
 paths:
-  "/api/?action=AcceptPendingComputers":
+  "/api/?action=AcceptPendingComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AcceptPendingComputers
+      operationId: LegacyAcceptPendingComputers
       summary: "AcceptPendingComputers"
       description: |
         Accept a list of pending computers associated with the account used for
             authentication.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -53,18 +52,17 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AddAPTSourcesToRepositoryProfile":
+  "/api/?action=AddAPTSourcesToRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AddAPTSourcesToRepositoryProfile
+      operationId: LegacyAddAPTSourcesToRepositoryProfile
       summary: "AddAPTSourcesToRepositoryProfile"
       description: |
         Add APT sources to a repository profile.
                     An activity will be created to add the given source to the the
                     computers associated with the given profile.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -98,15 +96,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AddAccessGroupsToRole":
+  "/api/?action=AddAccessGroupsToRole&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AddAccessGroupsToRole
+      operationId: LegacyAddAccessGroupsToRole
       summary: "AddAccessGroupsToRole"
       description: "Add the given access groups to a role."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -140,15 +137,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AddAnnotationToComputers":
+  "/api/?action=AddAnnotationToComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AddAnnotationToComputers
+      operationId: LegacyAddAnnotationToComputers
       summary: "AddAnnotationToComputers"
       description: "Add annotation key and optional value to a selection of computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -183,17 +179,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AddPackageFiltersToPocket":
+  "/api/?action=AddPackageFiltersToPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AddPackageFiltersToPocket
+      operationId: LegacyAddPackageFiltersToPocket
       summary: "AddPackageFiltersToPocket"
       description: |
         Add package filters to a repository pocket. The pocket must be in pull
             mode and support blocklist/allowlist filtering.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -239,15 +234,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AddPermissionsToRole":
+  "/api/?action=AddPermissionsToRole&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AddPermissionsToRole
+      operationId: LegacyAddPermissionsToRole
       summary: "AddPermissionsToRole"
       description: "Add permissions to a role."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -281,15 +275,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AddPersonsToRole":
+  "/api/?action=AddPersonsToRole&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AddPersonsToRole
+      operationId: LegacyAddPersonsToRole
       summary: "AddPersonsToRole"
       description: "Add permissions to a role."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -323,18 +316,17 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AddPocketsToRepositoryProfile":
+  "/api/?action=AddPocketsToRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AddPocketsToRepositoryProfile
+      operationId: LegacyAddPocketsToRepositoryProfile
       summary: "AddPocketsToRepositoryProfile"
       description: |
         Add repository pockets to a repository profile.
                     An activity will be created to add the given pockets to the APT
                     sources of the computers associated with the given profile.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -380,15 +372,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AddTagsToComputers":
+  "/api/?action=AddTagsToComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AddTagsToComputers
+      operationId: LegacyAddTagsToComputers
       summary: "AddTagsToComputers"
       description: "Add tags to a selection of computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -422,17 +413,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AddUploaderGPGKeysToPocket":
+  "/api/?action=AddUploaderGPGKeysToPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AddUploaderGPGKeysToPocket
+      operationId: LegacyAddUploaderGPGKeysToPocket
       summary: "AddUploaderGPGKeysToPocket"
       description: |
         Add GPG keys to a repository pocket in upload mode to validate uploaded
             packages.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -478,15 +468,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=ApproveActivities":
+  "/api/?action=ApproveActivities&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: ApproveActivities
+      operationId: LegacyApproveActivities
       summary: "ApproveActivities"
       description: "Approve activities associated with the current account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -510,11 +499,11 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AssociateAlert":
+  "/api/?action=AssociateAlert&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AssociateAlert
+      operationId: LegacyAssociateAlert
       summary: "AssociateAlert"
       description: |
         Associate an alert to computers with specific tags or to all computers.
@@ -522,7 +511,6 @@ paths:
             created. An 'all_computers' value of 'true' and a list of tags are mutually
             exclusive. Only one or the other may be passed.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -562,11 +550,11 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AssociatePackageProfile":
+  "/api/?action=AssociatePackageProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AssociatePackageProfile
+      operationId: LegacyAssociatePackageProfile
       summary: "AssociatePackageProfile"
       description: |
         Associate a package profile to computers with specific tags or to all
@@ -576,7 +564,6 @@ paths:
             An 'all_computers' value of 'true' and a list of tags are mutually
             exclusive. Only one or the other may be passed.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -616,11 +603,11 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AssociateRemovalProfile":
+  "/api/?action=AssociateRemovalProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AssociateRemovalProfile
+      operationId: LegacyAssociateRemovalProfile
       summary: "AssociateRemovalProfile"
       description: |
         Associate a removal profile to computers with the specified tags,
@@ -628,7 +615,6 @@ paths:
 
             tags and all_computers=true are mutually exclusive.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -668,17 +654,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AssociateRepositoryProfile":
+  "/api/?action=AssociateRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AssociateRepositoryProfile
+      operationId: LegacyAssociateRepositoryProfile
       summary: "AssociateRepositoryProfile"
       description: |
         Associate repository profile to computers with specified tags
                     or to all computers.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -718,11 +703,11 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=AssociateUpgradeProfile":
+  "/api/?action=AssociateUpgradeProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: AssociateUpgradeProfile
+      operationId: LegacyAssociateUpgradeProfile
       summary: "AssociateUpgradeProfile"
       description: |
         Associate an upgrade profile to computers with the specified tags,
@@ -730,7 +715,6 @@ paths:
 
             tags and all_computers=true are mutually exclusive.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -770,18 +754,17 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CancelActivities":
+  "/api/?action=CancelActivities&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CancelActivities
+      operationId: LegacyCancelActivities
       summary: "CancelActivities"
       description: |
         Cancel activities associated with the current account.
 
             Returns a list of activity ids that were cancelled.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -805,15 +788,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=ChangeComputersAccessGroup":
+  "/api/?action=ChangeComputersAccessGroup&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: ChangeComputersAccessGroup
+      operationId: LegacyChangeComputersAccessGroup
       summary: "ChangeComputersAccessGroup"
       description: "Change the access group for a selection of computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -843,17 +825,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CopyPackageProfile":
+  "/api/?action=CopyPackageProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CopyPackageProfile
+      operationId: LegacyCopyPackageProfile
       summary: "CopyPackageProfile"
       description: |
         Copy an existing package profile to a package profile with a new name and
             optionally a different title and description.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -897,15 +878,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CopyRole":
+  "/api/?action=CopyRole&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CopyRole
+      operationId: LegacyCopyRole
       summary: "CopyRole"
       description: "Copy an existing access role to a role with a new name."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -940,15 +920,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CopyScript":
+  "/api/?action=CopyScript&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CopyScript
+      operationId: LegacyCopyScript
       summary: "CopyScript"
       description: "Copy an existing script to a script with a new name."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -983,15 +962,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateAPTSource":
+  "/api/?action=CreateAPTSource&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateAPTSource
+      operationId: LegacyCreateAPTSource
       summary: "CreateAPTSource"
       description: "Create an APT source in the account used for authentication."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1032,15 +1010,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateAccessGroup":
+  "/api/?action=CreateAccessGroup&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateAccessGroup
+      operationId: LegacyCreateAccessGroup
       summary: "CreateAccessGroup"
       description: "Create a new access group."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1069,18 +1046,17 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateChildComputer":
+  "/api/?action=CreateChildComputer&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateChildComputer
+      operationId: LegacyCreateChildComputer
       summary: "CreateChildComputer"
       description: |
         Create child computer instances on a parent host machine.
             If provided, the new instance will be created according to the cloud-init
             file specified.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1120,15 +1096,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateDistribution":
+  "/api/?action=CreateDistribution&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateDistribution
+      operationId: LegacyCreateDistribution
       summary: "CreateDistribution"
       description: "Create a repository distribution associated with the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1158,18 +1133,17 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreatePackageProfile":
+  "/api/?action=CreatePackageProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreatePackageProfile
+      operationId: LegacyCreatePackageProfile
       summary: "CreatePackageProfile"
       description: |
         Create a package profile.
 
             source_computer_id and material are mutually exclusive.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1225,15 +1199,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreatePocket":
+  "/api/?action=CreatePocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreatePocket
+      operationId: LegacyCreatePocket
       summary: "CreatePocket"
       description: "Create a pocket associated with a series in the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1358,15 +1331,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateRemovalProfile":
+  "/api/?action=CreateRemovalProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateRemovalProfile
+      operationId: LegacyCreateRemovalProfile
       summary: "CreateRemovalProfile"
       description: "Create a removal profile."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1424,15 +1396,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateRepositoryProfile":
+  "/api/?action=CreateRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateRepositoryProfile
+      operationId: LegacyCreateRepositoryProfile
       summary: "CreateRepositoryProfile"
       description: "Create a repository profile."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1467,15 +1438,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateRole":
+  "/api/?action=CreateRole&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateRole
+      operationId: LegacyCreateRole
       summary: "CreateRole"
       description: "Create a new access role."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1504,15 +1474,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateSavedSearch":
+  "/api/?action=CreateSavedSearch&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateSavedSearch
+      operationId: LegacyCreateSavedSearch
       summary: "CreateSavedSearch"
       description: "Create a new saved search associated with the current account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1547,15 +1516,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateScript":
+  "/api/?action=CreateScript&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateScript
+      operationId: LegacyCreateScript
       summary: "CreateScript"
       description: "Create a new script."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1607,15 +1575,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateScriptAttachment":
+  "/api/?action=CreateScriptAttachment&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateScriptAttachment
+      operationId: LegacyCreateScriptAttachment
       summary: "CreateScriptAttachment"
       description: "Add a script attachment."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1645,15 +1612,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateSeries":
+  "/api/?action=CreateSeries&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateSeries
+      operationId: LegacyCreateSeries
       summary: "CreateSeries"
       description: "Create a series associated with a distribution in the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1744,15 +1710,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateUpgradeProfile":
+  "/api/?action=CreateUpgradeProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateUpgradeProfile
+      operationId: LegacyCreateUpgradeProfile
       summary: "CreateUpgradeProfile"
       description: "Create an upgrade profile."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1854,15 +1819,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=CreateUser":
+  "/api/?action=CreateUser&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: CreateUser
+      operationId: LegacyCreateUser
       summary: "CreateUser"
       description: "Create an activity to create a Linux user on the specified computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1934,15 +1898,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=DeleteChildComputers":
+  "/api/?action=DeleteChildComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: DeleteChildComputers
+      operationId: LegacyDeleteChildComputers
       summary: "DeleteChildComputers"
       description: "Delete a list of child computers by ID."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -1970,18 +1933,17 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=DeriveSeries":
+  "/api/?action=DeriveSeries&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: DeriveSeries
+      operationId: LegacyDeriveSeries
       summary: "DeriveSeries"
       description: |
         Derive a series from another one in the same distribution. The derived
             series will have pockets with names corresponding to the origin series,
             each one configured to pull from the pocket in origin series.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2017,17 +1979,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=DiffPullPocket":
+  "/api/?action=DiffPullPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: DiffPullPocket
+      operationId: LegacyDiffPullPocket
       summary: "DiffPullPocket"
       description: |
         Return a list of the changes between a pocket configured in pull mode and
             its origin one.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2063,15 +2024,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=DisableAdministrator":
+  "/api/?action=DisableAdministrator&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: DisableAdministrator
+      operationId: LegacyDisableAdministrator
       summary: "DisableAdministrator"
       description: "Disable an administrator of your account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2095,17 +2055,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=DisassociateAlert":
+  "/api/?action=DisassociateAlert&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: DisassociateAlert
+      operationId: LegacyDisassociateAlert
       summary: "DisassociateAlert"
       description: |
         Disassociate an alert from computers with specific tags or from
                 all computers.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2145,17 +2104,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=DisassociatePackageProfile":
+  "/api/?action=DisassociatePackageProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: DisassociatePackageProfile
+      operationId: LegacyDisassociatePackageProfile
       summary: "DisassociatePackageProfile"
       description: |
         Disassociate package profile from computers with specified
                     tags or from all computers.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2195,11 +2153,11 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=DisassociateRemovalProfile":
+  "/api/?action=DisassociateRemovalProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: DisassociateRemovalProfile
+      operationId: LegacyDisassociateRemovalProfile
       summary: "DisassociateRemovalProfile"
       description: |
         Disassociate a removal profile from computers with the specified
@@ -2207,7 +2165,6 @@ paths:
 
             tags and all_computers=true are mutually exclusive.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2247,17 +2204,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=DisassociateRepositoryProfile":
+  "/api/?action=DisassociateRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: DisassociateRepositoryProfile
+      operationId: LegacyDisassociateRepositoryProfile
       summary: "DisassociateRepositoryProfile"
       description: |
         Disassociate repository profile from computers with specified
                     tags or from all computers.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2297,11 +2253,11 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=DisassociateUpgradeProfile":
+  "/api/?action=DisassociateUpgradeProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: DisassociateUpgradeProfile
+      operationId: LegacyDisassociateUpgradeProfile
       summary: "DisassociateUpgradeProfile"
       description: |
         Disassociate an upgrade profile from computers with the specified
@@ -2309,7 +2265,6 @@ paths:
 
             tags and all_computers=true are mutually exclusive.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2349,17 +2304,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=EditPackageProfile":
+  "/api/?action=EditPackageProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: EditPackageProfile
+      operationId: LegacyEditPackageProfile
       summary: "EditPackageProfile"
       description: |
         Add or remove constraints related to a package profile. Constraints can
             be dependencies or conflicts.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2408,15 +2362,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=EditPocket":
+  "/api/?action=EditPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: EditPocket
+      operationId: LegacyEditPocket
       summary: "EditPocket"
       description: "Edit configuration for a repository pocket from a series in a distribution."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2502,15 +2455,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=EditRemovalProfile":
+  "/api/?action=EditRemovalProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: EditRemovalProfile
+      operationId: LegacyEditRemovalProfile
       summary: "EditRemovalProfile"
       description: "Edit an removal profile."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2559,15 +2511,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=EditRepositoryProfile":
+  "/api/?action=EditRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: EditRepositoryProfile
+      operationId: LegacyEditRepositoryProfile
       summary: "EditRepositoryProfile"
       description: "Edit a repository profile."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2601,15 +2552,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=EditSavedSearch":
+  "/api/?action=EditSavedSearch&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: EditSavedSearch
+      operationId: LegacyEditSavedSearch
       summary: "EditSavedSearch"
       description: "Edit a saved search associated with the current account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2643,15 +2593,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=EditScript":
+  "/api/?action=EditScript&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: EditScript
+      operationId: LegacyEditScript
       summary: "EditScript"
       description: "Edit a script."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2695,15 +2644,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=EditUpgradeProfile":
+  "/api/?action=EditUpgradeProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: EditUpgradeProfile
+      operationId: LegacyEditUpgradeProfile
       summary: "EditUpgradeProfile"
       description: "Edit an upgrade profile."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2799,15 +2747,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=EditUser":
+  "/api/?action=EditUser&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: EditUser
+      operationId: LegacyEditUser
       summary: "EditUser"
       description: "Create an activity to edit information of a Linux user on the specified computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2871,15 +2818,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=ExecuteScript":
+  "/api/?action=ExecuteScript&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: ExecuteScript
+      operationId: LegacyExecuteScript
       summary: "ExecuteScript"
       description: "Execute a script on computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2929,15 +2875,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetAPTSources":
+  "/api/?action=GetAPTSources&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetAPTSources
+      operationId: LegacyGetAPTSources
       summary: "GetAPTSources"
       description: "Get a list of apt sources in the account used for authentication."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -2965,15 +2910,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetAccessGroups":
+  "/api/?action=GetAccessGroups&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetAccessGroups
+      operationId: LegacyGetAccessGroups
       summary: "GetAccessGroups"
       description: "List all access groups in the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3001,11 +2945,11 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetActivities":
+  "/api/?action=GetActivities&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetActivities
+      operationId: LegacyGetActivities
       summary: "GetActivities"
       description: |
         Retrieve activities associated with the current account, ordered by
@@ -3023,7 +2967,6 @@ paths:
             Common examples of activities with progress would be syncing a pocket
             repository mirror or provisioning a new system.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3059,17 +3002,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetActivityTypes":
+  "/api/?action=GetActivityTypes&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetActivityTypes
+      operationId: LegacyGetActivityTypes
       summary: "GetActivityTypes"
       description: |
         Retrieve a list of possible activity types for use with the *type:* query
             criteria.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3085,15 +3027,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetAdministrators":
+  "/api/?action=GetAdministrators&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetAdministrators
+      operationId: LegacyGetAdministrators
       summary: "GetAdministrators"
       description: "Retrieve the list of administrators in the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3109,15 +3050,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetAlertSubscribers":
+  "/api/?action=GetAlertSubscribers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetAlertSubscribers
+      operationId: LegacyGetAlertSubscribers
       summary: "GetAlertSubscribers"
       description: "Get a a list of people who subscribe to a given alert."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3141,15 +3081,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetAlerts":
+  "/api/?action=GetAlerts&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetAlerts
+      operationId: LegacyGetAlerts
       summary: "GetAlerts"
       description: "Get a list of alerts in an account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3165,15 +3104,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetCSVComplianceData":
+  "/api/?action=GetCSVComplianceData&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetCSVComplianceData
+      operationId: LegacyGetCSVComplianceData
       summary: "GetCSVComplianceData"
       description: "Return a CSV formatted report of compliance data."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3219,15 +3157,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetComputerProcesses":
+  "/api/?action=GetComputerProcesses&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetComputerProcesses
+      operationId: LegacyGetComputerProcesses
       summary: "GetComputerProcesses"
       description: "Gets the active processes for the specified computer."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3261,15 +3198,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetComputers":
+  "/api/?action=GetComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetComputers
+      operationId: LegacyGetComputers
       summary: "GetComputers"
       description: "Get a list of computers associated with the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3335,15 +3271,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetComputersNotUpgraded":
+  "/api/?action=GetComputersNotUpgraded&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetComputersNotUpgraded
+      operationId: LegacyGetComputersNotUpgraded
       summary: "GetComputersNotUpgraded"
       description: "Report the ids of computers, within a given selection, that are not covered by an upgrade profile."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3379,15 +3314,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetDistributions":
+  "/api/?action=GetDistributions&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetDistributions
+      operationId: LegacyGetDistributions
       summary: "GetDistributions"
       description: "Get info about distributions."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3419,15 +3353,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetEventLog":
+  "/api/?action=GetEventLog&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetEventLog
+      operationId: LegacyGetEventLog
       summary: "GetEventLog"
       description: "Retrieve event log for the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3462,15 +3395,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetGPGKeys":
+  "/api/?action=GetGPGKeys&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetGPGKeys
+      operationId: LegacyGetGPGKeys
       summary: "GetGPGKeys"
       description: "Get info about GPG keys."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3496,15 +3428,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetNotPingingComputers":
+  "/api/?action=GetNotPingingComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetNotPingingComputers
+      operationId: LegacyGetNotPingingComputers
       summary: "GetNotPingingComputers"
       description: "Report the ids of computers, within a given selection, that have not pinged the server in a given number of minutes."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3546,15 +3477,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetPackageProfiles":
+  "/api/?action=GetPackageProfiles&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetPackageProfiles
+      operationId: LegacyGetPackageProfiles
       summary: "GetPackageProfiles"
       description: "Get the details of all Package Profiles defined in the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3580,11 +3510,11 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetPackages":
+  "/api/?action=GetPackages&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetPackages
+      operationId: LegacyGetPackages
       summary: "GetPackages"
       description: |
         Get a list of packages associated with the account used for
@@ -3600,7 +3530,6 @@ paths:
             A package is considered an upgrade if it's available and if it has a
             version higher than a non-held installed package with the same name.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3671,17 +3600,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetPendingComputers":
+  "/api/?action=GetPendingComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetPendingComputers
+      operationId: LegacyGetPendingComputers
       summary: "GetPendingComputers"
       description: |
         Get a list of pending computers associated with the account used for
             authentication.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3697,15 +3625,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetPermissions":
+  "/api/?action=GetPermissions&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetPermissions
+      operationId: LegacyGetPermissions
       summary: "GetPermissions"
       description: "List all available permissions."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3721,15 +3648,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetRemovalProfiles":
+  "/api/?action=GetRemovalProfiles&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetRemovalProfiles
+      operationId: LegacyGetRemovalProfiles
       summary: "GetRemovalProfiles"
       description: "List all existing removal profiles."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3745,17 +3671,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetRepoInfo":
+  "/api/?action=GetRepoInfo&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetRepoInfo
+      operationId: LegacyGetRepoInfo
       summary: "GetRepoInfo"
       description: |
         Given a url to a mirror repo, returns repository information present
         in the release file/s and also whether it's flat or an ubuntu repo
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3779,15 +3704,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetRepositoryProfiles":
+  "/api/?action=GetRepositoryProfiles&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetRepositoryProfiles
+      operationId: LegacyGetRepositoryProfiles
       summary: "GetRepositoryProfiles"
       description: "Get a list of repository profiles in the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3813,15 +3737,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetRoles":
+  "/api/?action=GetRoles&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetRoles
+      operationId: LegacyGetRoles
       summary: "GetRoles"
       description: "Get all available roles."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3847,15 +3770,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetSavedSearches":
+  "/api/?action=GetSavedSearches&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetSavedSearches
+      operationId: LegacyGetSavedSearches
       summary: "GetSavedSearches"
       description: "Retrieve saved searches associated with the current account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3883,15 +3805,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetScriptCode":
+  "/api/?action=GetScriptCode&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetScriptCode
+      operationId: LegacyGetScriptCode
       summary: "GetScriptCode"
       description: "Retrieve the code portion of a given script."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3915,15 +3836,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetScripts":
+  "/api/?action=GetScripts&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetScripts
+      operationId: LegacyGetScripts
       summary: "GetScripts"
       description: "Retrieve stored scripts associated with the current account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3959,15 +3879,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetSettings":
+  "/api/?action=GetSettings&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetSettings
+      operationId: LegacyGetSettings
       summary: "GetSettings"
       description: "Get all settings and their value for the current LDS installation."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -3983,15 +3902,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetUSNTimeToFix":
+  "/api/?action=GetUSNTimeToFix&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetUSNTimeToFix
+      operationId: LegacyGetUSNTimeToFix
       summary: "GetUSNTimeToFix"
       description: "Return a break down of machines unpatched periods following a USN release."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4047,15 +3965,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetUpgradeProfiles":
+  "/api/?action=GetUpgradeProfiles&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetUpgradeProfiles
+      operationId: LegacyGetUpgradeProfiles
       summary: "GetUpgradeProfiles"
       description: "List all previously created upgrade profiles."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4076,15 +3993,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetUpgradedComputersByFrequency":
+  "/api/?action=GetUpgradedComputersByFrequency&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetUpgradedComputersByFrequency
+      operationId: LegacyGetUpgradedComputersByFrequency
       summary: "GetUpgradedComputersByFrequency"
       description: "Return a dictionary of computer IDs broken down by their upgrade schedule."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4120,15 +4036,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetUsers":
+  "/api/?action=GetUsers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetUsers
+      operationId: LegacyGetUsers
       summary: "GetUsers"
       description: "Get Linux user information from the specified computer."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4152,15 +4067,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=GetWSLHosts":
+  "/api/?action=GetWSLHosts&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: GetWSLHosts
+      operationId: LegacyGetWSLHosts
       summary: "GetWSLHosts"
       description: "Gets a list of Windows computers that are hosting at least one WSL instance"
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4196,15 +4110,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=ImportGPGKey":
+  "/api/?action=ImportGPGKey&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: ImportGPGKey
+      operationId: LegacyImportGPGKey
       summary: "ImportGPGKey"
       description: "Import a GPG key."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4234,15 +4147,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=InstallPackages":
+  "/api/?action=InstallPackages&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: InstallPackages
+      operationId: LegacyInstallPackages
       summary: "InstallPackages"
       description: "Install packages on selected computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4287,15 +4199,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=InviteAdministrator":
+  "/api/?action=InviteAdministrator&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: InviteAdministrator
+      operationId: LegacyInviteAdministrator
       summary: "InviteAdministrator"
       description: "Invite an administrator to your account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4337,15 +4248,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=KillComputerProcesses":
+  "/api/?action=KillComputerProcesses&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: KillComputerProcesses
+      operationId: LegacyKillComputerProcesses
       summary: "KillComputerProcesses"
       description: "Creates an activity to send a KILL signal to the specified computer processes"
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4379,15 +4289,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=ListPocket":
+  "/api/?action=ListPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: ListPocket
+      operationId: LegacyListPocket
       summary: "ListPocket"
       description: "Return a list of the packages in a pocket."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4438,18 +4347,17 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=ModifyPackageProfile":
+  "/api/?action=ModifyPackageProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: ModifyPackageProfile
+      operationId: LegacyModifyPackageProfile
       summary: "ModifyPackageProfile"
       description: |
         THIS FUNCTION IS DEPRECATED. please use edit-package-profile instead.
             Add or remove constraints related to a package profile. Constraints can
             be dependencies or conflicts.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4498,15 +4406,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=PullPackagesToPocket":
+  "/api/?action=PullPackagesToPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: PullPackagesToPocket
+      operationId: LegacyPullPackagesToPocket
       summary: "PullPackagesToPocket"
       description: "Import packages to a pocket in pull mode from its parent pocket."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4542,15 +4449,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RebootComputers":
+  "/api/?action=RebootComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RebootComputers
+      operationId: LegacyRebootComputers
       summary: "RebootComputers"
       description: "Reboot a list of computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4583,17 +4489,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RejectPendingComputers":
+  "/api/?action=RejectPendingComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RejectPendingComputers
+      operationId: LegacyRejectPendingComputers
       summary: "RejectPendingComputers"
       description: |
         Reject a list of pending computers associated with the account used for
             authentication.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4621,15 +4526,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveAPTSource":
+  "/api/?action=RemoveAPTSource&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveAPTSource
+      operationId: LegacyRemoveAPTSource
       summary: "RemoveAPTSource"
       description: "Remove apt source from the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4653,18 +4557,17 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveAPTSourceFromRepositoryProfile":
+  "/api/?action=RemoveAPTSourceFromRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveAPTSourceFromRepositoryProfile
+      operationId: LegacyRemoveAPTSourceFromRepositoryProfile
       summary: "RemoveAPTSourceFromRepositoryProfile"
       description: |
         Remove APT source from a repository profile.
                     An activity will be created to remove the source from the
                     computers associated with the given profile.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4694,15 +4597,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveAPTSources":
+  "/api/?action=RemoveAPTSources&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveAPTSources
+      operationId: LegacyRemoveAPTSources
       summary: "RemoveAPTSources"
       description: "Deprecated: use RemoveAPTSource instead."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4730,15 +4632,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveAPTSourcesFromRepositoryProfile":
+  "/api/?action=RemoveAPTSourcesFromRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveAPTSourcesFromRepositoryProfile
+      operationId: LegacyRemoveAPTSourcesFromRepositoryProfile
       summary: "RemoveAPTSourcesFromRepositoryProfile"
       description: "Deprecated: use RemoveAPTSourceFromRepositoryProfile instead."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4772,15 +4673,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveAccessGroup":
+  "/api/?action=RemoveAccessGroup&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveAccessGroup
+      operationId: LegacyRemoveAccessGroup
       summary: "RemoveAccessGroup"
       description: "Remove an access group."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4804,15 +4704,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveAccessGroupsFromRole":
+  "/api/?action=RemoveAccessGroupsFromRole&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveAccessGroupsFromRole
+      operationId: LegacyRemoveAccessGroupsFromRole
       summary: "RemoveAccessGroupsFromRole"
       description: "Remove the given access groups to a role."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4846,15 +4745,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveAnnotationFromComputers":
+  "/api/?action=RemoveAnnotationFromComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveAnnotationFromComputers
+      operationId: LegacyRemoveAnnotationFromComputers
       summary: "RemoveAnnotationFromComputers"
       description: "Remove annotation key from a selection of computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4884,15 +4782,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveComputers":
+  "/api/?action=RemoveComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveComputers
+      operationId: LegacyRemoveComputers
       summary: "RemoveComputers"
       description: "Remove a list of computers by ID."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4920,15 +4817,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveDistribution":
+  "/api/?action=RemoveDistribution&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveDistribution
+      operationId: LegacyRemoveDistribution
       summary: "RemoveDistribution"
       description: "Remove the specified repository distribution."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4952,15 +4848,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveGPGKey":
+  "/api/?action=RemoveGPGKey&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveGPGKey
+      operationId: LegacyRemoveGPGKey
       summary: "RemoveGPGKey"
       description: "Remove a GPG key."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -4984,17 +4879,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemovePackageFiltersFromPocket":
+  "/api/?action=RemovePackageFiltersFromPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemovePackageFiltersFromPocket
+      operationId: LegacyRemovePackageFiltersFromPocket
       summary: "RemovePackageFiltersFromPocket"
       description: |
         Remove package filters from a repository pocket.  The pocket must be in
             pull mode and support blocklist/allowlist filtering.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5040,15 +4934,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemovePackageProfile":
+  "/api/?action=RemovePackageProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemovePackageProfile
+      operationId: LegacyRemovePackageProfile
       summary: "RemovePackageProfile"
       description: "Remove a package profile, given its name."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5072,15 +4965,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemovePackages":
+  "/api/?action=RemovePackages&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemovePackages
+      operationId: LegacyRemovePackages
       summary: "RemovePackages"
       description: "Remove packages on selected computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5125,15 +5017,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemovePackagesFromPocket":
+  "/api/?action=RemovePackagesFromPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemovePackagesFromPocket
+      operationId: LegacyRemovePackagesFromPocket
       summary: "RemovePackagesFromPocket"
       description: "Remove packages from pockets in upload mode."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5179,15 +5070,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemovePermissionsFromRole":
+  "/api/?action=RemovePermissionsFromRole&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemovePermissionsFromRole
+      operationId: LegacyRemovePermissionsFromRole
       summary: "RemovePermissionsFromRole"
       description: "Remove permissions from a role."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5221,15 +5111,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemovePersonsFromRole":
+  "/api/?action=RemovePersonsFromRole&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemovePersonsFromRole
+      operationId: LegacyRemovePersonsFromRole
       summary: "RemovePersonsFromRole"
       description: "Remove people from a role."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5263,15 +5152,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemovePocket":
+  "/api/?action=RemovePocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemovePocket
+      operationId: LegacyRemovePocket
       summary: "RemovePocket"
       description: "Remove a repository pocket from a series in a distribution."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5307,18 +5195,17 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemovePocketsFromRepositoryProfile":
+  "/api/?action=RemovePocketsFromRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemovePocketsFromRepositoryProfile
+      operationId: LegacyRemovePocketsFromRepositoryProfile
       summary: "RemovePocketsFromRepositoryProfile"
       description: |
         Remove repository pockets from a repository profile.
                     An activity will be created to remove the pockets from the APT
                     sources of the computers associated with the given profile.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5364,15 +5251,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveRemovalProfile":
+  "/api/?action=RemoveRemovalProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveRemovalProfile
+      operationId: LegacyRemoveRemovalProfile
       summary: "RemoveRemovalProfile"
       description: "Remove an existing removal profile by name."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5396,15 +5282,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveRepositoryProfile":
+  "/api/?action=RemoveRepositoryProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveRepositoryProfile
+      operationId: LegacyRemoveRepositoryProfile
       summary: "RemoveRepositoryProfile"
       description: "Remove repository profile from the account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5428,15 +5313,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveRepositoryProfiles":
+  "/api/?action=RemoveRepositoryProfiles&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveRepositoryProfiles
+      operationId: LegacyRemoveRepositoryProfiles
       summary: "RemoveRepositoryProfiles"
       description: "Deprecated: use RemoveRepositoryProfile instead."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5464,15 +5348,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveRole":
+  "/api/?action=RemoveRole&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveRole
+      operationId: LegacyRemoveRole
       summary: "RemoveRole"
       description: "Remove an access role."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5496,15 +5379,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveSavedSearch":
+  "/api/?action=RemoveSavedSearch&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveSavedSearch
+      operationId: LegacyRemoveSavedSearch
       summary: "RemoveSavedSearch"
       description: "Remove a saved search associated with the current account."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5528,15 +5410,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveScript":
+  "/api/?action=RemoveScript&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveScript
+      operationId: LegacyRemoveScript
       summary: "RemoveScript"
       description: "Remove scripts."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5560,15 +5441,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveScriptAttachment":
+  "/api/?action=RemoveScriptAttachment&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveScriptAttachment
+      operationId: LegacyRemoveScriptAttachment
       summary: "RemoveScriptAttachment"
       description: "Remove a script attachment."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5598,15 +5478,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveSeries":
+  "/api/?action=RemoveSeries&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveSeries
+      operationId: LegacyRemoveSeries
       summary: "RemoveSeries"
       description: "Remove a repository series from a distribution."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5636,15 +5515,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveTagsFromComputers":
+  "/api/?action=RemoveTagsFromComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveTagsFromComputers
+      operationId: LegacyRemoveTagsFromComputers
       summary: "RemoveTagsFromComputers"
       description: "Remove tags from a selection of computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5678,15 +5556,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveUpgradeProfile":
+  "/api/?action=RemoveUpgradeProfile&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveUpgradeProfile
+      operationId: LegacyRemoveUpgradeProfile
       summary: "RemoveUpgradeProfile"
       description: "Remove an existing upgrade profile by name."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5710,17 +5587,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveUploaderGPGKeysFromPocket":
+  "/api/?action=RemoveUploaderGPGKeysFromPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveUploaderGPGKeysFromPocket
+      operationId: LegacyRemoveUploaderGPGKeysFromPocket
       summary: "RemoveUploaderGPGKeysFromPocket"
       description: |
         Remove GPG keys for uploaded packages validation from a repository pocket
             in upload mode.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5766,15 +5642,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RemoveWSLHosts":
+  "/api/?action=RemoveWSLHosts&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RemoveWSLHosts
+      operationId: LegacyRemoveWSLHosts
       summary: "RemoveWSLHosts"
       description: "Remove a list of Windows computers that are hosting at least one WSL instance by id"
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5808,15 +5683,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=RenameComputers":
+  "/api/?action=RenameComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: RenameComputers
+      operationId: LegacyRenameComputers
       summary: "RenameComputers"
       description: "Rename a set of computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5843,17 +5717,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=SetDefaultChildComputer":
+  "/api/?action=SetDefaultChildComputer&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: SetDefaultChildComputer
+      operationId: LegacySetDefaultChildComputer
       summary: "SetDefaultChildComputer"
       description: |
         Set the child computer instance with the provided id as the default one
                 for the host parent.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5883,15 +5756,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=SetSettings":
+  "/api/?action=SetSettings&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: SetSettings
+      operationId: LegacySetSettings
       summary: "SetSettings"
       description: "Set configuration settings for the current LDS installation."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5919,15 +5791,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=ShutdownComputers":
+  "/api/?action=ShutdownComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: ShutdownComputers
+      operationId: LegacyShutdownComputers
       summary: "ShutdownComputers"
       description: "Shutdown a list of computers."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5960,15 +5831,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=ShutdownHostComputer":
+  "/api/?action=ShutdownHostComputer&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: ShutdownHostComputer
+      operationId: LegacyShutdownHostComputer
       summary: "ShutdownHostComputer"
       description: "Send a message to shutdown a host computer."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -5992,15 +5862,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=StartChildComputers":
+  "/api/?action=StartChildComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: StartChildComputers
+      operationId: LegacyStartChildComputers
       summary: "StartChildComputers"
       description: "Start a list of child computers by ID."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -6028,15 +5897,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=StopChildComputers":
+  "/api/?action=StopChildComputers&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: StopChildComputers
+      operationId: LegacyStopChildComputers
       summary: "StopChildComputers"
       description: "Stop a list of child computers by ID."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -6064,22 +5932,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=SubscribeToAlert":
+  "/api/?action=SubscribeToAlert&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: SubscribeToAlert
+      operationId: LegacySubscribeToAlert
       summary: "SubscribeToAlert"
       description: "Subscribe to an alert."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "SubscribeToAlert"
         - name: alert_type
           in: query
           required: true
@@ -6096,15 +5956,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=SyncMirrorPocket":
+  "/api/?action=SyncMirrorPocket&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: SyncMirrorPocket
+      operationId: LegacySyncMirrorPocket
       summary: "SyncMirrorPocket"
       description: "Synchronize a mirror repository pocket."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -6140,15 +5999,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=TerminateComputerProcesses":
+  "/api/?action=TerminateComputerProcesses&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: TerminateComputerProcesses
+      operationId: LegacyTerminateComputerProcesses
       summary: "TerminateComputerProcesses"
       description: "Creates an activity to send a TERM signal to the specified computer processes"
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -6182,15 +6040,14 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=UnsubscribeFromAlert":
+  "/api/?action=UnsubscribeFromAlert&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: UnsubscribeFromAlert
+      operationId: LegacyUnsubscribeFromAlert
       summary: "UnsubscribeFromAlert"
       description: "Unsubscribe from an alert."
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
@@ -6214,17 +6071,16 @@ paths:
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
 
-  "/api/?action=UpgradePackages":
+  "/api/?action=UpgradePackages&version=2011-08-01":
     get:
       tags:
         - Legacy API Actions
-      operationId: UpgradePackages
+      operationId: LegacyUpgradePackages
       summary: "UpgradePackages"
       description: |
         Request upgrading of all packages identified as being upgradable, on all
             computers selected by query.
       parameters:
-        - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
         - name: action
           in: query
           required: true
