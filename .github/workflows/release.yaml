@@ -1,0 +1,69 @@
+# SPDX-License-Identifier: Apache-2.0
+
+name: Bundle the OpenAPI spec, tag it, and publish a GitHub release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-release-openapi:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      tag: ${{ steps.tag.outputs.mod_tag }}
+      version: ${{ steps.ver.outputs.result }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: npm install -g swagger-cli
+      - run: make bundle
+
+      - name: Read version from bundle
+        id: ver
+        uses: mikefarah/yq@v4
+        with:
+          cmd: yq -r '.info.version' 'openapi/landscape_api.bundle.yaml'
+
+      - name: Compute tag
+        id: tag
+        run: |
+          VER="${{ steps.ver.outputs.result }}"
+          [ -z "$VER" ] && { echo "version not found"; exit 1; }
+          [[ "$VER" =~ ^v ]] && MODTAG="$VER" || MODTAG="v$VER"
+          echo "mod_tag=$MODTAG" >> "$GITHUB_OUTPUT"
+
+      - name: Tag this repo
+        env:
+          TAG: ${{ steps.tag.outputs.mod_tag }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch --tags
+          git tag -fa "$TAG" -m "Landscape OpenAPI ${{ steps.ver.outputs.result }}"
+          git push origin "$TAG" --force
+
+      - name: Create/Update release (OpenAPI)
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.tag.outputs.mod_tag }}
+        run: |
+          if gh release view "$TAG" --repo ${{ github.repository }}; then
+            gh release upload "$TAG" "openapi/landscape_api.bundle.yaml" \
+              --repo ${{ github.repository }} --clobber
+          else
+            gh release create "$TAG" \
+              --repo ${{ github.repository }} \
+              --title "$TAG" \
+              --notes "Automated release for Landscape OpenAPI ${{ steps.ver.outputs.result }}." \
+              "openapi/landscape_api.bundle.yaml"
+          fi
