@@ -12,8 +12,8 @@ info:
 tags:
   - name: Authentication
     description: Authentication and authorization operations.
-  - name: Legacy Actions
-    description: Legacy API endpoints for backward compatibility.
+  - name: Legacy API Actions
+    description: Legacy API actions.
   - name: Script Profiles
     description: Operations for managing script profiles, which define scheduled or event-based script execution across targeted computers.
   - name: Scripts
