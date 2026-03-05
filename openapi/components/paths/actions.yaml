@@ -4,7 +4,7 @@ paths:
   "/api/?action=AcceptPendingComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AcceptPendingComputers
       summary: "AcceptPendingComputers"
       description: |
@@ -56,7 +56,7 @@ paths:
   "/api/?action=AddAPTSourcesToRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AddAPTSourcesToRepositoryProfile
       summary: "AddAPTSourcesToRepositoryProfile"
       description: |
@@ -101,7 +101,7 @@ paths:
   "/api/?action=AddAccessGroupsToRole":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AddAccessGroupsToRole
       summary: "AddAccessGroupsToRole"
       description: "Add the given access groups to a role."
@@ -143,7 +143,7 @@ paths:
   "/api/?action=AddAnnotationToComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AddAnnotationToComputers
       summary: "AddAnnotationToComputers"
       description: "Add annotation key and optional value to a selection of computers."
@@ -186,7 +186,7 @@ paths:
   "/api/?action=AddPackageFiltersToPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AddPackageFiltersToPocket
       summary: "AddPackageFiltersToPocket"
       description: |
@@ -242,7 +242,7 @@ paths:
   "/api/?action=AddPermissionsToRole":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AddPermissionsToRole
       summary: "AddPermissionsToRole"
       description: "Add permissions to a role."
@@ -284,7 +284,7 @@ paths:
   "/api/?action=AddPersonsToRole":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AddPersonsToRole
       summary: "AddPersonsToRole"
       description: "Add permissions to a role."
@@ -326,7 +326,7 @@ paths:
   "/api/?action=AddPocketsToRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AddPocketsToRepositoryProfile
       summary: "AddPocketsToRepositoryProfile"
       description: |
@@ -383,7 +383,7 @@ paths:
   "/api/?action=AddTagsToComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AddTagsToComputers
       summary: "AddTagsToComputers"
       description: "Add tags to a selection of computers."
@@ -425,7 +425,7 @@ paths:
   "/api/?action=AddUploaderGPGKeysToPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AddUploaderGPGKeysToPocket
       summary: "AddUploaderGPGKeysToPocket"
       description: |
@@ -481,7 +481,7 @@ paths:
   "/api/?action=ApproveActivities":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: ApproveActivities
       summary: "ApproveActivities"
       description: "Approve activities associated with the current account."
@@ -513,7 +513,7 @@ paths:
   "/api/?action=AssociateAlert":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AssociateAlert
       summary: "AssociateAlert"
       description: |
@@ -565,14 +565,14 @@ paths:
   "/api/?action=AssociatePackageProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AssociatePackageProfile
       summary: "AssociatePackageProfile"
       description: |
         Associate a package profile to computers with specific tags or to all
             computers. If a tag with a given name doesn't exist, it will be
             automatically created.
-        
+
             An 'all_computers' value of 'true' and a list of tags are mutually
             exclusive. Only one or the other may be passed.
       parameters:
@@ -619,13 +619,13 @@ paths:
   "/api/?action=AssociateRemovalProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AssociateRemovalProfile
       summary: "AssociateRemovalProfile"
       description: |
         Associate a removal profile to computers with the specified tags,
             or all computers.
-        
+
             tags and all_computers=true are mutually exclusive.
       parameters:
         - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
@@ -671,7 +671,7 @@ paths:
   "/api/?action=AssociateRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AssociateRepositoryProfile
       summary: "AssociateRepositoryProfile"
       description: |
@@ -721,13 +721,13 @@ paths:
   "/api/?action=AssociateUpgradeProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: AssociateUpgradeProfile
       summary: "AssociateUpgradeProfile"
       description: |
         Associate an upgrade profile to computers with the specified tags,
             or all computers.
-        
+
             tags and all_computers=true are mutually exclusive.
       parameters:
         - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
@@ -773,12 +773,12 @@ paths:
   "/api/?action=CancelActivities":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CancelActivities
       summary: "CancelActivities"
       description: |
         Cancel activities associated with the current account.
-        
+
             Returns a list of activity ids that were cancelled.
       parameters:
         - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
@@ -808,7 +808,7 @@ paths:
   "/api/?action=ChangeComputersAccessGroup":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: ChangeComputersAccessGroup
       summary: "ChangeComputersAccessGroup"
       description: "Change the access group for a selection of computers."
@@ -846,7 +846,7 @@ paths:
   "/api/?action=CopyPackageProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CopyPackageProfile
       summary: "CopyPackageProfile"
       description: |
@@ -900,7 +900,7 @@ paths:
   "/api/?action=CopyRole":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CopyRole
       summary: "CopyRole"
       description: "Copy an existing access role to a role with a new name."
@@ -943,7 +943,7 @@ paths:
   "/api/?action=CopyScript":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CopyScript
       summary: "CopyScript"
       description: "Copy an existing script to a script with a new name."
@@ -986,7 +986,7 @@ paths:
   "/api/?action=CreateAPTSource":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateAPTSource
       summary: "CreateAPTSource"
       description: "Create an APT source in the account used for authentication."
@@ -1035,7 +1035,7 @@ paths:
   "/api/?action=CreateAccessGroup":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateAccessGroup
       summary: "CreateAccessGroup"
       description: "Create a new access group."
@@ -1072,7 +1072,7 @@ paths:
   "/api/?action=CreateChildComputer":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateChildComputer
       summary: "CreateChildComputer"
       description: |
@@ -1123,7 +1123,7 @@ paths:
   "/api/?action=CreateDistribution":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateDistribution
       summary: "CreateDistribution"
       description: "Create a repository distribution associated with the account."
@@ -1161,12 +1161,12 @@ paths:
   "/api/?action=CreatePackageProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreatePackageProfile
       summary: "CreatePackageProfile"
       description: |
         Create a package profile.
-        
+
             source_computer_id and material are mutually exclusive.
       parameters:
         - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
@@ -1201,7 +1201,7 @@ paths:
             type: string
         - name: constraints
           in: query
-          description: "Alternative to material, constraint specifications in the form of \"depends packagename\" or \"conflicts packagename < 1.0\". (Use constraints.1, constraints.2, etc. for multiple values)"
+          description: 'Alternative to material, constraint specifications in the form of "depends packagename" or "conflicts packagename < 1.0". (Use constraints.1, constraints.2, etc. for multiple values)'
           explode: true
           style: form
           schema:
@@ -1228,7 +1228,7 @@ paths:
   "/api/?action=CreatePocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreatePocket
       summary: "CreatePocket"
       description: "Create a pocket associated with a series in the account."
@@ -1361,7 +1361,7 @@ paths:
   "/api/?action=CreateRemovalProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateRemovalProfile
       summary: "CreateRemovalProfile"
       description: "Create a removal profile."
@@ -1427,7 +1427,7 @@ paths:
   "/api/?action=CreateRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateRepositoryProfile
       summary: "CreateRepositoryProfile"
       description: "Create a repository profile."
@@ -1470,7 +1470,7 @@ paths:
   "/api/?action=CreateRole":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateRole
       summary: "CreateRole"
       description: "Create a new access role."
@@ -1507,7 +1507,7 @@ paths:
   "/api/?action=CreateSavedSearch":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateSavedSearch
       summary: "CreateSavedSearch"
       description: "Create a new saved search associated with the current account."
@@ -1522,7 +1522,7 @@ paths:
             default: "CreateSavedSearch"
         - name: name
           in: query
-          description: "The \"slug\" name for this saved search. It must consist of only lowercase ASCII letters, numbers and hyphens. This is the text which must be used when using the \"search:name\" syntax.  If this parameter is not included a name will be generated automatically based on the title."
+          description: 'The "slug" name for this saved search. It must consist of only lowercase ASCII letters, numbers and hyphens. This is the text which must be used when using the "search:name" syntax.  If this parameter is not included a name will be generated automatically based on the title.'
           schema:
             type: string
         - name: title
@@ -1550,7 +1550,7 @@ paths:
   "/api/?action=CreateScript":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateScript
       summary: "CreateScript"
       description: "Create a new script."
@@ -1610,7 +1610,7 @@ paths:
   "/api/?action=CreateScriptAttachment":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateScriptAttachment
       summary: "CreateScriptAttachment"
       description: "Add a script attachment."
@@ -1648,7 +1648,7 @@ paths:
   "/api/?action=CreateSeries":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateSeries
       summary: "CreateSeries"
       description: "Create a series associated with a distribution in the account."
@@ -1747,7 +1747,7 @@ paths:
   "/api/?action=CreateUpgradeProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateUpgradeProfile
       summary: "CreateUpgradeProfile"
       description: "Create an upgrade profile."
@@ -1769,12 +1769,12 @@ paths:
         - name: every
           in: query
           required: true
-          description: "The frequency at which you wish this upgrade profile to be executed. Valid choices are \"hour\" and \"week\"."
+          description: 'The frequency at which you wish this upgrade profile to be executed. Valid choices are "hour" and "week".'
           schema:
             type: string
         - name: on_days
           in: query
-          description: "A list of days of the week on which the upgrade profile will be run. The day names must be abbreviated to their first two letters, as: \"mo\", \"tu\", \"we\", \"th\", \"fr\", \"sa\", \"su\". Required when the every parameter is \"week\" but optional when the every parameter is  \"hour\". (Use on_days.1, on_days.2, etc. for multiple values)"
+          description: 'A list of days of the week on which the upgrade profile will be run. The day names must be abbreviated to their first two letters, as: "mo", "tu", "we", "th", "fr", "sa", "su". Required when the every parameter is "week" but optional when the every parameter is  "hour". (Use on_days.1, on_days.2, etc. for multiple values)'
           explode: true
           style: form
           schema:
@@ -1813,7 +1813,7 @@ paths:
             default: false
         - name: upgrade_type
           in: query
-          description: "The type of upgrade profile, either \"security\" or \"all\"."
+          description: 'The type of upgrade profile, either "security" or "all".'
           schema:
             type: string
         - name: autoremove
@@ -1857,7 +1857,7 @@ paths:
   "/api/?action=CreateUser":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: CreateUser
       summary: "CreateUser"
       description: "Create an activity to create a Linux user on the specified computers."
@@ -1937,7 +1937,7 @@ paths:
   "/api/?action=DeleteChildComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: DeleteChildComputers
       summary: "DeleteChildComputers"
       description: "Delete a list of child computers by ID."
@@ -1973,7 +1973,7 @@ paths:
   "/api/?action=DeriveSeries":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: DeriveSeries
       summary: "DeriveSeries"
       description: |
@@ -2020,7 +2020,7 @@ paths:
   "/api/?action=DiffPullPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: DiffPullPocket
       summary: "DiffPullPocket"
       description: |
@@ -2066,7 +2066,7 @@ paths:
   "/api/?action=DisableAdministrator":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: DisableAdministrator
       summary: "DisableAdministrator"
       description: "Disable an administrator of your account."
@@ -2098,7 +2098,7 @@ paths:
   "/api/?action=DisassociateAlert":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: DisassociateAlert
       summary: "DisassociateAlert"
       description: |
@@ -2148,7 +2148,7 @@ paths:
   "/api/?action=DisassociatePackageProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: DisassociatePackageProfile
       summary: "DisassociatePackageProfile"
       description: |
@@ -2198,13 +2198,13 @@ paths:
   "/api/?action=DisassociateRemovalProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: DisassociateRemovalProfile
       summary: "DisassociateRemovalProfile"
       description: |
         Disassociate a removal profile from computers with the specified
             tags, or from all computers.
-        
+
             tags and all_computers=true are mutually exclusive.
       parameters:
         - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
@@ -2250,7 +2250,7 @@ paths:
   "/api/?action=DisassociateRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: DisassociateRepositoryProfile
       summary: "DisassociateRepositoryProfile"
       description: |
@@ -2300,13 +2300,13 @@ paths:
   "/api/?action=DisassociateUpgradeProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: DisassociateUpgradeProfile
       summary: "DisassociateUpgradeProfile"
       description: |
         Disassociate an upgrade profile from computers with the specified
             tags, or from all computers.
-        
+
             tags and all_computers=true are mutually exclusive.
       parameters:
         - $ref: "../parameters/legacy.yaml#/LegacyVersionParam"
@@ -2352,7 +2352,7 @@ paths:
   "/api/?action=EditPackageProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: EditPackageProfile
       summary: "EditPackageProfile"
       description: |
@@ -2380,7 +2380,7 @@ paths:
             type: string
         - name: add_constraints
           in: query
-          description: "List of constraints specifications to add in the form of \"depends packagename\" or \"conflicts packagename < 1.0\". (Use add_constraints.1, add_constraints.2, etc. for multiple values)"
+          description: 'List of constraints specifications to add in the form of "depends packagename" or "conflicts packagename < 1.0". (Use add_constraints.1, add_constraints.2, etc. for multiple values)'
           explode: true
           style: form
           schema:
@@ -2390,7 +2390,7 @@ paths:
               type: string
         - name: remove_constraints
           in: query
-          description: "List of constraints specifications to remove in the form of \"depends packagename\" or \"conflicts packagename < 1.0\". (Use remove_constraints.1, remove_constraints.2, etc. for multiple values)"
+          description: 'List of constraints specifications to remove in the form of "depends packagename" or "conflicts packagename < 1.0". (Use remove_constraints.1, remove_constraints.2, etc. for multiple values)'
           explode: true
           style: form
           schema:
@@ -2411,7 +2411,7 @@ paths:
   "/api/?action=EditPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: EditPocket
       summary: "EditPocket"
       description: "Edit configuration for a repository pocket from a series in a distribution."
@@ -2505,7 +2505,7 @@ paths:
   "/api/?action=EditRemovalProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: EditRemovalProfile
       summary: "EditRemovalProfile"
       description: "Edit an removal profile."
@@ -2562,7 +2562,7 @@ paths:
   "/api/?action=EditRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: EditRepositoryProfile
       summary: "EditRepositoryProfile"
       description: "Edit a repository profile."
@@ -2604,7 +2604,7 @@ paths:
   "/api/?action=EditSavedSearch":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: EditSavedSearch
       summary: "EditSavedSearch"
       description: "Edit a saved search associated with the current account."
@@ -2620,7 +2620,7 @@ paths:
         - name: name
           in: query
           required: true
-          description: "The \"slug\" name for this saved search, this is the text which must be used when using the \"search:name\" syntax. A saved search with this name must already exist in the account."
+          description: 'The "slug" name for this saved search, this is the text which must be used when using the "search:name" syntax. A saved search with this name must already exist in the account.'
           schema:
             type: string
         - name: title
@@ -2646,7 +2646,7 @@ paths:
   "/api/?action=EditScript":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: EditScript
       summary: "EditScript"
       description: "Edit a script."
@@ -2698,7 +2698,7 @@ paths:
   "/api/?action=EditUpgradeProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: EditUpgradeProfile
       summary: "EditUpgradeProfile"
       description: "Edit an upgrade profile."
@@ -2724,12 +2724,12 @@ paths:
             type: string
         - name: every
           in: query
-          description: "The frequency at which you wish this upgrade profile to be executed. Valid choices are \"hour\" and \"week\"."
+          description: 'The frequency at which you wish this upgrade profile to be executed. Valid choices are "hour" and "week".'
           schema:
             type: string
         - name: on_days
           in: query
-          description: "A list of days of the week on which the upgrade profile will be run. The day names must be abbreviated to their first two letters, as: \"mo\", \"tu\", \"we\", \"th\", \"fr\", \"sa\", \"su\". Required when the every parameter is \"week\" but optional when the every parameter is  \"hour\". (Use on_days.1, on_days.2, etc. for multiple values)"
+          description: 'A list of days of the week on which the upgrade profile will be run. The day names must be abbreviated to their first two letters, as: "mo", "tu", "we", "th", "fr", "sa", "su". Required when the every parameter is "week" but optional when the every parameter is  "hour". (Use on_days.1, on_days.2, etc. for multiple values)'
           explode: true
           style: form
           schema:
@@ -2766,7 +2766,7 @@ paths:
             default: false
         - name: upgrade_type
           in: query
-          description: "The type of upgrade profile, either \"security\" or \"all\"."
+          description: 'The type of upgrade profile, either "security" or "all".'
           schema:
             type: string
         - name: autoremove
@@ -2802,7 +2802,7 @@ paths:
   "/api/?action=EditUser":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: EditUser
       summary: "EditUser"
       description: "Create an activity to edit information of a Linux user on the specified computers."
@@ -2874,7 +2874,7 @@ paths:
   "/api/?action=ExecuteScript":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: ExecuteScript
       summary: "ExecuteScript"
       description: "Execute a script on computers."
@@ -2932,7 +2932,7 @@ paths:
   "/api/?action=GetAPTSources":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetAPTSources
       summary: "GetAPTSources"
       description: "Get a list of apt sources in the account used for authentication."
@@ -2968,7 +2968,7 @@ paths:
   "/api/?action=GetAccessGroups":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetAccessGroups
       summary: "GetAccessGroups"
       description: "List all access groups in the account."
@@ -3004,22 +3004,22 @@ paths:
   "/api/?action=GetActivities":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetActivities
       summary: "GetActivities"
       description: |
         Retrieve activities associated with the current account, ordered by
             creation time.
-        
+
             Some activities requested take an extended period of time to complete.
             These activities will not have discrete activity_status values. Instead
             they will report estimated percent complete in the progress field for the
             activity. The progress field will have one of the following values::
-        
+
               0: if activity is not started
               -1: if an error occurred
               1 to 100: percent complete of ongoing activity
-        
+
             Common examples of activities with progress would be syncing a pocket
             repository mirror or provisioning a new system.
       parameters:
@@ -3062,7 +3062,7 @@ paths:
   "/api/?action=GetActivityTypes":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetActivityTypes
       summary: "GetActivityTypes"
       description: |
@@ -3088,7 +3088,7 @@ paths:
   "/api/?action=GetAdministrators":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetAdministrators
       summary: "GetAdministrators"
       description: "Retrieve the list of administrators in the account."
@@ -3112,7 +3112,7 @@ paths:
   "/api/?action=GetAlertSubscribers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetAlertSubscribers
       summary: "GetAlertSubscribers"
       description: "Get a a list of people who subscribe to a given alert."
@@ -3144,7 +3144,7 @@ paths:
   "/api/?action=GetAlerts":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetAlerts
       summary: "GetAlerts"
       description: "Get a list of alerts in an account."
@@ -3168,7 +3168,7 @@ paths:
   "/api/?action=GetCSVComplianceData":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetCSVComplianceData
       summary: "GetCSVComplianceData"
       description: "Return a CSV formatted report of compliance data."
@@ -3222,7 +3222,7 @@ paths:
   "/api/?action=GetComputerProcesses":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetComputerProcesses
       summary: "GetComputerProcesses"
       description: "Gets the active processes for the specified computer."
@@ -3264,7 +3264,7 @@ paths:
   "/api/?action=GetComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetComputers
       summary: "GetComputers"
       description: "Get a list of computers associated with the account."
@@ -3338,7 +3338,7 @@ paths:
   "/api/?action=GetComputersNotUpgraded":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetComputersNotUpgraded
       summary: "GetComputersNotUpgraded"
       description: "Report the ids of computers, within a given selection, that are not covered by an upgrade profile."
@@ -3382,7 +3382,7 @@ paths:
   "/api/?action=GetDistributions":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetDistributions
       summary: "GetDistributions"
       description: "Get info about distributions."
@@ -3422,7 +3422,7 @@ paths:
   "/api/?action=GetEventLog":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetEventLog
       summary: "GetEventLog"
       description: "Retrieve event log for the account."
@@ -3465,7 +3465,7 @@ paths:
   "/api/?action=GetGPGKeys":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetGPGKeys
       summary: "GetGPGKeys"
       description: "Get info about GPG keys."
@@ -3499,7 +3499,7 @@ paths:
   "/api/?action=GetNotPingingComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetNotPingingComputers
       summary: "GetNotPingingComputers"
       description: "Report the ids of computers, within a given selection, that have not pinged the server in a given number of minutes."
@@ -3549,7 +3549,7 @@ paths:
   "/api/?action=GetPackageProfiles":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetPackageProfiles
       summary: "GetPackageProfiles"
       description: "Get the details of all Package Profiles defined in the account."
@@ -3583,20 +3583,20 @@ paths:
   "/api/?action=GetPackages":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetPackages
       summary: "GetPackages"
       description: |
         Get a list of packages associated with the account used for
             authentication.
-        
+
             A package is considered installed if dpkg reports it as installed on the
             system.
-        
+
             A package is considered available if it can be fetched from an APT
             source. Note that this means that it's possible for an installed package
             to be not available.
-        
+
             A package is considered an upgrade if it's available and if it has a
             version higher than a non-held installed package with the same name.
       parameters:
@@ -3674,7 +3674,7 @@ paths:
   "/api/?action=GetPendingComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetPendingComputers
       summary: "GetPendingComputers"
       description: |
@@ -3700,7 +3700,7 @@ paths:
   "/api/?action=GetPermissions":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetPermissions
       summary: "GetPermissions"
       description: "List all available permissions."
@@ -3724,7 +3724,7 @@ paths:
   "/api/?action=GetRemovalProfiles":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetRemovalProfiles
       summary: "GetRemovalProfiles"
       description: "List all existing removal profiles."
@@ -3748,7 +3748,7 @@ paths:
   "/api/?action=GetRepoInfo":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetRepoInfo
       summary: "GetRepoInfo"
       description: |
@@ -3782,7 +3782,7 @@ paths:
   "/api/?action=GetRepositoryProfiles":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetRepositoryProfiles
       summary: "GetRepositoryProfiles"
       description: "Get a list of repository profiles in the account."
@@ -3816,7 +3816,7 @@ paths:
   "/api/?action=GetRoles":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetRoles
       summary: "GetRoles"
       description: "Get all available roles."
@@ -3850,7 +3850,7 @@ paths:
   "/api/?action=GetSavedSearches":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetSavedSearches
       summary: "GetSavedSearches"
       description: "Retrieve saved searches associated with the current account."
@@ -3886,7 +3886,7 @@ paths:
   "/api/?action=GetScriptCode":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetScriptCode
       summary: "GetScriptCode"
       description: "Retrieve the code portion of a given script."
@@ -3918,7 +3918,7 @@ paths:
   "/api/?action=GetScripts":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetScripts
       summary: "GetScripts"
       description: "Retrieve stored scripts associated with the current account."
@@ -3962,7 +3962,7 @@ paths:
   "/api/?action=GetSettings":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetSettings
       summary: "GetSettings"
       description: "Get all settings and their value for the current LDS installation."
@@ -3986,7 +3986,7 @@ paths:
   "/api/?action=GetUSNTimeToFix":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetUSNTimeToFix
       summary: "GetUSNTimeToFix"
       description: "Return a break down of machines unpatched periods following a USN release."
@@ -4050,7 +4050,7 @@ paths:
   "/api/?action=GetUpgradeProfiles":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetUpgradeProfiles
       summary: "GetUpgradeProfiles"
       description: "List all previously created upgrade profiles."
@@ -4065,7 +4065,7 @@ paths:
             default: "GetUpgradeProfiles"
         - name: upgrade_type
           in: query
-          description: " The type of upgrade you wish to list. This can be either \"all\" or \"security\", in which case the result will be a list of upgrade profiles with an upgrade type of \"all\" or \"security\" respectively. If omitted, the resulting list will contain all upgrade profiles, regardless of their upgrade type."
+          description: ' The type of upgrade you wish to list. This can be either "all" or "security", in which case the result will be a list of upgrade profiles with an upgrade type of "all" or "security" respectively. If omitted, the resulting list will contain all upgrade profiles, regardless of their upgrade type.'
           schema:
             type: string
       responses:
@@ -4079,7 +4079,7 @@ paths:
   "/api/?action=GetUpgradedComputersByFrequency":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetUpgradedComputersByFrequency
       summary: "GetUpgradedComputersByFrequency"
       description: "Return a dictionary of computer IDs broken down by their upgrade schedule."
@@ -4123,7 +4123,7 @@ paths:
   "/api/?action=GetUsers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetUsers
       summary: "GetUsers"
       description: "Get Linux user information from the specified computer."
@@ -4155,7 +4155,7 @@ paths:
   "/api/?action=GetWSLHosts":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: GetWSLHosts
       summary: "GetWSLHosts"
       description: "Gets a list of Windows computers that are hosting at least one WSL instance"
@@ -4199,7 +4199,7 @@ paths:
   "/api/?action=ImportGPGKey":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: ImportGPGKey
       summary: "ImportGPGKey"
       description: "Import a GPG key."
@@ -4237,7 +4237,7 @@ paths:
   "/api/?action=InstallPackages":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: InstallPackages
       summary: "InstallPackages"
       description: "Install packages on selected computers."
@@ -4290,7 +4290,7 @@ paths:
   "/api/?action=InviteAdministrator":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: InviteAdministrator
       summary: "InviteAdministrator"
       description: "Invite an administrator to your account."
@@ -4340,7 +4340,7 @@ paths:
   "/api/?action=KillComputerProcesses":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: KillComputerProcesses
       summary: "KillComputerProcesses"
       description: "Creates an activity to send a KILL signal to the specified computer processes"
@@ -4382,7 +4382,7 @@ paths:
   "/api/?action=ListPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: ListPocket
       summary: "ListPocket"
       description: "Return a list of the packages in a pocket."
@@ -4441,11 +4441,11 @@ paths:
   "/api/?action=ModifyPackageProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: ModifyPackageProfile
       summary: "ModifyPackageProfile"
       description: |
-        THIS FUNCTION IS DEPRECATED. please use edit-package-profile instead. 
+        THIS FUNCTION IS DEPRECATED. please use edit-package-profile instead.
             Add or remove constraints related to a package profile. Constraints can
             be dependencies or conflicts.
       parameters:
@@ -4470,7 +4470,7 @@ paths:
             type: string
         - name: add_constraints
           in: query
-          description: "List of constraints specifications to add in the form of \"depends packagename\" or \"conflicts packagename < 1.0\". (Use add_constraints.1, add_constraints.2, etc. for multiple values)"
+          description: 'List of constraints specifications to add in the form of "depends packagename" or "conflicts packagename < 1.0". (Use add_constraints.1, add_constraints.2, etc. for multiple values)'
           explode: true
           style: form
           schema:
@@ -4480,7 +4480,7 @@ paths:
               type: string
         - name: remove_constraints
           in: query
-          description: "List of constraints specifications to remove in the form of \"depends packagename\" or \"conflicts packagename < 1.0\". (Use remove_constraints.1, remove_constraints.2, etc. for multiple values)"
+          description: 'List of constraints specifications to remove in the form of "depends packagename" or "conflicts packagename < 1.0". (Use remove_constraints.1, remove_constraints.2, etc. for multiple values)'
           explode: true
           style: form
           schema:
@@ -4501,7 +4501,7 @@ paths:
   "/api/?action=PullPackagesToPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: PullPackagesToPocket
       summary: "PullPackagesToPocket"
       description: "Import packages to a pocket in pull mode from its parent pocket."
@@ -4545,7 +4545,7 @@ paths:
   "/api/?action=RebootComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RebootComputers
       summary: "RebootComputers"
       description: "Reboot a list of computers."
@@ -4586,7 +4586,7 @@ paths:
   "/api/?action=RejectPendingComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RejectPendingComputers
       summary: "RejectPendingComputers"
       description: |
@@ -4624,7 +4624,7 @@ paths:
   "/api/?action=RemoveAPTSource":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveAPTSource
       summary: "RemoveAPTSource"
       description: "Remove apt source from the account."
@@ -4656,7 +4656,7 @@ paths:
   "/api/?action=RemoveAPTSourceFromRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveAPTSourceFromRepositoryProfile
       summary: "RemoveAPTSourceFromRepositoryProfile"
       description: |
@@ -4697,7 +4697,7 @@ paths:
   "/api/?action=RemoveAPTSources":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveAPTSources
       summary: "RemoveAPTSources"
       description: "Deprecated: use RemoveAPTSource instead."
@@ -4733,7 +4733,7 @@ paths:
   "/api/?action=RemoveAPTSourcesFromRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveAPTSourcesFromRepositoryProfile
       summary: "RemoveAPTSourcesFromRepositoryProfile"
       description: "Deprecated: use RemoveAPTSourceFromRepositoryProfile instead."
@@ -4775,7 +4775,7 @@ paths:
   "/api/?action=RemoveAccessGroup":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveAccessGroup
       summary: "RemoveAccessGroup"
       description: "Remove an access group."
@@ -4807,7 +4807,7 @@ paths:
   "/api/?action=RemoveAccessGroupsFromRole":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveAccessGroupsFromRole
       summary: "RemoveAccessGroupsFromRole"
       description: "Remove the given access groups to a role."
@@ -4849,7 +4849,7 @@ paths:
   "/api/?action=RemoveAnnotationFromComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveAnnotationFromComputers
       summary: "RemoveAnnotationFromComputers"
       description: "Remove annotation key from a selection of computers."
@@ -4887,7 +4887,7 @@ paths:
   "/api/?action=RemoveComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveComputers
       summary: "RemoveComputers"
       description: "Remove a list of computers by ID."
@@ -4923,7 +4923,7 @@ paths:
   "/api/?action=RemoveDistribution":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveDistribution
       summary: "RemoveDistribution"
       description: "Remove the specified repository distribution."
@@ -4955,7 +4955,7 @@ paths:
   "/api/?action=RemoveGPGKey":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveGPGKey
       summary: "RemoveGPGKey"
       description: "Remove a GPG key."
@@ -4987,7 +4987,7 @@ paths:
   "/api/?action=RemovePackageFiltersFromPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemovePackageFiltersFromPocket
       summary: "RemovePackageFiltersFromPocket"
       description: |
@@ -5043,7 +5043,7 @@ paths:
   "/api/?action=RemovePackageProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemovePackageProfile
       summary: "RemovePackageProfile"
       description: "Remove a package profile, given its name."
@@ -5075,7 +5075,7 @@ paths:
   "/api/?action=RemovePackages":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemovePackages
       summary: "RemovePackages"
       description: "Remove packages on selected computers."
@@ -5128,7 +5128,7 @@ paths:
   "/api/?action=RemovePackagesFromPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemovePackagesFromPocket
       summary: "RemovePackagesFromPocket"
       description: "Remove packages from pockets in upload mode."
@@ -5182,7 +5182,7 @@ paths:
   "/api/?action=RemovePermissionsFromRole":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemovePermissionsFromRole
       summary: "RemovePermissionsFromRole"
       description: "Remove permissions from a role."
@@ -5224,7 +5224,7 @@ paths:
   "/api/?action=RemovePersonsFromRole":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemovePersonsFromRole
       summary: "RemovePersonsFromRole"
       description: "Remove people from a role."
@@ -5266,7 +5266,7 @@ paths:
   "/api/?action=RemovePocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemovePocket
       summary: "RemovePocket"
       description: "Remove a repository pocket from a series in a distribution."
@@ -5310,7 +5310,7 @@ paths:
   "/api/?action=RemovePocketsFromRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemovePocketsFromRepositoryProfile
       summary: "RemovePocketsFromRepositoryProfile"
       description: |
@@ -5367,7 +5367,7 @@ paths:
   "/api/?action=RemoveRemovalProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveRemovalProfile
       summary: "RemoveRemovalProfile"
       description: "Remove an existing removal profile by name."
@@ -5399,7 +5399,7 @@ paths:
   "/api/?action=RemoveRepositoryProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveRepositoryProfile
       summary: "RemoveRepositoryProfile"
       description: "Remove repository profile from the account."
@@ -5431,7 +5431,7 @@ paths:
   "/api/?action=RemoveRepositoryProfiles":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveRepositoryProfiles
       summary: "RemoveRepositoryProfiles"
       description: "Deprecated: use RemoveRepositoryProfile instead."
@@ -5467,7 +5467,7 @@ paths:
   "/api/?action=RemoveRole":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveRole
       summary: "RemoveRole"
       description: "Remove an access role."
@@ -5499,7 +5499,7 @@ paths:
   "/api/?action=RemoveSavedSearch":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveSavedSearch
       summary: "RemoveSavedSearch"
       description: "Remove a saved search associated with the current account."
@@ -5515,7 +5515,7 @@ paths:
         - name: name
           in: query
           required: true
-          description: "The \"slug\" name for this saved search."
+          description: 'The "slug" name for this saved search.'
           schema:
             type: string
       responses:
@@ -5531,7 +5531,7 @@ paths:
   "/api/?action=RemoveScript":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveScript
       summary: "RemoveScript"
       description: "Remove scripts."
@@ -5563,7 +5563,7 @@ paths:
   "/api/?action=RemoveScriptAttachment":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveScriptAttachment
       summary: "RemoveScriptAttachment"
       description: "Remove a script attachment."
@@ -5601,7 +5601,7 @@ paths:
   "/api/?action=RemoveSeries":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveSeries
       summary: "RemoveSeries"
       description: "Remove a repository series from a distribution."
@@ -5639,7 +5639,7 @@ paths:
   "/api/?action=RemoveTagsFromComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveTagsFromComputers
       summary: "RemoveTagsFromComputers"
       description: "Remove tags from a selection of computers."
@@ -5681,7 +5681,7 @@ paths:
   "/api/?action=RemoveUpgradeProfile":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveUpgradeProfile
       summary: "RemoveUpgradeProfile"
       description: "Remove an existing upgrade profile by name."
@@ -5713,7 +5713,7 @@ paths:
   "/api/?action=RemoveUploaderGPGKeysFromPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveUploaderGPGKeysFromPocket
       summary: "RemoveUploaderGPGKeysFromPocket"
       description: |
@@ -5769,7 +5769,7 @@ paths:
   "/api/?action=RemoveWSLHosts":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RemoveWSLHosts
       summary: "RemoveWSLHosts"
       description: "Remove a list of Windows computers that are hosting at least one WSL instance by id"
@@ -5811,7 +5811,7 @@ paths:
   "/api/?action=RenameComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: RenameComputers
       summary: "RenameComputers"
       description: "Rename a set of computers."
@@ -5846,7 +5846,7 @@ paths:
   "/api/?action=SetDefaultChildComputer":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: SetDefaultChildComputer
       summary: "SetDefaultChildComputer"
       description: |
@@ -5886,7 +5886,7 @@ paths:
   "/api/?action=SetSettings":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: SetSettings
       summary: "SetSettings"
       description: "Set configuration settings for the current LDS installation."
@@ -5922,7 +5922,7 @@ paths:
   "/api/?action=ShutdownComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: ShutdownComputers
       summary: "ShutdownComputers"
       description: "Shutdown a list of computers."
@@ -5963,7 +5963,7 @@ paths:
   "/api/?action=ShutdownHostComputer":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: ShutdownHostComputer
       summary: "ShutdownHostComputer"
       description: "Send a message to shutdown a host computer."
@@ -5995,7 +5995,7 @@ paths:
   "/api/?action=StartChildComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: StartChildComputers
       summary: "StartChildComputers"
       description: "Start a list of child computers by ID."
@@ -6031,7 +6031,7 @@ paths:
   "/api/?action=StopChildComputers":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: StopChildComputers
       summary: "StopChildComputers"
       description: "Stop a list of child computers by ID."
@@ -6067,7 +6067,7 @@ paths:
   "/api/?action=SubscribeToAlert":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: SubscribeToAlert
       summary: "SubscribeToAlert"
       description: "Subscribe to an alert."
@@ -6099,7 +6099,7 @@ paths:
   "/api/?action=SyncMirrorPocket":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: SyncMirrorPocket
       summary: "SyncMirrorPocket"
       description: "Synchronize a mirror repository pocket."
@@ -6143,7 +6143,7 @@ paths:
   "/api/?action=TerminateComputerProcesses":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: TerminateComputerProcesses
       summary: "TerminateComputerProcesses"
       description: "Creates an activity to send a TERM signal to the specified computer processes"
@@ -6185,7 +6185,7 @@ paths:
   "/api/?action=UnsubscribeFromAlert":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: UnsubscribeFromAlert
       summary: "UnsubscribeFromAlert"
       description: "Unsubscribe from an alert."
@@ -6217,7 +6217,7 @@ paths:
   "/api/?action=UpgradePackages":
     get:
       tags:
-        - Legacy Actions
+        - Legacy API Actions
       operationId: UpgradePackages
       summary: "UpgradePackages"
       description: |
@@ -6274,4 +6274,3 @@ paths:
           $ref: "../responses/error.yaml#/Unauthorized"
         "403":
           $ref: "../responses/error.yaml#/Forbidden"
-

@@ -1,7 +1,0 @@
-# SPDX-License-Identifier: Apache-2.0
-
-LegacyActionResult:
-  oneOf:
-    - $ref: "./script.yaml#/ScriptResult"
-    - $ref: "./script.yaml#/LegacyScriptAttachment"
-    - $ref: "./script.yaml#/LegacyScriptCode"
