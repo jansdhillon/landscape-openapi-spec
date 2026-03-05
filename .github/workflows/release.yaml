@@ -5,6 +5,8 @@ name: Bundle the OpenAPI spec, tag it, and publish a GitHub release
 on:
   push:
     branches: [main]
+  repository_dispatch:
+    types: [openapi-released]
   workflow_dispatch:
 
 permissions:
