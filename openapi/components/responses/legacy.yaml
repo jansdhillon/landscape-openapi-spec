@@ -5,9 +5,4 @@ LegacyActionResponse:
   content:
     application/json:
       schema:
-        oneOf:
-          - type: object
-            description: "A JSON object returned by the action."
-          - type: string
-            description: "A plain string returned by the action."
         description: "The response body varies by action; may be a JSON object or a plain string."
