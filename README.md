@@ -32,6 +32,12 @@ Generate bundle in `openapi/landscape_api.bundle.yaml`:
 make bundle
 ```
 
+View docs:
+
+```sh
+make serve-docs
+```
+
 Example usage: <https://github.com/jansdhillon/landscape-go-api-client>.
 
 ## Syncing
