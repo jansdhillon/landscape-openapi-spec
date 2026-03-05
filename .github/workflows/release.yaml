@@ -5,8 +5,6 @@ name: Bundle the OpenAPI spec, tag it, and publish a GitHub release
 on:
   push:
     branches: [main]
-  repository_dispatch:
-    types: [openapi-released]
   workflow_dispatch:
 
 permissions:
@@ -69,3 +67,11 @@ jobs:
               --notes "Automated release for Landscape OpenAPI ${{ steps.ver.outputs.result }}." \
               "openapi/landscape_api.bundle.yaml"
           fi
+
+      - name: Trigger go client regeneration
+        env:
+          GH_TOKEN: ${{ secrets.REGENERATE_CLIENT_TOKEN }}
+        run: |
+          gh api repos/jansdhillon/landscape-go-api-client/dispatches \
+              --method POST \
+              --field event_type=openapi-released
