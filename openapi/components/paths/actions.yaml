@@ -2612,7 +2612,6 @@ paths:
       description: |
         Retrieve a list of possible activity types for use with the *type:* query
             criteria.
-      parameters:
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -2628,7 +2627,6 @@ paths:
       operationId: LegacyGetAdministrators
       summary: "GetAdministrators"
       description: "Retrieve the list of administrators in the account."
-      parameters:
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -2668,7 +2666,6 @@ paths:
       operationId: LegacyGetAlerts
       summary: "GetAlerts"
       description: "Get a list of alerts in an account."
-      parameters:
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3112,7 +3109,6 @@ paths:
       description: |
         Get a list of pending computers associated with the account used for
             authentication.
-      parameters:
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3128,7 +3124,6 @@ paths:
       operationId: LegacyGetPermissions
       summary: "GetPermissions"
       description: "List all available permissions."
-      parameters:
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3144,7 +3139,6 @@ paths:
       operationId: LegacyGetRemovalProfiles
       summary: "GetRemovalProfiles"
       description: "List all existing removal profiles."
-      parameters:
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3326,7 +3320,6 @@ paths:
       operationId: LegacyGetSettings
       summary: "GetSettings"
       description: "Get all settings and their value for the current LDS installation."
-      parameters:
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
