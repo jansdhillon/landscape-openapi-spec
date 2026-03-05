@@ -1,5 +1,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
+Forbidden:
+  description: Forbidden - Insufficient permissions.
+  content:
+    application/json:
+      schema:
+        $ref: "../schemas/error.yaml#/Error"
+
 BadRequest:
   description: Bad Request
   content:

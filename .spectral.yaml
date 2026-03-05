@@ -5,6 +5,9 @@ extends: [[spectral:oas, all]]
 rules:
   oas3-schema: off
   oas3-unused-component: off
+  # The legacy API is RPC-style: all actions are dispatched via ?action= at /api.
+  # These paths intentionally include query strings to document each action individually.
+  path-not-include-query: off
   info-description-required:
     description: "The info object should have a description"
     given: "$.info"
