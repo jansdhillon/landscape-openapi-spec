@@ -5,4 +5,5 @@ LegacyActionResponse:
   content:
     application/json:
       schema:
-        $ref: "../schemas/legacy.yaml#/LegacyActionResult"
+        type: object
+        description: "The response body varies by action."
