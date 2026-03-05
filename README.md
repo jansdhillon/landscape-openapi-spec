@@ -1,6 +1,6 @@
 # landscape-openapi-spec
 
-[![Bundle and sync API Client with OpenAPI spec, publish GitHub release/Go package](https://github.com/jansdhillon/landscape-openapi-spec/actions/workflows/sync-client.yaml/badge.svg)](https://github.com/jansdhillon/landscape-openapi-spec/actions/workflows/sync-client.yaml)
+[![Bundle and publish GitHub release](https://github.com/jansdhillon/landscape-openapi-spec/actions/workflows/release.yaml/badge.svg)](https://github.com/jansdhillon/landscape-openapi-spec/actions/workflows/release.yaml)
 
 OpenAPI 3.1 specification for the Landscape Server API.
 
@@ -40,6 +40,8 @@ make serve-docs
 
 Example usage: <https://github.com/jansdhillon/landscape-go-api-client>.
 
-## Syncing
+## Releasing
 
-Whenever a new version of the OpenAPI spec is created and pushed to `main`, [a GitHub Actions workflow](./.github/workflows/sync-client.yaml) is triggered that bundles the OpenAPI spec, creates a release for that version in this repository and the Go client (with the bundle as an artifact), and uses the new bundle to open a PR on `landscape-go-api-client` to update the generated code. The workflow also syncs the Go package with [pkg.go.dev](https://pkg.go.dev/github.com/jansdhillon/landscape-go-api-client).
+Whenever a new version of the OpenAPI spec is pushed to `main`, [a GitHub Actions workflow](./.github/workflows/release.yaml) bundles the spec and publishes a GitHub release with the bundle as an artifact.
+
+The workflow can also be triggered externally via `repository_dispatch` (event type `openapi-released`), allowing upstream repositories to kick off a release without a direct push to `main`. The sending workflow must use a PAT with `repo` scope on this repository, as `GITHUB_TOKEN` is scoped to the originating repo only.
