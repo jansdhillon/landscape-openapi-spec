@@ -8,12 +8,3 @@ LegacyVersionParam:
     type: string
     const: "2011-08-01"
   description: The legacy API version. Landscape currently expects the fixed value `2011-08-01`.
-
-LegacyActionParam:
-  name: action
-  in: query
-  required: true
-  schema:
-    type: string
-    minLength: 1
-  description: The legacy API action name to invoke.
