@@ -95,10 +95,6 @@ LegacyScriptAttachment:
   type: string
   description: The response from creating a legacy script attachment.
 
-LegacyScriptCode:
-  type: string
-  description: The response of getting a legacy script's code (raw, doesn't split code and interpreter).
-
 ScriptProfile:
   type: object
   properties:
