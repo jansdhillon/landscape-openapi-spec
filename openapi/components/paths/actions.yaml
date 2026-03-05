@@ -11,13 +11,6 @@ paths:
         Accept a list of pending computers associated with the account used for
             authentication.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AcceptPendingComputers"
         - name: computer_ids
           in: query
           required: true
@@ -63,13 +56,6 @@ paths:
                     An activity will be created to add the given source to the the
                     computers associated with the given profile.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AddAPTSourcesToRepositoryProfile"
         - name: name
           in: query
           required: true
@@ -104,13 +90,6 @@ paths:
       summary: "AddAccessGroupsToRole"
       description: "Add the given access groups to a role."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AddAccessGroupsToRole"
         - name: name
           in: query
           required: true
@@ -145,13 +124,6 @@ paths:
       summary: "AddAnnotationToComputers"
       description: "Add annotation key and optional value to a selection of computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AddAnnotationToComputers"
         - name: query
           in: query
           required: true
@@ -189,13 +161,6 @@ paths:
         Add package filters to a repository pocket. The pocket must be in pull
             mode and support blocklist/allowlist filtering.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AddPackageFiltersToPocket"
         - name: name
           in: query
           required: true
@@ -242,13 +207,6 @@ paths:
       summary: "AddPermissionsToRole"
       description: "Add permissions to a role."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AddPermissionsToRole"
         - name: name
           in: query
           required: true
@@ -283,13 +241,6 @@ paths:
       summary: "AddPersonsToRole"
       description: "Add permissions to a role."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AddPersonsToRole"
         - name: name
           in: query
           required: true
@@ -327,13 +278,6 @@ paths:
                     An activity will be created to add the given pockets to the APT
                     sources of the computers associated with the given profile.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AddPocketsToRepositoryProfile"
         - name: name
           in: query
           required: true
@@ -380,13 +324,6 @@ paths:
       summary: "AddTagsToComputers"
       description: "Add tags to a selection of computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AddTagsToComputers"
         - name: query
           in: query
           required: true
@@ -423,13 +360,6 @@ paths:
         Add GPG keys to a repository pocket in upload mode to validate uploaded
             packages.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AddUploaderGPGKeysToPocket"
         - name: name
           in: query
           required: true
@@ -476,13 +406,6 @@ paths:
       summary: "ApproveActivities"
       description: "Approve activities associated with the current account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "ApproveActivities"
         - name: query
           in: query
           required: true
@@ -511,13 +434,6 @@ paths:
             created. An 'all_computers' value of 'true' and a list of tags are mutually
             exclusive. Only one or the other may be passed.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AssociateAlert"
         - name: name
           in: query
           required: true
@@ -564,13 +480,6 @@ paths:
             An 'all_computers' value of 'true' and a list of tags are mutually
             exclusive. Only one or the other may be passed.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AssociatePackageProfile"
         - name: name
           in: query
           required: true
@@ -615,13 +524,6 @@ paths:
 
             tags and all_computers=true are mutually exclusive.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AssociateRemovalProfile"
         - name: name
           in: query
           required: true
@@ -664,13 +566,6 @@ paths:
         Associate repository profile to computers with specified tags
                     or to all computers.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AssociateRepositoryProfile"
         - name: name
           in: query
           required: true
@@ -715,13 +610,6 @@ paths:
 
             tags and all_computers=true are mutually exclusive.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "AssociateUpgradeProfile"
         - name: name
           in: query
           required: true
@@ -765,13 +653,6 @@ paths:
 
             Returns a list of activity ids that were cancelled.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CancelActivities"
         - name: query
           in: query
           required: true
@@ -796,13 +677,6 @@ paths:
       summary: "ChangeComputersAccessGroup"
       description: "Change the access group for a selection of computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "ChangeComputersAccessGroup"
         - name: query
           in: query
           required: true
@@ -835,13 +709,6 @@ paths:
         Copy an existing package profile to a package profile with a new name and
             optionally a different title and description.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CopyPackageProfile"
         - name: name
           in: query
           required: true
@@ -886,13 +753,6 @@ paths:
       summary: "CopyRole"
       description: "Copy an existing access role to a role with a new name."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CopyRole"
         - name: name
           in: query
           required: true
@@ -928,13 +788,6 @@ paths:
       summary: "CopyScript"
       description: "Copy an existing script to a script with a new name."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CopyScript"
         - name: script_id
           in: query
           required: true
@@ -970,13 +823,6 @@ paths:
       summary: "CreateAPTSource"
       description: "Create an APT source in the account used for authentication."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateAPTSource"
         - name: name
           in: query
           required: true
@@ -1018,13 +864,6 @@ paths:
       summary: "CreateAccessGroup"
       description: "Create a new access group."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateAccessGroup"
         - name: title
           in: query
           required: true
@@ -1057,13 +896,6 @@ paths:
             If provided, the new instance will be created according to the cloud-init
             file specified.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateChildComputer"
         - name: computer_name
           in: query
           required: true
@@ -1104,13 +936,6 @@ paths:
       summary: "CreateDistribution"
       description: "Create a repository distribution associated with the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateDistribution"
         - name: name
           in: query
           required: true
@@ -1144,13 +969,6 @@ paths:
 
             source_computer_id and material are mutually exclusive.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreatePackageProfile"
         - name: title
           in: query
           required: true
@@ -1207,13 +1025,6 @@ paths:
       summary: "CreatePocket"
       description: "Create a pocket associated with a series in the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreatePocket"
         - name: name
           in: query
           required: true
@@ -1339,13 +1150,6 @@ paths:
       summary: "CreateRemovalProfile"
       description: "Create a removal profile."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateRemovalProfile"
         - name: title
           in: query
           required: true
@@ -1404,13 +1208,6 @@ paths:
       summary: "CreateRepositoryProfile"
       description: "Create a repository profile."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateRepositoryProfile"
         - name: title
           in: query
           required: true
@@ -1446,13 +1243,6 @@ paths:
       summary: "CreateRole"
       description: "Create a new access role."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateRole"
         - name: name
           in: query
           required: true
@@ -1482,13 +1272,6 @@ paths:
       summary: "CreateSavedSearch"
       description: "Create a new saved search associated with the current account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateSavedSearch"
         - name: name
           in: query
           description: 'The "slug" name for this saved search. It must consist of only lowercase ASCII letters, numbers and hyphens. This is the text which must be used when using the "search:name" syntax.  If this parameter is not included a name will be generated automatically based on the title.'
@@ -1524,13 +1307,6 @@ paths:
       summary: "CreateScript"
       description: "Create a new script."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateScript"
         - name: title
           in: query
           required: true
@@ -1583,13 +1359,6 @@ paths:
       summary: "CreateScriptAttachment"
       description: "Add a script attachment."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateScriptAttachment"
         - name: script_id
           in: query
           required: true
@@ -1620,13 +1389,6 @@ paths:
       summary: "CreateSeries"
       description: "Create a series associated with a distribution in the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateSeries"
         - name: name
           in: query
           required: true
@@ -1718,13 +1480,6 @@ paths:
       summary: "CreateUpgradeProfile"
       description: "Create an upgrade profile."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateUpgradeProfile"
         - name: title
           in: query
           required: true
@@ -1827,13 +1582,6 @@ paths:
       summary: "CreateUser"
       description: "Create an activity to create a Linux user on the specified computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "CreateUser"
         - name: computer_ids
           in: query
           required: true
@@ -1906,13 +1654,6 @@ paths:
       summary: "DeleteChildComputers"
       description: "Delete a list of child computers by ID."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "DeleteChildComputers"
         - name: computer_ids
           in: query
           required: true
@@ -1944,13 +1685,6 @@ paths:
             series will have pockets with names corresponding to the origin series,
             each one configured to pull from the pocket in origin series.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "DeriveSeries"
         - name: name
           in: query
           required: true
@@ -1989,13 +1723,6 @@ paths:
         Return a list of the changes between a pocket configured in pull mode and
             its origin one.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "DiffPullPocket"
         - name: name
           in: query
           required: true
@@ -2032,13 +1759,6 @@ paths:
       summary: "DisableAdministrator"
       description: "Disable an administrator of your account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "DisableAdministrator"
         - name: email
           in: query
           required: true
@@ -2065,13 +1785,6 @@ paths:
         Disassociate an alert from computers with specific tags or from
                 all computers.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "DisassociateAlert"
         - name: name
           in: query
           required: true
@@ -2114,13 +1827,6 @@ paths:
         Disassociate package profile from computers with specified
                     tags or from all computers.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "DisassociatePackageProfile"
         - name: name
           in: query
           required: true
@@ -2165,13 +1871,6 @@ paths:
 
             tags and all_computers=true are mutually exclusive.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "DisassociateRemovalProfile"
         - name: name
           in: query
           required: true
@@ -2214,13 +1913,6 @@ paths:
         Disassociate repository profile from computers with specified
                     tags or from all computers.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "DisassociateRepositoryProfile"
         - name: name
           in: query
           required: true
@@ -2265,13 +1957,6 @@ paths:
 
             tags and all_computers=true are mutually exclusive.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "DisassociateUpgradeProfile"
         - name: name
           in: query
           required: true
@@ -2314,13 +1999,6 @@ paths:
         Add or remove constraints related to a package profile. Constraints can
             be dependencies or conflicts.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "EditPackageProfile"
         - name: name
           in: query
           required: true
@@ -2370,13 +2048,6 @@ paths:
       summary: "EditPocket"
       description: "Edit configuration for a repository pocket from a series in a distribution."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "EditPocket"
         - name: name
           in: query
           required: true
@@ -2463,13 +2134,6 @@ paths:
       summary: "EditRemovalProfile"
       description: "Edit an removal profile."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "EditRemovalProfile"
         - name: name
           in: query
           required: true
@@ -2519,13 +2183,6 @@ paths:
       summary: "EditRepositoryProfile"
       description: "Edit a repository profile."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "EditRepositoryProfile"
         - name: name
           in: query
           required: true
@@ -2560,13 +2217,6 @@ paths:
       summary: "EditSavedSearch"
       description: "Edit a saved search associated with the current account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "EditSavedSearch"
         - name: name
           in: query
           required: true
@@ -2601,13 +2251,6 @@ paths:
       summary: "EditScript"
       description: "Edit a script."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "EditScript"
         - name: script_id
           in: query
           required: true
@@ -2652,13 +2295,6 @@ paths:
       summary: "EditUpgradeProfile"
       description: "Edit an upgrade profile."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "EditUpgradeProfile"
         - name: name
           in: query
           required: true
@@ -2755,13 +2391,6 @@ paths:
       summary: "EditUser"
       description: "Create an activity to edit information of a Linux user on the specified computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "EditUser"
         - name: computer_ids
           in: query
           required: true
@@ -2826,13 +2455,6 @@ paths:
       summary: "ExecuteScript"
       description: "Execute a script on computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "ExecuteScript"
         - name: query
           in: query
           required: true
@@ -2883,13 +2505,6 @@ paths:
       summary: "GetAPTSources"
       description: "Get a list of apt sources in the account used for authentication."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetAPTSources"
         - name: names
           in: query
           description: "List of names of the APT source to be returned. Multiple names can be supplied. (Use names.1, names.2, etc. for multiple values)"
@@ -2918,13 +2533,6 @@ paths:
       summary: "GetAccessGroups"
       description: "List all access groups in the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetAccessGroups"
         - name: names
           in: query
           description: "The name of the access group. (Use names.1, names.2, etc. for multiple values)"
@@ -2967,13 +2575,6 @@ paths:
             Common examples of activities with progress would be syncing a pocket
             repository mirror or provisioning a new system.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetActivities"
         - name: query
           in: query
           description: "A query string with space separated tokens used to filter the returned result objects."
@@ -3012,13 +2613,6 @@ paths:
         Retrieve a list of possible activity types for use with the *type:* query
             criteria.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetActivityTypes"
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3035,13 +2629,6 @@ paths:
       summary: "GetAdministrators"
       description: "Retrieve the list of administrators in the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetAdministrators"
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3058,13 +2645,6 @@ paths:
       summary: "GetAlertSubscribers"
       description: "Get a a list of people who subscribe to a given alert."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetAlertSubscribers"
         - name: alert_type
           in: query
           required: true
@@ -3089,13 +2669,6 @@ paths:
       summary: "GetAlerts"
       description: "Get a list of alerts in an account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetAlerts"
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3112,13 +2685,6 @@ paths:
       summary: "GetCSVComplianceData"
       description: "Return a CSV formatted report of compliance data."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetCSVComplianceData"
         - name: query
           in: query
           description: "A query string with space separated tokens used to filter the returned result objects."
@@ -3165,13 +2731,6 @@ paths:
       summary: "GetComputerProcesses"
       description: "Gets the active processes for the specified computer."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetComputerProcesses"
         - name: computer_id
           in: query
           required: true
@@ -3206,13 +2765,6 @@ paths:
       summary: "GetComputers"
       description: "Get a list of computers associated with the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetComputers"
         - name: query
           in: query
           description: "A query string with space separated tokens used to filter the returned result objects."
@@ -3279,13 +2831,6 @@ paths:
       summary: "GetComputersNotUpgraded"
       description: "Report the ids of computers, within a given selection, that are not covered by an upgrade profile."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetComputersNotUpgraded"
         - name: query
           in: query
           description: "A query string with space separated tokens used to filter the returned result objects."
@@ -3322,13 +2867,6 @@ paths:
       summary: "GetDistributions"
       description: "Get info about distributions."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetDistributions"
         - name: names
           in: query
           description: "A list of distribution names to get info for. If this is not provided, the call will return all distributions for the account. (Use names.1, names.2, etc. for multiple values)"
@@ -3361,13 +2899,6 @@ paths:
       summary: "GetEventLog"
       description: "Retrieve event log for the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetEventLog"
         - name: days
           in: query
           description: "The number of days prior to today from which to fetch log entries. It defaults to 30 days."
@@ -3403,13 +2934,6 @@ paths:
       summary: "GetGPGKeys"
       description: "Get info about GPG keys."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetGPGKeys"
         - name: names
           in: query
           description: "A list of GPG keys to get info for. If this is not provided, the call will return all keys for the account. (Use names.1, names.2, etc. for multiple values)"
@@ -3436,13 +2960,6 @@ paths:
       summary: "GetNotPingingComputers"
       description: "Report the ids of computers, within a given selection, that have not pinged the server in a given number of minutes."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetNotPingingComputers"
         - name: query
           in: query
           description: "A query string with space separated tokens used to filter the returned result objects."
@@ -3485,13 +3002,6 @@ paths:
       summary: "GetPackageProfiles"
       description: "Get the details of all Package Profiles defined in the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetPackageProfiles"
         - name: names
           in: query
           description: "A list of package profile names to limit the result. (Use names.1, names.2, etc. for multiple values)"
@@ -3530,13 +3040,6 @@ paths:
             A package is considered an upgrade if it's available and if it has a
             version higher than a non-held installed package with the same name.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetPackages"
         - name: query
           in: query
           required: true
@@ -3610,13 +3113,6 @@ paths:
         Get a list of pending computers associated with the account used for
             authentication.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetPendingComputers"
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3633,13 +3129,6 @@ paths:
       summary: "GetPermissions"
       description: "List all available permissions."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetPermissions"
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3656,13 +3145,6 @@ paths:
       summary: "GetRemovalProfiles"
       description: "List all existing removal profiles."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetRemovalProfiles"
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3681,13 +3163,6 @@ paths:
         Given a url to a mirror repo, returns repository information present
         in the release file/s and also whether it's flat or an ubuntu repo
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetRepoInfo"
         - name: mirror_uri
           in: query
           required: true
@@ -3712,13 +3187,6 @@ paths:
       summary: "GetRepositoryProfiles"
       description: "Get a list of repository profiles in the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetRepositoryProfiles"
         - name: names
           in: query
           description: "A list of repository profile names to get info for. If this is not provided, the call will return all repository profiles for the account. (Use names.1, names.2, etc. for multiple values)"
@@ -3745,13 +3213,6 @@ paths:
       summary: "GetRoles"
       description: "Get all available roles."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetRoles"
         - name: names
           in: query
           description: "A list of role names to limit the result. (Use names.1, names.2, etc. for multiple values)"
@@ -3778,13 +3239,6 @@ paths:
       summary: "GetSavedSearches"
       description: "Retrieve saved searches associated with the current account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetSavedSearches"
         - name: offset
           in: query
           description: "The offset inside the list of results."
@@ -3813,13 +3267,6 @@ paths:
       summary: "GetScriptCode"
       description: "Retrieve the code portion of a given script."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetScriptCode"
         - name: script_id
           in: query
           required: true
@@ -3844,13 +3291,6 @@ paths:
       summary: "GetScripts"
       description: "Retrieve stored scripts associated with the current account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetScripts"
         - name: limit
           in: query
           description: "The maximum number of results returned by the method. It defaults to 1000."
@@ -3887,13 +3327,6 @@ paths:
       summary: "GetSettings"
       description: "Get all settings and their value for the current LDS installation."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetSettings"
       responses:
         "200":
           $ref: "../responses/legacy.yaml#/LegacyActionResponse"
@@ -3910,13 +3343,6 @@ paths:
       summary: "GetUSNTimeToFix"
       description: "Return a break down of machines unpatched periods following a USN release."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetUSNTimeToFix"
         - name: query
           in: query
           description: "A query string with space separated tokens used to filter the returned result objects."
@@ -3973,13 +3399,6 @@ paths:
       summary: "GetUpgradeProfiles"
       description: "List all previously created upgrade profiles."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetUpgradeProfiles"
         - name: upgrade_type
           in: query
           description: ' The type of upgrade you wish to list. This can be either "all" or "security", in which case the result will be a list of upgrade profiles with an upgrade type of "all" or "security" respectively. If omitted, the resulting list will contain all upgrade profiles, regardless of their upgrade type.'
@@ -4001,13 +3420,6 @@ paths:
       summary: "GetUpgradedComputersByFrequency"
       description: "Return a dictionary of computer IDs broken down by their upgrade schedule."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetUpgradedComputersByFrequency"
         - name: query
           in: query
           description: "A query string with space separated tokens used to filter the returned result objects."
@@ -4044,13 +3456,6 @@ paths:
       summary: "GetUsers"
       description: "Get Linux user information from the specified computer."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetUsers"
         - name: computer_id
           in: query
           required: true
@@ -4075,13 +3480,6 @@ paths:
       summary: "GetWSLHosts"
       description: "Gets a list of Windows computers that are hosting at least one WSL instance"
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "GetWSLHosts"
         - name: query
           in: query
           description: "A query string with space separated tokens used to filter the returned result objects."
@@ -4118,13 +3516,6 @@ paths:
       summary: "ImportGPGKey"
       description: "Import a GPG key."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "ImportGPGKey"
         - name: name
           in: query
           required: true
@@ -4155,13 +3546,6 @@ paths:
       summary: "InstallPackages"
       description: "Install packages on selected computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "InstallPackages"
         - name: query
           in: query
           required: true
@@ -4207,13 +3591,6 @@ paths:
       summary: "InviteAdministrator"
       description: "Invite an administrator to your account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "InviteAdministrator"
         - name: name
           in: query
           required: true
@@ -4256,13 +3633,6 @@ paths:
       summary: "KillComputerProcesses"
       description: "Creates an activity to send a KILL signal to the specified computer processes"
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "KillComputerProcesses"
         - name: computer_id
           in: query
           required: true
@@ -4297,13 +3667,6 @@ paths:
       summary: "ListPocket"
       description: "Return a list of the packages in a pocket."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "ListPocket"
         - name: name
           in: query
           required: true
@@ -4358,13 +3721,6 @@ paths:
             Add or remove constraints related to a package profile. Constraints can
             be dependencies or conflicts.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "ModifyPackageProfile"
         - name: name
           in: query
           required: true
@@ -4414,13 +3770,6 @@ paths:
       summary: "PullPackagesToPocket"
       description: "Import packages to a pocket in pull mode from its parent pocket."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "PullPackagesToPocket"
         - name: name
           in: query
           required: true
@@ -4457,13 +3806,6 @@ paths:
       summary: "RebootComputers"
       description: "Reboot a list of computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RebootComputers"
         - name: computer_ids
           in: query
           required: true
@@ -4499,13 +3841,6 @@ paths:
         Reject a list of pending computers associated with the account used for
             authentication.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RejectPendingComputers"
         - name: computer_ids
           in: query
           required: true
@@ -4534,13 +3869,6 @@ paths:
       summary: "RemoveAPTSource"
       description: "Remove apt source from the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveAPTSource"
         - name: name
           in: query
           required: true
@@ -4568,13 +3896,6 @@ paths:
                     An activity will be created to remove the source from the
                     computers associated with the given profile.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveAPTSourceFromRepositoryProfile"
         - name: name
           in: query
           required: true
@@ -4605,13 +3926,6 @@ paths:
       summary: "RemoveAPTSources"
       description: "Deprecated: use RemoveAPTSource instead."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveAPTSources"
         - name: names
           in: query
           required: true
@@ -4640,13 +3954,6 @@ paths:
       summary: "RemoveAPTSourcesFromRepositoryProfile"
       description: "Deprecated: use RemoveAPTSourceFromRepositoryProfile instead."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveAPTSourcesFromRepositoryProfile"
         - name: name
           in: query
           required: true
@@ -4681,13 +3988,6 @@ paths:
       summary: "RemoveAccessGroup"
       description: "Remove an access group."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveAccessGroup"
         - name: name
           in: query
           required: true
@@ -4712,13 +4012,6 @@ paths:
       summary: "RemoveAccessGroupsFromRole"
       description: "Remove the given access groups to a role."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveAccessGroupsFromRole"
         - name: name
           in: query
           required: true
@@ -4753,13 +4046,6 @@ paths:
       summary: "RemoveAnnotationFromComputers"
       description: "Remove annotation key from a selection of computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveAnnotationFromComputers"
         - name: query
           in: query
           required: true
@@ -4790,13 +4076,6 @@ paths:
       summary: "RemoveComputers"
       description: "Remove a list of computers by ID."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveComputers"
         - name: computer_ids
           in: query
           required: true
@@ -4825,13 +4104,6 @@ paths:
       summary: "RemoveDistribution"
       description: "Remove the specified repository distribution."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveDistribution"
         - name: name
           in: query
           required: true
@@ -4856,13 +4128,6 @@ paths:
       summary: "RemoveGPGKey"
       description: "Remove a GPG key."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveGPGKey"
         - name: name
           in: query
           required: true
@@ -4889,13 +4154,6 @@ paths:
         Remove package filters from a repository pocket.  The pocket must be in
             pull mode and support blocklist/allowlist filtering.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemovePackageFiltersFromPocket"
         - name: name
           in: query
           required: true
@@ -4942,13 +4200,6 @@ paths:
       summary: "RemovePackageProfile"
       description: "Remove a package profile, given its name."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemovePackageProfile"
         - name: name
           in: query
           required: true
@@ -4973,13 +4224,6 @@ paths:
       summary: "RemovePackages"
       description: "Remove packages on selected computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemovePackages"
         - name: query
           in: query
           required: true
@@ -5025,13 +4269,6 @@ paths:
       summary: "RemovePackagesFromPocket"
       description: "Remove packages from pockets in upload mode."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemovePackagesFromPocket"
         - name: name
           in: query
           required: true
@@ -5078,13 +4315,6 @@ paths:
       summary: "RemovePermissionsFromRole"
       description: "Remove permissions from a role."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemovePermissionsFromRole"
         - name: name
           in: query
           required: true
@@ -5119,13 +4349,6 @@ paths:
       summary: "RemovePersonsFromRole"
       description: "Remove people from a role."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemovePersonsFromRole"
         - name: name
           in: query
           required: true
@@ -5160,13 +4383,6 @@ paths:
       summary: "RemovePocket"
       description: "Remove a repository pocket from a series in a distribution."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemovePocket"
         - name: name
           in: query
           required: true
@@ -5206,13 +4422,6 @@ paths:
                     An activity will be created to remove the pockets from the APT
                     sources of the computers associated with the given profile.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemovePocketsFromRepositoryProfile"
         - name: name
           in: query
           required: true
@@ -5259,13 +4468,6 @@ paths:
       summary: "RemoveRemovalProfile"
       description: "Remove an existing removal profile by name."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveRemovalProfile"
         - name: name
           in: query
           required: true
@@ -5290,13 +4492,6 @@ paths:
       summary: "RemoveRepositoryProfile"
       description: "Remove repository profile from the account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveRepositoryProfile"
         - name: name
           in: query
           required: true
@@ -5321,13 +4516,6 @@ paths:
       summary: "RemoveRepositoryProfiles"
       description: "Deprecated: use RemoveRepositoryProfile instead."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveRepositoryProfiles"
         - name: names
           in: query
           required: true
@@ -5356,13 +4544,6 @@ paths:
       summary: "RemoveRole"
       description: "Remove an access role."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveRole"
         - name: name
           in: query
           required: true
@@ -5387,13 +4568,6 @@ paths:
       summary: "RemoveSavedSearch"
       description: "Remove a saved search associated with the current account."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveSavedSearch"
         - name: name
           in: query
           required: true
@@ -5418,13 +4592,6 @@ paths:
       summary: "RemoveScript"
       description: "Remove scripts."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveScript"
         - name: script_id
           in: query
           required: true
@@ -5449,13 +4616,6 @@ paths:
       summary: "RemoveScriptAttachment"
       description: "Remove a script attachment."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveScriptAttachment"
         - name: script_id
           in: query
           required: true
@@ -5486,13 +4646,6 @@ paths:
       summary: "RemoveSeries"
       description: "Remove a repository series from a distribution."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveSeries"
         - name: name
           in: query
           required: true
@@ -5523,13 +4676,6 @@ paths:
       summary: "RemoveTagsFromComputers"
       description: "Remove tags from a selection of computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveTagsFromComputers"
         - name: query
           in: query
           required: true
@@ -5564,13 +4710,6 @@ paths:
       summary: "RemoveUpgradeProfile"
       description: "Remove an existing upgrade profile by name."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveUpgradeProfile"
         - name: name
           in: query
           required: true
@@ -5597,13 +4736,6 @@ paths:
         Remove GPG keys for uploaded packages validation from a repository pocket
             in upload mode.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveUploaderGPGKeysFromPocket"
         - name: name
           in: query
           required: true
@@ -5650,13 +4782,6 @@ paths:
       summary: "RemoveWSLHosts"
       description: "Remove a list of Windows computers that are hosting at least one WSL instance by id"
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RemoveWSLHosts"
         - name: computer_ids
           in: query
           required: true
@@ -5691,13 +4816,6 @@ paths:
       summary: "RenameComputers"
       description: "Rename a set of computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "RenameComputers"
         - name: computer_titles
           in: query
           required: true
@@ -5727,13 +4845,6 @@ paths:
         Set the child computer instance with the provided id as the default one
                 for the host parent.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "SetDefaultChildComputer"
         - name: parent_id
           in: query
           required: true
@@ -5764,13 +4875,6 @@ paths:
       summary: "SetSettings"
       description: "Set configuration settings for the current LDS installation."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "SetSettings"
         - name: key_values
           in: query
           required: true
@@ -5799,13 +4903,6 @@ paths:
       summary: "ShutdownComputers"
       description: "Shutdown a list of computers."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "ShutdownComputers"
         - name: computer_ids
           in: query
           required: true
@@ -5839,13 +4936,6 @@ paths:
       summary: "ShutdownHostComputer"
       description: "Send a message to shutdown a host computer."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "ShutdownHostComputer"
         - name: parent_id
           in: query
           required: true
@@ -5870,13 +4960,6 @@ paths:
       summary: "StartChildComputers"
       description: "Start a list of child computers by ID."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "StartChildComputers"
         - name: computer_ids
           in: query
           required: true
@@ -5905,13 +4988,6 @@ paths:
       summary: "StopChildComputers"
       description: "Stop a list of child computers by ID."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "StopChildComputers"
         - name: computer_ids
           in: query
           required: true
@@ -5964,13 +5040,6 @@ paths:
       summary: "SyncMirrorPocket"
       description: "Synchronize a mirror repository pocket."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "SyncMirrorPocket"
         - name: name
           in: query
           required: true
@@ -6007,13 +5076,6 @@ paths:
       summary: "TerminateComputerProcesses"
       description: "Creates an activity to send a TERM signal to the specified computer processes"
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "TerminateComputerProcesses"
         - name: computer_id
           in: query
           required: true
@@ -6048,13 +5110,6 @@ paths:
       summary: "UnsubscribeFromAlert"
       description: "Unsubscribe from an alert."
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "UnsubscribeFromAlert"
         - name: alert_type
           in: query
           required: true
@@ -6081,13 +5136,6 @@ paths:
         Request upgrading of all packages identified as being upgradable, on all
             computers selected by query.
       parameters:
-        - name: action
-          in: query
-          required: true
-          description: "API action"
-          schema:
-            type: string
-            default: "UpgradePackages"
         - name: query
           in: query
           required: true
