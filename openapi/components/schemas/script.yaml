@@ -44,36 +44,6 @@ ScriptLastEditedBy:
     - id
     - name
 
-LegacyScriptCreator:
-  type: object
-  description: Information about the creator of a V1 legacy script.
-  x-oapi-codegen-extra-tags:
-    tfsdk: "creator"
-  properties:
-    id:
-      type: integer
-      nullable: true
-      description: The ID of the person who created the script.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "id"
-    name:
-      type: string
-      nullable: true
-      description: The name of the person who created the script.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "name"
-    email:
-      type: string
-      format: email
-      nullable: true
-      description: The email address of the person who created the script.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "email"
-  required:
-    - id
-    - name
-    - email
-
 ScriptAttachment:
   type: object
   properties:
@@ -91,10 +61,6 @@ ScriptAttachment:
     - id
     - filename
 
-LegacyScriptAttachment:
-  type: string
-  description: The response from creating a legacy script attachment.
-
 ScriptProfile:
   type: object
   properties:
@@ -111,58 +77,6 @@ ScriptProfile:
   required:
     - id
     - title
-
-V1Script:
-  type: object
-  properties:
-    id:
-      type: integer
-      description: The unique identifier for the script.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "id"
-    title:
-      type: string
-      description: The title of the script.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "title"
-    creator:
-      $ref: "#/LegacyScriptCreator"
-      nullable: true
-    status:
-      type: string
-      description: The status of the script (V1 for legacy scripts).
-      x-oapi-codegen-extra-tags:
-        tfsdk: "status"
-      enum:
-        - V1
-    attachments:
-      type: array
-      nullable: true
-      description: List of attachments associated with the script.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "attachments"
-      items:
-        $ref: "#/LegacyScriptAttachment"
-    access_group:
-      type: string
-      description: The access group that can view or execute this script.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "access_group"
-    time_limit:
-      type: integer
-      description: The execution time limit for the script in seconds.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "time_limit"
-    username:
-      type: string
-      nullable: true
-      description: The username under which the script runs.
-      x-oapi-codegen-extra-tags:
-        tfsdk: "username"
-  required:
-    - id
-    - title
-    - status
 
 V2Script:
   type: object
@@ -273,18 +187,6 @@ V2Script:
     - id
     - title
     - status
-
-ScriptResult:
-  oneOf:
-    - $ref: "#/V1Script"
-    - $ref: "#/V2Script"
-  discriminator:
-    propertyName: status
-    mapping:
-      V1: "#/V1Script"
-      ARCHIVED: "#/V2Script"
-      REDACTED: "#/V2Script"
-      ACTIVE: "#/V2Script"
 
 ScriptAttachmentResult:
   description: The contents of the specified script attachment.
