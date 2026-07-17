@@ -5,7 +5,7 @@ GetScriptResponse:
   content:
     application/json:
       schema:
-        $ref: "../schemas/script.yaml#/ScriptResult"
+        $ref: "../schemas/script.yaml#/V2Script"
 
 GetScriptAttachmentResponse:
   description: The found script attachment and its state.

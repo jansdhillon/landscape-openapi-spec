@@ -3,7 +3,7 @@
 openapi: 3.1.0
 info:
   title: Landscape OpenAPI Spec
-  version: "0.1.7"
+  version: "0.1.8"
   description: API specification for Canonical Landscape.
   license:
     name: Apache-2.0
@@ -12,8 +12,6 @@ info:
 tags:
   - name: Authentication
     description: Authentication and authorization operations.
-  - name: Legacy API Actions
-    description: Legacy API actions.
   - name: Script Profiles
     description: Operations for managing script profiles, which define scheduled or event-based script execution across targeted computers.
   - name: Scripts
@@ -51,280 +49,6 @@ paths:
     $ref: "./components/paths/script.yaml#/paths/~1api~1script-profiles~1{script_profile_id}~1computers"
   "/api/script-profiles/{script_profile_id}/activities":
     $ref: "./components/paths/script.yaml#/paths/~1api~1script-profiles~1{script_profile_id}~1activities"
-  "/api/?action=AcceptPendingComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AcceptPendingComputers&version=2011-08-01"
-  "/api/?action=AddAPTSourcesToRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AddAPTSourcesToRepositoryProfile&version=2011-08-01"
-  "/api/?action=AddAccessGroupsToRole&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AddAccessGroupsToRole&version=2011-08-01"
-  "/api/?action=AddAnnotationToComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AddAnnotationToComputers&version=2011-08-01"
-  "/api/?action=AddPackageFiltersToPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AddPackageFiltersToPocket&version=2011-08-01"
-  "/api/?action=AddPermissionsToRole&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AddPermissionsToRole&version=2011-08-01"
-  "/api/?action=AddPersonsToRole&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AddPersonsToRole&version=2011-08-01"
-  "/api/?action=AddPocketsToRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AddPocketsToRepositoryProfile&version=2011-08-01"
-  "/api/?action=AddTagsToComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AddTagsToComputers&version=2011-08-01"
-  "/api/?action=AddUploaderGPGKeysToPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AddUploaderGPGKeysToPocket&version=2011-08-01"
-  "/api/?action=ApproveActivities&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=ApproveActivities&version=2011-08-01"
-  "/api/?action=AssociateAlert&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AssociateAlert&version=2011-08-01"
-  "/api/?action=AssociatePackageProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AssociatePackageProfile&version=2011-08-01"
-  "/api/?action=AssociateRemovalProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AssociateRemovalProfile&version=2011-08-01"
-  "/api/?action=AssociateRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AssociateRepositoryProfile&version=2011-08-01"
-  "/api/?action=AssociateUpgradeProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=AssociateUpgradeProfile&version=2011-08-01"
-  "/api/?action=CancelActivities&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CancelActivities&version=2011-08-01"
-  "/api/?action=ChangeComputersAccessGroup&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=ChangeComputersAccessGroup&version=2011-08-01"
-  "/api/?action=CopyPackageProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CopyPackageProfile&version=2011-08-01"
-  "/api/?action=CopyRole&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CopyRole&version=2011-08-01"
-  "/api/?action=CopyScript&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CopyScript&version=2011-08-01"
-  "/api/?action=CreateAPTSource&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateAPTSource&version=2011-08-01"
-  "/api/?action=CreateAccessGroup&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateAccessGroup&version=2011-08-01"
-  "/api/?action=CreateChildComputer&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateChildComputer&version=2011-08-01"
-  "/api/?action=CreateDistribution&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateDistribution&version=2011-08-01"
-  "/api/?action=CreatePackageProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreatePackageProfile&version=2011-08-01"
-  "/api/?action=CreatePocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreatePocket&version=2011-08-01"
-  "/api/?action=CreateRemovalProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateRemovalProfile&version=2011-08-01"
-  "/api/?action=CreateRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateRepositoryProfile&version=2011-08-01"
-  "/api/?action=CreateRole&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateRole&version=2011-08-01"
-  "/api/?action=CreateSavedSearch&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateSavedSearch&version=2011-08-01"
-  "/api/?action=CreateScript&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateScript&version=2011-08-01"
-  "/api/?action=CreateScriptAttachment&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateScriptAttachment&version=2011-08-01"
-  "/api/?action=CreateSeries&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateSeries&version=2011-08-01"
-  "/api/?action=CreateUpgradeProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateUpgradeProfile&version=2011-08-01"
-  "/api/?action=CreateUser&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=CreateUser&version=2011-08-01"
-  "/api/?action=DeleteChildComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=DeleteChildComputers&version=2011-08-01"
-  "/api/?action=DeriveSeries&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=DeriveSeries&version=2011-08-01"
-  "/api/?action=DiffPullPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=DiffPullPocket&version=2011-08-01"
-  "/api/?action=DisableAdministrator&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=DisableAdministrator&version=2011-08-01"
-  "/api/?action=DisassociateAlert&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=DisassociateAlert&version=2011-08-01"
-  "/api/?action=DisassociatePackageProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=DisassociatePackageProfile&version=2011-08-01"
-  "/api/?action=DisassociateRemovalProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=DisassociateRemovalProfile&version=2011-08-01"
-  "/api/?action=DisassociateRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=DisassociateRepositoryProfile&version=2011-08-01"
-  "/api/?action=DisassociateUpgradeProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=DisassociateUpgradeProfile&version=2011-08-01"
-  "/api/?action=EditPackageProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=EditPackageProfile&version=2011-08-01"
-  "/api/?action=EditPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=EditPocket&version=2011-08-01"
-  "/api/?action=EditRemovalProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=EditRemovalProfile&version=2011-08-01"
-  "/api/?action=EditRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=EditRepositoryProfile&version=2011-08-01"
-  "/api/?action=EditSavedSearch&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=EditSavedSearch&version=2011-08-01"
-  "/api/?action=EditScript&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=EditScript&version=2011-08-01"
-  "/api/?action=EditUpgradeProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=EditUpgradeProfile&version=2011-08-01"
-  "/api/?action=EditUser&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=EditUser&version=2011-08-01"
-  "/api/?action=ExecuteScript&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=ExecuteScript&version=2011-08-01"
-  "/api/?action=GetAPTSources&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetAPTSources&version=2011-08-01"
-  "/api/?action=GetAccessGroups&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetAccessGroups&version=2011-08-01"
-  "/api/?action=GetActivities&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetActivities&version=2011-08-01"
-  "/api/?action=GetActivityTypes&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetActivityTypes&version=2011-08-01"
-  "/api/?action=GetAdministrators&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetAdministrators&version=2011-08-01"
-  "/api/?action=GetAlertSubscribers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetAlertSubscribers&version=2011-08-01"
-  "/api/?action=GetAlerts&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetAlerts&version=2011-08-01"
-  "/api/?action=GetCSVComplianceData&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetCSVComplianceData&version=2011-08-01"
-  "/api/?action=GetComputerProcesses&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetComputerProcesses&version=2011-08-01"
-  "/api/?action=GetComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetComputers&version=2011-08-01"
-  "/api/?action=GetComputersNotUpgraded&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetComputersNotUpgraded&version=2011-08-01"
-  "/api/?action=GetDistributions&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetDistributions&version=2011-08-01"
-  "/api/?action=GetEventLog&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetEventLog&version=2011-08-01"
-  "/api/?action=GetGPGKeys&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetGPGKeys&version=2011-08-01"
-  "/api/?action=GetNotPingingComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetNotPingingComputers&version=2011-08-01"
-  "/api/?action=GetPackageProfiles&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetPackageProfiles&version=2011-08-01"
-  "/api/?action=GetPackages&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetPackages&version=2011-08-01"
-  "/api/?action=GetPendingComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetPendingComputers&version=2011-08-01"
-  "/api/?action=GetPermissions&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetPermissions&version=2011-08-01"
-  "/api/?action=GetRemovalProfiles&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetRemovalProfiles&version=2011-08-01"
-  "/api/?action=GetRepoInfo&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetRepoInfo&version=2011-08-01"
-  "/api/?action=GetRepositoryProfiles&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetRepositoryProfiles&version=2011-08-01"
-  "/api/?action=GetRoles&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetRoles&version=2011-08-01"
-  "/api/?action=GetSavedSearches&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetSavedSearches&version=2011-08-01"
-  "/api/?action=GetScriptCode&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetScriptCode&version=2011-08-01"
-  "/api/?action=GetScripts&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetScripts&version=2011-08-01"
-  "/api/?action=GetSettings&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetSettings&version=2011-08-01"
-  "/api/?action=GetUSNTimeToFix&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetUSNTimeToFix&version=2011-08-01"
-  "/api/?action=GetUpgradeProfiles&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetUpgradeProfiles&version=2011-08-01"
-  "/api/?action=GetUpgradedComputersByFrequency&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetUpgradedComputersByFrequency&version=2011-08-01"
-  "/api/?action=GetUsers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetUsers&version=2011-08-01"
-  "/api/?action=GetWSLHosts&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=GetWSLHosts&version=2011-08-01"
-  "/api/?action=ImportGPGKey&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=ImportGPGKey&version=2011-08-01"
-  "/api/?action=InstallPackages&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=InstallPackages&version=2011-08-01"
-  "/api/?action=InviteAdministrator&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=InviteAdministrator&version=2011-08-01"
-  "/api/?action=KillComputerProcesses&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=KillComputerProcesses&version=2011-08-01"
-  "/api/?action=ListPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=ListPocket&version=2011-08-01"
-  "/api/?action=ModifyPackageProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=ModifyPackageProfile&version=2011-08-01"
-  "/api/?action=PullPackagesToPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=PullPackagesToPocket&version=2011-08-01"
-  "/api/?action=RebootComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RebootComputers&version=2011-08-01"
-  "/api/?action=RejectPendingComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RejectPendingComputers&version=2011-08-01"
-  "/api/?action=RemoveAPTSource&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveAPTSource&version=2011-08-01"
-  "/api/?action=RemoveAPTSourceFromRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveAPTSourceFromRepositoryProfile&version=2011-08-01"
-  "/api/?action=RemoveAPTSources&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveAPTSources&version=2011-08-01"
-  "/api/?action=RemoveAPTSourcesFromRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveAPTSourcesFromRepositoryProfile&version=2011-08-01"
-  "/api/?action=RemoveAccessGroup&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveAccessGroup&version=2011-08-01"
-  "/api/?action=RemoveAccessGroupsFromRole&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveAccessGroupsFromRole&version=2011-08-01"
-  "/api/?action=RemoveAnnotationFromComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveAnnotationFromComputers&version=2011-08-01"
-  "/api/?action=RemoveComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveComputers&version=2011-08-01"
-  "/api/?action=RemoveDistribution&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveDistribution&version=2011-08-01"
-  "/api/?action=RemoveGPGKey&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveGPGKey&version=2011-08-01"
-  "/api/?action=RemovePackageFiltersFromPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemovePackageFiltersFromPocket&version=2011-08-01"
-  "/api/?action=RemovePackageProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemovePackageProfile&version=2011-08-01"
-  "/api/?action=RemovePackages&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemovePackages&version=2011-08-01"
-  "/api/?action=RemovePackagesFromPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemovePackagesFromPocket&version=2011-08-01"
-  "/api/?action=RemovePermissionsFromRole&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemovePermissionsFromRole&version=2011-08-01"
-  "/api/?action=RemovePersonsFromRole&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemovePersonsFromRole&version=2011-08-01"
-  "/api/?action=RemovePocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemovePocket&version=2011-08-01"
-  "/api/?action=RemovePocketsFromRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemovePocketsFromRepositoryProfile&version=2011-08-01"
-  "/api/?action=RemoveRemovalProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveRemovalProfile&version=2011-08-01"
-  "/api/?action=RemoveRepositoryProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveRepositoryProfile&version=2011-08-01"
-  "/api/?action=RemoveRepositoryProfiles&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveRepositoryProfiles&version=2011-08-01"
-  "/api/?action=RemoveRole&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveRole&version=2011-08-01"
-  "/api/?action=RemoveSavedSearch&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveSavedSearch&version=2011-08-01"
-  "/api/?action=RemoveScript&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveScript&version=2011-08-01"
-  "/api/?action=RemoveScriptAttachment&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveScriptAttachment&version=2011-08-01"
-  "/api/?action=RemoveSeries&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveSeries&version=2011-08-01"
-  "/api/?action=RemoveTagsFromComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveTagsFromComputers&version=2011-08-01"
-  "/api/?action=RemoveUpgradeProfile&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveUpgradeProfile&version=2011-08-01"
-  "/api/?action=RemoveUploaderGPGKeysFromPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveUploaderGPGKeysFromPocket&version=2011-08-01"
-  "/api/?action=RemoveWSLHosts&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RemoveWSLHosts&version=2011-08-01"
-  "/api/?action=RenameComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=RenameComputers&version=2011-08-01"
-  "/api/?action=SetDefaultChildComputer&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=SetDefaultChildComputer&version=2011-08-01"
-  "/api/?action=SetSettings&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=SetSettings&version=2011-08-01"
-  "/api/?action=ShutdownComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=ShutdownComputers&version=2011-08-01"
-  "/api/?action=ShutdownHostComputer&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=ShutdownHostComputer&version=2011-08-01"
-  "/api/?action=StartChildComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=StartChildComputers&version=2011-08-01"
-  "/api/?action=StopChildComputers&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=StopChildComputers&version=2011-08-01"
-  "/api/?action=SubscribeToAlert&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=SubscribeToAlert&version=2011-08-01"
-  "/api/?action=SyncMirrorPocket&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=SyncMirrorPocket&version=2011-08-01"
-  "/api/?action=TerminateComputerProcesses&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=TerminateComputerProcesses&version=2011-08-01"
-  "/api/?action=UnsubscribeFromAlert&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=UnsubscribeFromAlert&version=2011-08-01"
-  "/api/?action=UpgradePackages&version=2011-08-01":
-    $ref: "./components/paths/actions.yaml#/paths/~1api~1?action=UpgradePackages&version=2011-08-01"
   "/api/login":
     $ref: "./components/paths/auth.yaml#/paths/~1api~1login"
   "/api/login/access-key":
@@ -354,10 +78,6 @@ components:
       $ref: "./components/schemas/auth.yaml#/AccessKeyLoginRequest"
     Error:
       $ref: "./components/schemas/error.yaml#/Error"
-    LegacyScriptAttachment:
-      $ref: "./components/schemas/script.yaml#/LegacyScriptAttachment"
-    LegacyScriptCreator:
-      $ref: "./components/schemas/script.yaml#/LegacyScriptCreator"
     LoginAccount:
       $ref: "./components/schemas/auth.yaml#/LoginAccount"
     LoginRequest:
@@ -372,14 +92,10 @@ components:
       $ref: "./components/schemas/script.yaml#/ScriptLastEditedBy"
     ScriptProfile:
       $ref: "./components/schemas/script.yaml#/ScriptProfile"
-    ScriptResult:
-      $ref: "./components/schemas/script.yaml#/ScriptResult"
-    ScriptAttachmentResult:
-      $ref: "./components/schemas/script.yaml#/ScriptAttachmentResult"
-    V1Script:
-      $ref: "./components/schemas/script.yaml#/V1Script"
     V2Script:
       $ref: "./components/schemas/script.yaml#/V2Script"
+    ScriptAttachmentResult:
+      $ref: "./components/schemas/script.yaml#/ScriptAttachmentResult"
     ScriptProfileLimits:
       $ref: "./components/schemas/script.yaml#/ScriptProfileLimits"
     ScriptProfileEventType:
@@ -460,5 +176,3 @@ components:
       $ref: "./components/responses/script.yaml#/GetScriptProfileActivitiesResponse"
     ScriptProfilesByScriptResult:
       $ref: "./components/responses/script.yaml#/ScriptProfilesByScriptResult"
-    LegacyActionResponse:
-      $ref: "./components/responses/legacy.yaml#/LegacyActionResponse"
