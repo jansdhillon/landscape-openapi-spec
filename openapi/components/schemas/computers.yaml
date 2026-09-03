@@ -1,0 +1,165 @@
+# SPDX-License-Identifier: Apache-2.0
+
+# Schemas for the /api/computers endpoints.
+#
+# Field definitions follow Computer.serialize() and the v2
+# computers_list_handler in landscape-server. The response object is wide
+# (extra keys appear depending on the with_* query parameters), so
+# additionalProperties is intentionally allowed.
+
+NetworkDevice:
+  type: object
+  description: A network device attached to the computer.
+  properties:
+    interface:
+      type: string
+    ip_address:
+      type: string
+    mac_address:
+      type: string
+    broadcast_address:
+      type: string
+    netmask:
+      type: string
+
+ComputerAlert:
+  type: object
+  description: An alert active on the computer (present with with_alerts).
+  properties:
+    type:
+      type: string
+    summary:
+      type: string
+    severity:
+      type: string
+
+ComputerUpgrades:
+  type: object
+  description: Pending upgrade counts (present with with_upgrades).
+  properties:
+    regular:
+      type: integer
+    security:
+      type: integer
+
+# A child computer as embedded in a Computer's children array. landscape-server
+# serializes children with include_children=False, so this intentionally has no
+# children property. NOTE: keep as a separate schema - a direct
+# $ref back to Computer creates a self-referential cycle that swagger-cli
+# (make validate) cannot resolve.
+ChildComputer:
+  type: object
+  additionalProperties: true
+  description: A child instance of a computer, without its own children.
+  properties:
+    id:
+      type: integer
+    title:
+      type: string
+    hostname:
+      type: string
+    is_wsl_instance:
+      type: boolean
+
+Computer:
+  type: object
+  additionalProperties: true
+  description: A computer registered in Landscape.
+  properties:
+    id:
+      type: integer
+      description: The computer's ID.
+    title:
+      type: string
+      description: The display name of the computer.
+    hostname:
+      type: string
+    comment:
+      type: string
+    distribution:
+      type: string
+      description: The Ubuntu release running on the computer (e.g. "24.04").
+    access_group:
+      type: string
+      description: The access group the computer belongs to.
+    tags:
+      type: array
+      items:
+        type: string
+    last_ping_time:
+      type: string
+      nullable: true
+    last_exchange_time:
+      type: string
+      nullable: true
+      description: When the computer last exchanged data with the server.
+    reboot_required_flag:
+      type: boolean
+    total_memory:
+      type: integer
+      nullable: true
+    total_swap:
+      type: integer
+      nullable: true
+    is_wsl_instance:
+      type: boolean
+    is_default_child:
+      type: boolean
+      nullable: true
+      description: Whether this computer is the default WSL child instance.
+    children:
+      type: array
+      description: |
+        Child instances (e.g. WSL instances) of this computer. Children are
+        serialized without their own children or parent, per landscape-server's
+        Computer.serialize(include_children=False).
+      items:
+        $ref: "#/ChildComputer"
+    network_devices:
+      type: array
+      description: Present when with_network or with_all_network is set.
+      items:
+        $ref: "#/NetworkDevice"
+    hardware:
+      type: object
+      additionalProperties: true
+      description: Present when with_hardware is set.
+    grouped_hardware:
+      type: object
+      additionalProperties: true
+      description: Present when with_grouped_hardware is set.
+    annotations:
+      type: object
+      additionalProperties: true
+      description: Present when with_annotations is set.
+    alerts:
+      type: array
+      description: Present when with_alerts is set.
+      items:
+        $ref: "#/ComputerAlert"
+    upgrades:
+      $ref: "#/ComputerUpgrades"
+
+ComputerListResponse:
+  type: object
+  additionalProperties: false
+  properties:
+    count:
+      type: integer
+      description: Total number of computers matching the query.
+    next:
+      type: string
+      nullable: true
+      description: URL of the next page of results, if any.
+    previous:
+      type: string
+      nullable: true
+      description: URL of the previous page of results, if any.
+    results:
+      type: array
+      description: The page of computers.
+      items:
+        $ref: "#/Computer"
+  required:
+    - count
+    - results
