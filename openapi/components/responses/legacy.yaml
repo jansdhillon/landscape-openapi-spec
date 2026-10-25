@@ -1,8 +1,0 @@
-# SPDX-License-Identifier: Apache-2.0
-
-LegacyActionResponse:
-  description: Result returned by a legacy action.
-  content:
-    application/json:
-      schema:
-        description: "The response body varies by action; may be a JSON object or a plain string."

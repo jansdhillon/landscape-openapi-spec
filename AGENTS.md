@@ -18,20 +18,16 @@ openapi/
   components/
     paths/
       script.yaml                 # Path item definitions for /api/scripts/…
-      actions.yaml                # Legacy /api path
       auth.yaml                   # /api/login paths
     schemas/
       script.yaml                 # All script and script-profile schemas
       auth.yaml                   # Auth-related schemas
       error.yaml                  # Error schema
-      legacy.yaml                 # Legacy action schemas
     parameters/
       script.yaml                 # Path/query params for scripts & script profiles
-      legacy.yaml                 # Legacy params
     responses/
       script.yaml                 # Response definitions for scripts & script profiles
       error.yaml                  # Reusable error responses
-      legacy.yaml                 # Legacy responses
 .github/
   workflows/
     lint.yaml                     # Runs on PRs: make validate && make lint
