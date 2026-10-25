@@ -1,0 +1,131 @@
+# SPDX-License-Identifier: Apache-2.0
+
+paths:
+  "/api/computers":
+    get:
+      tags:
+        - Computers
+      operationId: list_computers
+      summary: List computers.
+      description: |
+        Retrieve a paginated list of computers registered in Landscape,
+        including their hardware info, Ubuntu Pro status, distribution,
+        tags, and last exchange time.
+
+        The `query` parameter accepts space-separated tokens. Bare words
+        match hostname or title; selector prefixes refine the search:
+        `tag:`, `distribution:`, `hostname:`, `title:`, `alert:`,
+        `access-group:`, `id:`, `mac:`, `ip:`, `search:`, `needs:reboot`,
+        `license-id:`, `needs:license`, `annotation:`, `profile:`,
+        `security-profile:`, plus uppercase `OR` and `NOT` operators.
+      parameters:
+        - name: query
+          in: query
+          schema:
+            type: string
+          description: Search query (see description above for syntax).
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 1000
+          description: Maximum number of results to return.
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+          description: Offset into the list of results.
+        - name: root_only
+          in: query
+          schema:
+            type: boolean
+            default: true
+          description: Include only the root member of each computer family tree.
+        - name: archived_only
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Only include archived computers.
+        - name: with_network
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include all active network devices.
+        - name: with_all_network
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include all active and inactive network devices.
+        - name: with_hardware
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include all known hardware information.
+        - name: with_grouped_hardware
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include hardware information grouped by device category.
+        - name: with_annotations
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include custom annotation information.
+        - name: with_alerts
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include active alert information per computer.
+        - name: with_upgrades
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include counts of regular and security upgrades.
+        - name: with_release_upgrades
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include whether a release upgrade is available.
+        - name: with_reboot_packages
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include packages needing a reboot.
+        - name: with_wsl_profiles
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Include WSL profiles associated with Windows computers.
+        - name: wsl_parents
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: Restrict to WSL parent instances (inclusive with wsl_children).
+        - name: wsl_children
+          in: query
+          schema:
+            type: boolean
+            default: false
+          description: |
+            Restrict to WSL child instances (inclusive with wsl_parents).
+            root_only must be false for child instances to appear.
+      responses:
+        "200":
+          $ref: "../responses/computer.yaml#/ComputerListResult"
+        "400":
+          $ref: "../responses/error.yaml#/BadRequest"
+        "401":
+          $ref: "../responses/error.yaml#/Unauthorized"

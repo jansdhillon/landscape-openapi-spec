@@ -3,7 +3,7 @@
 openapi: 3.1.0
 info:
   title: Landscape OpenAPI Spec
-  version: "0.1.8"
+  version: "0.1.9"
   description: API specification for Canonical Landscape.
   license:
     name: Apache-2.0
@@ -12,6 +12,8 @@ info:
 tags:
   - name: Authentication
     description: Authentication and authorization operations.
+  - name: Computers
+    description: Operations for querying registered computers.
   - name: Script Profiles
     description: Operations for managing script profiles, which define scheduled or event-based script execution across targeted computers.
   - name: Scripts
@@ -27,6 +29,8 @@ security:
   - bearerAuth: []
 
 paths:
+  "/api/computers":
+    $ref: "./components/paths/computer.yaml#/paths/~1api~1computers"
   "/api/scripts/{script_id}":
     $ref: "./components/paths/script.yaml#/paths/~1api~1scripts~1{script_id}"
   "/api/scripts/{script_id}/attachments/{attachment_id}":
@@ -76,6 +80,10 @@ components:
   schemas:
     AccessKeyLoginRequest:
       $ref: "./components/schemas/auth.yaml#/AccessKeyLoginRequest"
+    Computer:
+      $ref: "./components/schemas/computers.yaml#/Computer"
+    ComputerListResponse:
+      $ref: "./components/schemas/computers.yaml#/ComputerListResponse"
     Error:
       $ref: "./components/schemas/error.yaml#/Error"
     LoginAccount:
