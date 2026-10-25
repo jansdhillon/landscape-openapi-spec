@@ -74,8 +74,10 @@ Computer:
       description: The display name of the computer.
     hostname:
       type: string
+      description: The hostname reported by the computer.
     comment:
       type: string
+      description: A free-form comment attached to the computer.
     distribution:
       type: string
       description: The Ubuntu release running on the computer (e.g. "24.04").
@@ -86,23 +88,29 @@ Computer:
       type: array
       items:
         type: string
+      description: Tags assigned to the computer.
     last_ping_time:
       type: string
       nullable: true
+      description: When the computer last pinged the server.
     last_exchange_time:
       type: string
       nullable: true
       description: When the computer last exchanged data with the server.
     reboot_required_flag:
       type: boolean
+      description: Whether the computer needs a reboot.
     total_memory:
       type: integer
       nullable: true
+      description: Total RAM of the computer, in megabytes.
     total_swap:
       type: integer
       nullable: true
+      description: Total swap of the computer, in megabytes.
     is_wsl_instance:
       type: boolean
+      description: Whether the computer is a WSL instance.
     is_default_child:
       type: boolean
       nullable: true
